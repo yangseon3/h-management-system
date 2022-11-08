@@ -1,0 +1,15 @@
+/* BEM 방식 */
+.center-modal__icon-wrap{
+    width: 187px;
+    height: 125px;
+}
+
+.sample-block__get-api{
+    width: 200px;
+    height: 100px;
+    margin: 30px;
+    font-size: 20px;
+}
+.sample-block__get-api--error-notice{
+    border: 1px solid red;
+}

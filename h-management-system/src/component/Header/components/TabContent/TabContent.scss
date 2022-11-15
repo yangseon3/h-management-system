@@ -1,0 +1,40 @@
+@import '/src/styles/variables.scss';
+.tabContent {
+  @include flex(space-between, center, null);
+  max-width: 1200px;
+  margin: 10px auto;
+
+  .dataBox {
+    padding: 10px;
+    width: 280px;
+    height: 100px;
+    border: 1px solid black;
+
+    .mainData {
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+
+      .mainUnit {
+        margin-left: 5px;
+        font-size: 16px;
+        vertical-align: bottom;
+      }
+    }
+    .compareBox {
+      @include flex(space-between, center, null);
+      p {
+        line-height: 20px;
+      }
+      .compareIcon {
+        margin-right: 5px;
+        font-size: 20px;
+      }
+
+      .resultValue {
+        @include flex(space-between, center, null);
+      }
+    }
+  }
+}

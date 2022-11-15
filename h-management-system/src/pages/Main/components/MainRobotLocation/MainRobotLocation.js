@@ -1,11 +1,17 @@
 import React from 'react';
-import './MainRobotLocation.scss';
+import RobotKakaoData from './RobotKakaoData/RobotKakaoData';
+import RobotKakaoMap from './RobotKakaoMap/RobotKakaoMap';
+import './RobotLocation.scss';
 
 const MainRobotLocation = () => {
   return (
-    <div className="robotLocatioin">
-      <div>모든 매장모아보기</div>
-      <div>전국 매장위치</div>
+    <div className="mainRobotLocatioin">
+      <div className="mainRobotLocatioinKakaoData">
+        <RobotKakaoData />
+      </div>
+      <div className="mainRobotLocatioinKakaoData">
+        <RobotKakaoMap />
+      </div>
     </div>
   );
 };

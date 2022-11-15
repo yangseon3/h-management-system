@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Login from 'pages/Login/Login';
 import Main from 'pages/Main/Main';
 import Detail from 'pages/Detail/Detail';
+import MainLayout from 'pages/MainLayout/MainLayout';
 
 const Router = () => {
   const queryClient = new QueryClient();

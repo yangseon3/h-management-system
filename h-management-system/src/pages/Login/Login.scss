@@ -1,0 +1,92 @@
+.login {
+    width: 100vw;
+    height: 100vh; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:url(https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1257&q=80);
+    .loginContainer {
+        width: 700px;
+        height: 500px;
+        background-color: white;
+        border-radius: 10px;  
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .loginHeader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+    }
+    .loginHeaderMark{ 
+    background:linear-gradient(to left,#84b7f5,#3F93FC); 
+    border-radius: 30px;
+    width: 130px;
+    height: 20px;
+    margin: 20px;
+    line-height:23px;
+    color: white; 
+    }
+    .loginHeaderName {
+        color:#3F93FC;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .loginIdInput {
+        width: 300px;
+        height: 40px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;  
+        outline: none;
+        margin-bottom: 20px;
+        text-indent: 10px;
+        background-color: #F5F6FA;
+    }
+    .loginPwInput {
+        width: 300px;
+        height: 40px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;  
+        outline: none; 
+        text-indent: 10px;
+        background-color: #F5F6FA;
+    }
+    .buttonValid{
+        color: red;
+        padding-bottom: 10px;
+    }
+    .loginButton {
+        background:linear-gradient(to left,#84b7f5,#3F93FC); 
+        width: 300px;
+        height: 50px;
+        color: white;
+        border: 0;
+        outline: 0;
+        border-radius: 5px;  
+        font-size: 20px;
+    }
+    .loginUserinfoFind {
+        display: flex;
+    }
+    .loginIdFind{
+        padding-right: 20px;
+    }
+    .loginPwFind{
+        padding-left: 20px;
+    }
+    .loginFooter{
+        display: flex;
+        padding: 10px;
+    }
+    .loginFirstName{
+        color: #3F93FC;
+        padding-right: 10px;
+    }
+}

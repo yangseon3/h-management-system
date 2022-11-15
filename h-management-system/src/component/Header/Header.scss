@@ -2,22 +2,52 @@
 
 .header {
   .headerTop {
-    border: 1px solid black;
+    padding: 15px 0;
+    background-color: #558eff;
+    color: #fff;
+
+    .logo {
+      width: 200px;
+      padding-top: 5px;
+      img {
+        width: 100%;
+      }
+    }
+    .weatherWrap {
+      @include flex(justify-content, center, null);
+      height: 18px;
+      .dateWrap,
+      .timeWrap {
+        display: flex;
+        align-items: center;
+        .icon {
+          font-size: 20px;
+        }
+        p {
+          padding: 4px 4px 0;
+          white-space: nowrap;
+          line-height: 18px;
+        }
+      }
+      .dateWrap {
+        margin-right: 30px;
+      }
+    }
   }
   .innerHeader {
-    @include flex(space-between, null, null);
+    @include flex(space-between, center, null);
     max-width: 1200px;
     margin: 0 auto;
   }
   .headerBottom {
+    padding-top: 10px;
     border: 1px solid black;
     .menuWrap {
       @include flex(space-between, center, null);
       max-width: 1200px;
       margin: 0 auto;
       li {
-        width: 20%;
-        height: 150px;
+        width: 30%;
         border: 1px solid black;
       }
     }

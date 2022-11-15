@@ -1,13 +1,13 @@
 import React from 'react';
-import ErrorStatus from './components/ErrorStatus/ErrorStatus';
-import RobotLocation from './components/RobotLocation/RobotLocation';
+import MainErrorStatus from './components/MainErrorStatus/MainErrorStatus';
+import MainRobotLocation from './components/MainRobotLocation/MainRobotLocation';
 import './Main.scss';
 
 const Main = () => {
   return (
     <div className="main">
-      <RobotLocation />
-      <ErrorStatus />
+      <MainRobotLocation />
+      <MainErrorStatus />
     </div>
   );
 };

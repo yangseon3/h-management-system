@@ -1,7 +1,7 @@
 import React from 'react';
-import './RobotLocation.scss';
+import './MainRobotLocation.scss';
 
-const RobotLocation = () => {
+const MainRobotLocation = () => {
   return (
     <div className="robotLocatioin">
       <div>모든 매장모아보기</div>
@@ -10,4 +10,4 @@ const RobotLocation = () => {
   );
 };
 
-export default RobotLocation;
+export default MainRobotLocation;

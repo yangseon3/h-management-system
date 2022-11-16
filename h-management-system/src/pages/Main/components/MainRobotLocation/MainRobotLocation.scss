@@ -1,9 +1,10 @@
-.robotLocatioin {
-  width: 65%;
+.mainRobotLocatioin {
+  width: 65%;  
+  margin-top: 10px;  
   display: flex;
-  justify-content: space-between;
-  div {
-    width: 46%;
+  justify-content: space-between; 
+  .mainRobotLocatioinKakaoData {
+    width: 46%; 
     border: 1px solid black;
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import RobotKakaoData from './RobotKakaoData/RobotKakaoData';
-import RobotKakaoMap from './RobotKakaoMap/RobotKakaoMap';
-import './RobotLocation.scss';
+import RobotKakaoData from '../RobotLocation/RobotKakaoData/RobotKakaoData';
+import RobotKakaoMap from '../RobotLocation/RobotKakaoMap/RobotKakaoMap';
+import './MainRobotLocation.scss';
+
 
 const MainRobotLocation = () => {
   return (

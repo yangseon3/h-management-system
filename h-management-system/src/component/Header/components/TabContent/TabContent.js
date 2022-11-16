@@ -63,7 +63,11 @@ const TabContent = ({ before, dataValue }) => {
                   />
                 )}
               </span>
-              <p>{calcResult(currentValue, prevValue)}%</p>
+              <p>
+                {calcResult(currentValue, prevValue)
+                  ? calcResult(currentValue, prevValue) + '%'
+                  : currentValue + unit}
+              </p>
             </div>
           </div>
         </div>

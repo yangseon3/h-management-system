@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
+import { useParams } from 'react-router-dom';
 import DayTab from './components/DayTab';
 import MonthTab from './components/MonthTab';
 import WeekTab from './components/WeekTab';
@@ -8,6 +9,7 @@ import './Header.scss';
 const Header = () => {
   const [dateState, setDateState] = useState(new Date());
   const [currentTab, setCurrentTab] = useState('일간');
+  const params = useParams();
 
   useEffect(() => {
     const timeUpdate = setInterval(() => {
@@ -16,13 +18,19 @@ const Header = () => {
     return () => clearInterval(timeUpdate);
   }, []);
 
+  const MAPPING_OBJ = {
+    일간: <DayTab params={params} />,
+    주간: <WeekTab params={params} />,
+    월간: <MonthTab params={params} />,
+  };
+
   return (
     <div className="header">
       <div className="headerTop">
         <div className="innerHeader">
           <h1 className="logo">
             <img
-              src="images/hprobot-logo-white-1line.png"
+              src="/images/hprobot-logo-white-1line.png"
               alt="헬퍼로보틱스 로고"
             />
           </h1>
@@ -70,8 +78,3 @@ const Header = () => {
 
 export default Header;
 const MENU_TAB = ['일간', '주간', '월간'];
-const MAPPING_OBJ = {
-  일간: <DayTab />,
-  주간: <WeekTab />,
-  월간: <MonthTab />,
-};

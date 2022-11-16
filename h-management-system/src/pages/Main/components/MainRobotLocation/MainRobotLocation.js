@@ -3,7 +3,6 @@ import RobotKakaoData from '../RobotLocation/RobotKakaoData/RobotKakaoData';
 import RobotKakaoMap from '../RobotLocation/RobotKakaoMap/RobotKakaoMap';
 import './MainRobotLocation.scss';
 
-
 const MainRobotLocation = () => {
   return (
     <div className="mainRobotLocatioin">

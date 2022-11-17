@@ -27,7 +27,7 @@ const ErrorStatisticPresenter = () => {
           console.log(result);
         }
       },
-      refetchInterval: 1000,
+      // refetchInterval: 1000,
     }
   );
 
@@ -38,6 +38,7 @@ const ErrorStatisticPresenter = () => {
   if (status === 'error') {
     return <span>Error: {error.message}</span>;
   }
+
   return (
     <div className="errorStatic">
       {STATIC_NAME.map(name => (

@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { basicApi } from 'lib/config';
-import API from 'api';
+import React from 'react';
 import TabContent from './TabContent/TabContent';
 
-const DayTab = ({ params }) => {
-  const [dayData, setDayData] = useState({});
+const DayTab = ({ params, isLoading, data }) => {
+  const dayData = params.productId
+    ? data && data[params.productId].day
+    : data && data.all.day;
 
-  useEffect(() => {
-    basicApi
-      .get(API.statistic)
-      .then(res => res.data)
-      .then(data =>
-        params.productId
-          ? setDayData(data[params.productId].day)
-          : setDayData(data.all.day)
-      );
-  }, [params]);
-
-  return <TabContent before="전일" dataValue={dayData} />;
+  return !isLoading && <TabContent before="전일" dataValue={dayData} />;
 };
 
 export default DayTab;

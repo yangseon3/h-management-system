@@ -1,23 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import API from 'api';
+import { useQuery } from 'react-query';
 import { basicApi } from 'lib/config';
+import { useParams } from 'react-router-dom';
 
 const Kakao = () => {
-  const [positions, setPositions] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await basicApi.get(API.store);
-        const data = await res.data;
-        setPositions(data);
-      } catch (err) {
-        alert(err);
-      }
-    })();
-  }, []);
+  const params = useParams();
+
+  const RobotDetail = () => {
+    result(params.productId);
+  };
+
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const res = await basicApi.get(API.store);
+  //       const data = await res.data;
+  //       setPositions(data);
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   })();
+  // }, []);
+
+  const result = useQuery(['mapData'], async () => {
+    try {
+      const res = await basicApi(API.store);
+      const data = await res.data;
+      return data;
+    } catch (err) {
+      alert(err);
+    }
+  });
 
   return (
     <>
@@ -33,9 +50,10 @@ const Kakao = () => {
         }}
         level={3} // 지도의 확대 레벨
       >
-        {positions?.stores?.map(item => (
+        {result?.data?.stores?.map(item => (
           <div>
             <MapMarker
+              onClick={RobotDetail}
               key={item.map_id}
               position={{ lat: 33.450701, lng: 126.570667 }}
               clickable={true} // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다

@@ -1,35 +1,52 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import API from 'api';
 import { basicApi } from 'lib/config';
+import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
 import './RobotKakaoData.scss';
 
 const RobotKakaoData = () => {
-  const [positions, setPositions] = useState([]);
   const [serving, setServing] = useState(false);
   const [error, setError] = useState(false);
   const [performance, setPerformance] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await basicApi.get(API.store);
-        const data = await res.data;
-        setPositions(data);
-      } catch (err) {
-        alert(err);
-      }
-    })();
-  }, []);
+  const params = useParams();
+
+  const RobotDetail = () => {
+    result(params.productId);
+  };
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const res = await basicApi.get(API.store);
+  //       const data = await res.data;
+  //       setPositions(data);
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   })();
+  // }, []);
+
+  const result = useQuery(['mapDataCount'], async () => {
+    try {
+      const res = await basicApi(API.store);
+      const data = await res.data;
+      return data;
+    } catch (err) {
+      alert(err);
+    }
+  });
 
   return (
     <div className="kakaoDataContainer">
       <div className="kakaoDataImpo">
         <div className="kakaoDataImpoContent">모든 매장모아보기</div>
-        {positions?.stores?.map(item => (
+        {result?.data?.stores?.map(item => (
           <div className="kakaoDataImpoWrapper">
             <div className="kakaoDataCookGauge">
-              <div className="kakaoDataBranchName">{item.map_name}</div>
+              <div onClick={RobotDetail} className="kakaoDataBranchName">
+                {item.map_name}
+              </div>
               <div className="kakaoDataStatusDisplay">
                 <div>🔴 에러 🟢 서빙중 🔵 대기중 ⚫️ 수리중</div>
                 <div className="kakaoDataGauge">

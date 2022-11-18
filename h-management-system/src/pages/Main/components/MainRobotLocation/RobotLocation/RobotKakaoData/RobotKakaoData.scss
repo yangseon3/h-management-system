@@ -33,6 +33,7 @@
         margin-left: 5px;
         line-height: 20px;
         text-align: center;
+        cursor: pointer;
     }
     .kakaoDataStatusDisplay {
         width: 100%; 
@@ -69,18 +70,21 @@
         display: flex;
         justify-content: space-between; 
         margin: 5px; 
+        cursor: pointer;
     }
     .storeDataHover {
         text-align: center;
         width: 100%;
         line-height: 25px;
         border: 1px solid black; 
+        cursor: pointer;
     }
     .storeDataContent{ 
         text-align: center;
         width: 100%;
         line-height: 25px;
         border: 1px solid black;
+        cursor: pointer;
     }
 
 }

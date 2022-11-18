@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.calendarBox {
+  @include flex('null', center, 'null');
+  width: 100%;
+
+  .searchBtn {
+    width: 100px;
+  }
+}
+
+.react-datepicker__day-name {
+  width: 28px;
+}
+.custom-datepicker {
+  border: 1px solid blue;
+}
+.custom-day {
+  width: 28px;
+  height: 28px;
+  line-height: 1.8;
+  text-align: center;
+}
+.gray-day {
+  color: #aba8b9;
+}
+.selected-day {
+  background: #2e1c8b;
+  border-radius: 50%;
+  font-weight: 700;
+}

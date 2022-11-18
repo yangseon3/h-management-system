@@ -1,52 +1,25 @@
 import React, { useState } from 'react';
-import ReactDatePicker from 'react-datepicker';
-import ko from 'date-fns/locale/ko';
-import 'react-datepicker/dist/react-datepicker.css';
-import { useQueries, useMutation, useQuery, useQueryClient } from 'react-query';
+import { useQueries, useMutation } from 'react-query';
 import {
   AllError,
   PostDateError,
   ByTimeError,
   PostByTimeError,
 } from './ErrorLogController';
+import Calendar from 'component/Calendar/Calendar';
+import ConvertCurTime from 'utils/ConvertCurTime';
+import ConvertStrCurTime from 'utils/ConvertStrCurTime';
 import './ErrorLogPresenter.scss';
 
 const ErrorLogPresenter = () => {
   //시작날짜, 끝나는 날짜를 관리하는 state
-  const [date, setDate] = useState({
-    start_date: null,
-    end_date: null,
-  });
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   //current_date 관리하는 state
   const [currentTime, setCurrentTime] = useState('');
   //enabled를 관리하는 state
   const [getAllData, setGetAllData] = useState(true);
   const [getCurrentData, setGetCurrentData] = useState(false);
-  //현재시간 관리
-  let now = new Date();
-  let year = now.getFullYear().toString();
-  let month = ('0' + (now.getMonth() + 1)).slice(-2);
-  let day = ('0' + now.getDate()).slice(-2);
-  let hours = ('0' + now.getHours()).slice(-2);
-  let minutes = ('0' + now.getMinutes()).slice(-2);
-  let seconds = ('0' + now.getSeconds()).slice(-2);
-
-  //문자없는 현재 시간 ex) 20221030124537
-  const joinedCurrentTime = year + month + day + hours + minutes + seconds;
-
-  //조합된 현재 시간 ex) 2022-10-26 10:00:00
-  const joinedStrCurrentTime =
-    year +
-    '-' +
-    month +
-    '-' +
-    day +
-    ' ' +
-    hours +
-    ':' +
-    minutes +
-    ':' +
-    seconds;
 
   //쿼리 목록들
   const QUERIES = [
@@ -75,10 +48,10 @@ const ErrorLogPresenter = () => {
   );
 
   //달력 설정 후 설정값을 서버로 보내는 함수
-  const handleClickDateInfo = () => {
+  const handleClickDateInfo = dates => {
     setGetAllData(false);
     setGetCurrentData(false);
-    postDateInfo.mutate(date);
+    postDateInfo.mutate(dates);
   };
 
   const postDateInfo = useMutation(PostDateError, {
@@ -92,12 +65,13 @@ const ErrorLogPresenter = () => {
   //시간 설정 후 시간값을 서버로 보내는 함수
   const handleClickTimeInfo = () => {
     setGetAllData(false);
-    postTimeInfo.mutate({ current_date: joinedStrCurrentTime });
+    postTimeInfo.mutate({ current_date: ConvertStrCurTime() });
   };
 
   const postTimeInfo = useMutation(PostByTimeError, {
     onMutate: () => {
-      setCurrentTime(joinedCurrentTime);
+      setGetCurrentData(false);
+      setCurrentTime(ConvertCurTime());
     },
     onSuccess: () => {
       setGetCurrentData(true);
@@ -114,6 +88,15 @@ const ErrorLogPresenter = () => {
 
   return (
     <div className="errorLogPresenter">
+      <div>
+        <Calendar
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+          event={handleClickDateInfo}
+        />
+      </div>
       <div className="errorButtonBox">
         <button
           onClick={() => {
@@ -122,13 +105,6 @@ const ErrorLogPresenter = () => {
           }}
         >
           all
-        </button>
-        <button
-          onClick={() => {
-            handleClickDateInfo();
-          }}
-        >
-          date
         </button>
         <button
           onClick={() => {

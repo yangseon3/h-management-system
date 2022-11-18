@@ -4,9 +4,7 @@ import { useQuery } from 'react-query';
 import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
 import { basicApi } from 'lib/config';
 import API from 'api';
-import DayTab from './components/DayTab';
-import MonthTab from './components/MonthTab';
-import WeekTab from './components/WeekTab';
+import TabContent from './components/TabContent';
 import './Header.scss';
 
 const Header = () => {
@@ -26,10 +24,33 @@ const Header = () => {
     return data;
   });
 
+  const resultData = data && data;
+
   const MAPPING_OBJ = {
-    일간: <DayTab params={params} data={data} isLoading={isLoading} />,
-    주간: <WeekTab params={params} data={data} isLoading={isLoading} />,
-    월간: <MonthTab params={params} data={data} isLoading={isLoading} />,
+    일간: (
+      <TabContent
+        before="전일"
+        params={params}
+        resultData={resultData}
+        category="day"
+      />
+    ),
+    주간: (
+      <TabContent
+        before="전주"
+        params={params}
+        resultData={resultData}
+        category="week"
+      />
+    ),
+    월간: (
+      <TabContent
+        before="전월"
+        params={params}
+        resultData={resultData}
+        category="month"
+      />
+    ),
   };
 
   return (
@@ -78,7 +99,9 @@ const Header = () => {
             ))}
           </ul>
         </div>
-        <div className="robotInfoWrap">{MAPPING_OBJ[currentTab]}</div>
+        <div className="robotInfoWrap">
+          {!isLoading && MAPPING_OBJ[currentTab]}
+        </div>
       </div>
     </div>
   );

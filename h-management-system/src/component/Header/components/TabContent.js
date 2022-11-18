@@ -2,7 +2,11 @@ import React from 'react';
 import { BsFillCaretDownFill, BsFillCaretUpFill } from 'react-icons/bs';
 import './TabContent.scss';
 
-const TabContent = ({ before, dataValue }) => {
+const TabContent = ({ before, resultData, params, category }) => {
+  const dataValue = params.productId
+    ? resultData && resultData[params.productId][category]
+    : resultData && resultData.all[category];
+
   const CONTENT_BOXES = [
     {
       id: 1,
@@ -21,7 +25,7 @@ const TabContent = ({ before, dataValue }) => {
     {
       id: 3,
       title: '서빙평균시간',
-      unit: 'M',
+      unit: 'm',
       currentValue: dataValue.avg_serving_time,
       prevValue: dataValue.avg_serving_time_before,
     },

@@ -32,6 +32,7 @@ export const ByTimeError = async data => {
     const response = await basicApi.get(
       `${API.getByTimeError}/${data.queryKey[1]}`
     );
+
     if (response.status === 200) {
       return [false, response.data];
     } else {
@@ -45,8 +46,6 @@ export const ByTimeError = async data => {
 export const PostByTimeError = async data => {
   try {
     const response = await basicApi.post(API.postByTimeError, data);
-    console.log('실행되나');
-    console.log(data);
     if (response.status === 200) {
       return [false, response.data];
     } else {

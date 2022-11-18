@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDatePicker from 'react-datepicker';
 import ko from 'date-fns/locale/ko';
 import 'react-datepicker/dist/react-datepicker.css';
-import { useQueries, useMutation } from 'react-query';
+import { useQueries, useMutation, useQuery } from 'react-query';
 import {
   AllError,
   PostDateError,

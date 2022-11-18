@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
+import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
+import { basicApi } from 'lib/config';
+import API from 'api';
 import DayTab from './components/DayTab';
 import MonthTab from './components/MonthTab';
 import WeekTab from './components/WeekTab';
@@ -18,10 +21,15 @@ const Header = () => {
     return () => clearInterval(timeUpdate);
   }, []);
 
+  const { isLoading, data } = useQuery('HeaderKey', async () => {
+    const { data } = await basicApi.get(API.statistic);
+    return data;
+  });
+
   const MAPPING_OBJ = {
-    일간: <DayTab params={params} />,
-    주간: <WeekTab params={params} />,
-    월간: <MonthTab params={params} />,
+    일간: <DayTab params={params} data={data} isLoading={isLoading} />,
+    주간: <WeekTab params={params} data={data} isLoading={isLoading} />,
+    월간: <MonthTab params={params} data={data} isLoading={isLoading} />,
   };
 
   return (

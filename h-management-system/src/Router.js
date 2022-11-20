@@ -13,9 +13,12 @@ const Router = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/main" element={<Main />} />
+            <Route path="/detail" element={<Detail />} />
+            <Route path="/detail/:productId" element={<Detail />} />
+          </Route>
           <Route path="/" element={<Login />} />
-          <Route path="/main" element={<Main />} />
-          <Route path="/detail" element={<Detail />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

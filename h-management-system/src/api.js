@@ -1,4 +1,5 @@
 const API = {
+  postLoginInfo: '/default/public/login',
   getAllError: '/api/monitoring-system/error-notice/all',
   getDateError: '/api/monitoring-system/error-notice/by-time',
   getByTimeError: '/api/monitoring-system/error-notice/current-date',

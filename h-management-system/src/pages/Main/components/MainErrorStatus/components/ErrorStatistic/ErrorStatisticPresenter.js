@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { ErrorStatisticController } from './ErrorStatisticController';
 import './ErrorStatisticPresenter.scss';
+
 const ErrorStatisticPresenter = () => {
   const [total, setTotal] = useState(0);
-  const [statistic, setStatisitc] = useState({});
 
   const sumStatistics = data => {
     let sum = 0;
@@ -14,7 +14,7 @@ const ErrorStatisticPresenter = () => {
     return sum;
   };
 
-  const { status, data, error } = useQuery(
+  const errorStatistic = useQuery(
     ['errorStatistic'],
     ErrorStatisticController,
     {
@@ -22,7 +22,6 @@ const ErrorStatisticPresenter = () => {
         let [err, result] = data;
         if (!err) {
           setTotal(sumStatistics(result.all));
-          setStatisitc(result.all);
         } else {
           console.log(result);
         }
@@ -31,26 +30,32 @@ const ErrorStatisticPresenter = () => {
     }
   );
 
-  if (status === 'loading') {
-    return <span>Loading...</span>;
-  }
-
-  if (status === 'error') {
-    return <span>Error: {error.message}</span>;
-  }
+  const errorData = errorStatistic.data && errorStatistic.data[1];
 
   return (
     <div className="errorStatic">
-      {STATIC_NAME.map(name => (
-        <div key={name.id}>
-          <p>{name.name}</p>
-          {name.name === '전체' ? (
-            <p>{total}</p>
-          ) : (
-            <p>{statistic[name.name]}</p>
-          )}
-        </div>
-      ))}
+      <div className="staticHeader">에러 상태</div>
+      <div className="staticContentsBox">
+        <table style={{ background: 'white' }}>
+          <tr>
+            {STATIC_NAME.map(name => (
+              <th scope="col" key={name.id}>
+                {name.name}
+              </th>
+            ))}
+          </tr>
+          <tr>
+            {errorData &&
+              STATIC_NAME.map(name =>
+                name.name === '전체' ? (
+                  <td key={name.id}>{total}</td>
+                ) : (
+                  <td key={name.id}>{errorData.all[name.name]}</td>
+                )
+              )}
+          </tr>
+        </table>
+      </div>
     </div>
   );
 };

@@ -88,6 +88,7 @@ const ErrorLogPresenter = () => {
 
   return (
     <div className="errorLogPresenter">
+      <div className="logHeader">에러 알림</div>
       <div>
         <Calendar
           startDate={startDate}
@@ -99,6 +100,7 @@ const ErrorLogPresenter = () => {
       </div>
       <div className="errorButtonBox">
         <button
+          style={{ width: '100px' }}
           onClick={() => {
             setGetAllData(true);
             setGetCurrentData(false);
@@ -107,6 +109,7 @@ const ErrorLogPresenter = () => {
           all
         </button>
         <button
+          style={{ width: '100px' }}
           onClick={() => {
             handleClickTimeInfo();
           }}

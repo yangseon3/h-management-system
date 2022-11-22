@@ -1,0 +1,24 @@
+@import '/src/styles/variables.scss';
+.mainTab {
+  @include flex(space-between, flex-start, null);
+  height: 70vh;
+}
+.navContainer {
+  width: 5vw;
+  height: 100%;
+  border: 1px solid black;
+  .navWrap {
+    li {
+      padding: 10px 0;
+      text-align: center;
+      cursor: pointer;
+      .menuName {
+        display: block;
+      }
+    }
+  }
+}
+.tabPageWrap {
+  width: 90vw;
+  margin: 0 auto;
+}

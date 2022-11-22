@@ -1,6 +1,6 @@
 @import '/src/styles/variables.scss';
 .main {
   @include flex(space-between, center, null);
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }

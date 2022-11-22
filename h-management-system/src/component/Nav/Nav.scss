@@ -1,7 +1,11 @@
 @import '/src/styles/variables.scss';
 .mainTab {
   @include flex(space-between, flex-start, null);
+  position: absolute;
+  left: 0;
+  top: 212px;
   height: 70vh;
+  background-color: white;
 }
 .navContainer {
   width: 5vw;
@@ -17,8 +21,4 @@
       }
     }
   }
-}
-.tabPageWrap {
-  width: 90vw;
-  margin: 0 auto;
 }

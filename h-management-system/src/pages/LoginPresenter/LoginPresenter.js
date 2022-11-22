@@ -4,7 +4,7 @@ import { useMutation } from 'react-query';
 import { LoginController } from './LoginController';
 import './Login.scss';
 
-const Login = () => {
+const LoginPresenter = () => {
   const [validation, setValidation] = useState('');
 
   const [userInfo, setUserInfo] = useState({
@@ -84,4 +84,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPresenter;

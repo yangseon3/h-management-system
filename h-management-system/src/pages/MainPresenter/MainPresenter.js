@@ -1,9 +1,9 @@
 import React from 'react';
 import MainErrorStatus from './components/MainErrorStatus/MainErrorStatus';
 import MainRobotLocation from './components/MainRobotLocation/MainRobotLocation';
-import './Main.scss';
+import './MainPresenter.scss';
 
-const Main = () => {
+const MainPresenter = () => {
   return (
     <div className="main">
       <MainRobotLocation />
@@ -12,4 +12,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainPresenter;

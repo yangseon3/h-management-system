@@ -7,8 +7,8 @@ import './Calendar.scss';
 const Calendar = ({ event, startDate, setStartDate, endDate, setEndDate }) => {
   const convertDate = date => {
     let year = date.getFullYear().toString();
-    let month = ('0' + (date.getMonth() + 1)).slice(-2);
-    let day = ('0' + date.getDate()).slice(-2);
+    let month = ('0' + (date?.getMonth() + 1)).slice(-2);
+    let day = ('0' + date?.getDate()).slice(-2);
 
     return year + '-' + month + '-' + day;
   };

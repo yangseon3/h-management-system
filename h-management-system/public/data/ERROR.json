@@ -1,0 +1,86 @@
+{
+  "error_notice": [
+    {
+      "error_id": 0,
+      "robot_id": 1,
+      "error_msg": "로봇의 예상 경로보다 많이 이동했습니다",
+      "current_node": 15,
+      "created_at": "2022-11-15 16:40:40"
+    },
+    {
+      "error_id": 1,
+      "robot_id": 2,
+      "error_msg": "레일 중심을 벗어났습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    },
+    {
+      "error_id": 2,
+      "robot_id": 5,
+      "error_msg": "가이드의 일부분, A1을 못 읽었습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    },
+    {
+      "error_id": 3,
+      "robot_id": 4,
+      "error_msg": "레일 중심을 벗어났습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    },
+    {
+      "error_id": 4,
+      "robot_id": 4,
+      "error_msg": "레일 중심을 벗어났습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    },
+    {
+      "error_id": 5,
+      "robot_id": 4,
+      "error_msg": "레일 중심을 벗어났습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    },
+    {
+      "error_id": 6,
+      "robot_id": 4,
+      "error_msg": "레일 중심을 벗어났습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    },
+    {
+      "error_id": 7,
+      "robot_id": 4,
+      "error_msg": "레일 중심을 벗어났습니다",
+      "current_node": 8,
+      "created_at": "2022-11-15 16:50:40"
+    }
+  ],
+  "serve_error_count": [
+    { "date": "9/15", "serve_counts": 62, "error_counts": 18 },
+    { "date": "9/16", "serve_counts": 48, "error_counts": 12 },
+    { "date": "9/17", "serve_counts": 54, "error_counts": 22 },
+    { "date": "9/18", "serve_counts": 32, "error_counts": 16 },
+    { "date": "9/19", "serve_counts": 77, "error_counts": 32 },
+    { "date": "9/20", "serve_counts": 59, "error_counts": 55 },
+    { "date": "9/21", "serve_counts": 30, "error_counts": 18 }
+  ],
+  "error_count": [
+    { "error": "callback_from_wemos_timeout", "counts": 10 },
+    { "error": "guide_departure", "counts": 4 },
+    { "error": "over_drive_100cm", "counts": 5 },
+    { "error": "mega_wemos_communication_errort", "counts": 3 },
+    { "error": "etc", "counts": 1 }
+  ],
+  "guide_departure": [
+    { "current_node": 52, "counts": 3 },
+    { "current_node": 42, "counts": 4 },
+    { "current_node": 17, "counts": 1 }
+  ],
+  "over_drive": [
+    { "current_node": 52, "counts": 2 },
+    { "current_node": 42, "counts": 1 },
+    { "current_node": 17, "counts": 1 }
+  ]
+}

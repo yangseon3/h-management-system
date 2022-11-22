@@ -40,15 +40,20 @@
     margin: 0 auto;
   }
   .headerBottom {
-    padding-top: 10px;
+    @include flex(center, center, null);
+    gap: 20px;
     border: 1px solid black;
     .menuWrap {
-      @include flex(space-between, center, null);
-      max-width: 1200px;
-      margin: 0 auto;
+      // max-width: 1200px;
+      // margin: 0 auto;
       li {
-        width: 30%;
+        margin-bottom: 4px;
+        padding: 2px 5px;
         border: 1px solid black;
+        cursor: pointer;
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }

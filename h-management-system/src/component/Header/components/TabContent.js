@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsFillCaretDownFill, BsFillCaretUpFill } from 'react-icons/bs';
+import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri';
 import './TabContent.scss';
 
 const TabContent = ({ before, resultData, params, category }) => {
@@ -44,35 +44,33 @@ const TabContent = ({ before, resultData, params, category }) => {
     <div className="tabContent">
       {CONTENT_BOXES?.map(({ id, title, currentValue, prevValue, unit }) => (
         <div className="dataBox" key={id}>
-          <p>{title}</p>
           <div className="mainData">
             {currentValue}
             <span className="mainUnit">{unit}</span>
           </div>
           <div className="compareBox">
-            <p>
-              {before} : {prevValue}
-            </p>
             <div className="resultValue">
               <span>
                 {prevValue > currentValue ? (
-                  <BsFillCaretDownFill
+                  <RiArrowDownSFill
                     className="compareIcon"
                     style={{ color: 'red' }}
                   />
                 ) : (
-                  <BsFillCaretUpFill
+                  <RiArrowUpSFill
                     className="compareIcon"
                     style={{ color: 'green' }}
                   />
                 )}
               </span>
-              <p>
+              <p className="compareValue">
                 {calcResult(currentValue, prevValue)
                   ? calcResult(currentValue, prevValue) + '%'
                   : currentValue + unit}
               </p>
+              <p className="compareTitle">{before}대비</p>
             </div>
+            <p>{title}</p>
           </div>
         </div>
       ))}

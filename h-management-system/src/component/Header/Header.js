@@ -90,6 +90,9 @@ const Header = () => {
         </div>
       </div>
       <div className="headerBottom">
+        <div className="robotInfoWrap">
+          {!isLoading && MAPPING_OBJ[currentTab]}
+        </div>
         <div className="tabMenu">
           <ul className="menuWrap">
             {MENU_TAB.map((tabname, idx) => (
@@ -98,9 +101,6 @@ const Header = () => {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="robotInfoWrap">
-          {!isLoading && MAPPING_OBJ[currentTab]}
         </div>
       </div>
     </div>

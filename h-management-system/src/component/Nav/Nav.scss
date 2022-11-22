@@ -1,10 +1,9 @@
 @import '/src/styles/variables.scss';
 .mainTab {
   @include flex(space-between, flex-start, null);
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 212px;
-  height: 70vh;
+  height: 100vh;
   background-color: white;
 }
 .navContainer {

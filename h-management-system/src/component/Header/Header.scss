@@ -2,20 +2,21 @@
 
 .header {
   .headerTop {
-    padding: 10px 0;
+    height: 7vh;
+    line-height: 7vh;
     background-color: #558eff;
     color: #fff;
 
     .logo {
-      width: 200px;
-      padding-top: 5px;
+      @include flex(center, center, null);
+      width: 12vw;
       img {
         width: 100%;
       }
     }
     .weatherWrap {
       @include flex(justify-content, center, null);
-      height: 18px;
+      height: 3vh;
       .dateWrap,
       .timeWrap {
         display: flex;
@@ -26,7 +27,7 @@
         p {
           padding: 4px 4px 0;
           white-space: nowrap;
-          line-height: 18px;
+          line-height: 3vh;
         }
       }
       .dateWrap {
@@ -41,7 +42,8 @@
   }
   .headerBottom {
     @include flex(center, center, null);
-    gap: 20px;
+    height: 10vh;
+    gap: 1.3889vw;
     border: 1px solid black;
     .menuWrap {
       // max-width: 1200px;

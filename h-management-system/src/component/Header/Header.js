@@ -23,7 +23,6 @@ const Header = () => {
     const { data } = await basicApi.get(API.statistic);
     return data;
   });
-
   const resultData = data && data;
 
   const MAPPING_OBJ = {
@@ -32,7 +31,7 @@ const Header = () => {
         before="전일"
         params={params}
         resultData={resultData}
-        category="day"
+        date="day"
       />
     ),
     주간: (
@@ -40,7 +39,7 @@ const Header = () => {
         before="전주"
         params={params}
         resultData={resultData}
-        category="week"
+        date="week"
       />
     ),
     월간: (
@@ -48,7 +47,7 @@ const Header = () => {
         before="전월"
         params={params}
         resultData={resultData}
-        category="month"
+        date="month"
       />
     ),
   };

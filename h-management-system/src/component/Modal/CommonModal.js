@@ -4,7 +4,15 @@ import DateModal from './DateModal/DateModal';
 import './Modal.scss';
 import RobotModal from './RobotModal/RobotModal';
 
-const Modal = ({ type, contents, close, event, title, data, setData }) => {
+const CommonModal = ({
+  type,
+  contents,
+  close,
+  event,
+  title,
+  data,
+  setData,
+}) => {
   const modal = {
     confirm: (
       <ConfirmModal
@@ -41,4 +49,4 @@ const Modal = ({ type, contents, close, event, title, data, setData }) => {
   return <>{modal[type]}</>;
 };
 
-export default Modal;
+export default CommonModal;

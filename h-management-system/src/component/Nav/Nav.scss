@@ -3,8 +3,9 @@
   @include flex(space-between, flex-start, null);
   position: fixed;
   left: 0;
-  height: 100vh;
+  height: 83vh;
   background-color: white;
+  z-index: 999;
 }
 .navContainer {
   width: 5vw;
@@ -12,7 +13,7 @@
   border: 1px solid black;
   .navWrap {
     li {
-      padding: 10px 0;
+      padding: 0.6944vw 0;
       text-align: center;
       cursor: pointer;
       .menuName {

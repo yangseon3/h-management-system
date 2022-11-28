@@ -1,0 +1,33 @@
+@import '/src/styles/variables.scss';
+
+.storeInfo {
+  height: 100%;
+  border: 1px solid black;
+  transition: all 0.5s ease-in-out;
+  .imgWrap {
+    height: 300px;
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .chartWrap {
+    @include flex(flex-start, center, null);
+    gap: 5vw;
+    height: 250px;
+    .storeDoughnut {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      .doughnutText {
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .storeLine {
+      height: 100%;
+    }
+  }
+}

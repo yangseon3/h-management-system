@@ -5,10 +5,10 @@ import './RobotList.scss';
 const RobotList = ({ robotData, params }) => {
   const robotListRef = useRef(null);
   useEffect(() => {
-    if (params.category === 'all') {
-      robotListRef.current.style.width = '100%';
-    } else {
+    if (params.category !== 'all') {
       robotListRef.current.style.width = '24vw';
+    } else {
+      robotListRef.current.style.width = '100%';
     }
   }, [params]);
 
@@ -33,7 +33,7 @@ const RobotList = ({ robotData, params }) => {
               </div>
               <div>
                 <p>{robot.serving_count}회</p>
-                <p>{robot.move_distance}km</p>
+                <p>{robot.distance}km</p>
               </div>
             </div>
           </li>

@@ -9,18 +9,19 @@ import ErrorPresenter from 'pages/ErrorPresenter/ErrorPresenter';
 import LogPresenter from 'pages/LogPresenter/LogPresenter';
 import ChartPresenter from 'pages/ChartPresenter/ChartPresenter';
 import StorePresenter from 'pages/StorePresenter/StorePresenter';
+import Modal from 'react-modal';
 
 const Router = () => {
   const queryClient = new QueryClient();
-
+  Modal.setAppElement('#root');
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/main" element={<MainPresenter />} />
-            <Route path="/robot" element={<RobotPresenter />} />
-            <Route path="/store" element={<StorePresenter />} />
+            <Route path="/robot/:category" element={<RobotPresenter />} />
+            <Route path="/store/:category" element={<StorePresenter />} />
             <Route path="/error" element={<ErrorPresenter />} />
             <Route path="/log" element={<LogPresenter />} />
             <Route path="/chart" element={<ChartPresenter />} />

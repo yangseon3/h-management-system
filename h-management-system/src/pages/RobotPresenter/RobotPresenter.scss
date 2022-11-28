@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 
 .robotPresenter {
+  @include flex(space-between, center, null);
+  position: fixed;
+  padding: 1vw 1vw 1vw 6vw;
   width: 100%;
-  padding-left: 6vw;
+  height: 83vh;
 }

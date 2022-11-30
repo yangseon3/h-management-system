@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.scss';
+
+.errorChartPresenter {
+  width: 75%;
+  height: 700px;
+  border: 1px solid black;
+  padding: 10px;
+
+  .lineChartBox {
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+  }
+
+  .doughnutChartBox {
+    @include flex(space-around, center, 'null');
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+  }
+}

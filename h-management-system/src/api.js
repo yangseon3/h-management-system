@@ -10,6 +10,7 @@ const API = {
   store: '/api/monitoring-system/store',
   storeCopy: '/api/monitoring-system/robot_count',
   servingLog: '/api/serving-log/by-time',
+  getDefaultError: '/api/monitoring-system/error-statistic',
 };
 
 export default API;

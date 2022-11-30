@@ -1,0 +1,28 @@
+@import '/src/styles/variables.scss';
+.storeList {
+  padding: 10px;
+  height: 100%;
+  transition: all 0.7s ease-in-out;
+  border: 1px solid black;
+  overflow-y: scroll;
+  background-color: #fff;
+  z-index: 99;
+  .listWrap {
+    @include flex(flex-start, center, null);
+    flex-wrap: wrap;
+    gap: 1vw;
+    margin-top: 20px;
+    li {
+      width: calc((90vw - 20px) / 3);
+      border: 1px solid black;
+    }
+    .imgWrap {
+      height: 200px;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

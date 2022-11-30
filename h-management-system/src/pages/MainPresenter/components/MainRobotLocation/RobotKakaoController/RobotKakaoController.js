@@ -3,11 +3,14 @@ import { basicApi } from 'lib/config';
 
 export const GetKakaoData = async () => {
   try {
-    const res = await basicApi(API.store);
-    const data = await res.data;
+    const response = await basicApi.get(API.store);
 
-    return data;
-  } catch (err) {
-    alert(err);
+    if (response.status === 200) {
+      return [false, response.data];
+    } else {
+      return [response.data.error, response.data.message];
+    }
+  } catch (e) {
+    return [true, e.message];
   }
 };

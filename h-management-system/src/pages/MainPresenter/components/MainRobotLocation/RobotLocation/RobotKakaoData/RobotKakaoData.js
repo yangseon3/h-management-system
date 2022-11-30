@@ -1,23 +1,15 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './RobotKakaoData.scss';
 import { GetKakaoData } from '../../RobotKakaoController/RobotKakaoController';
 
 const RobotKakaoData = () => {
-  const [serving, setServing] = useState(false);
-  const [error, setError] = useState(false);
-  const [performance, setPerformance] = useState(false);
-
-  const params = useParams();
-
-  const RobotDetail = () => {
-    query(params.productId);
-  };
+  const navigate = useNavigate();
 
   const query = useQuery(['mapDataCount'], GetKakaoData);
 
-  const totalData = query.data && query.data.stores;
+  const totalData = query.data && query.data[1].stores;
 
   const totalValue =
     totalData &&
@@ -38,7 +30,10 @@ const RobotKakaoData = () => {
           totalValue.map(item => (
             <div className="kakaoDataImpoWrapper" key={item.map_id}>
               <div className="kakaoDataCookGauge">
-                <div onClick={RobotDetail} className="kakaoDataBranchName">
+                <div
+                  className="kakaoDataBranchName"
+                  onClick={() => navigate(`/store/${item.map_id}`)}
+                >
                   {item.map_name}
                 </div>
                 <div className="kakaoDataStatusDisplay">
@@ -71,39 +66,18 @@ const RobotKakaoData = () => {
                   </div>
                 </div>
               </div>
-              <div className="kakaoDataServing">
-                <div
-                  className="kakaoDataServing"
-                  onMouseEnter={() => setServing(true)}
-                  onMouseLeave={() => setServing(false)}
-                >
-                  {serving ? (
-                    <div className="storeDataHover">{item.serving_count}</div>
-                  ) : (
-                    <div className="storeDataContent">서빙횟수</div>
-                  )}
+              <div className="kakaoData">
+                <div className="kakaoDataWrapper">
+                  <div className="storeDataContent">서빙횟수</div>
+                  <div className="storeDataCount">{item.serving_count}</div>
                 </div>
-                <div
-                  className="kakaoDataServing"
-                  onMouseEnter={() => setError(true)}
-                  onMouseLeave={() => setError(false)}
-                >
-                  {error ? (
-                    <div className="storeDataHover">{item.error_count}</div>
-                  ) : (
-                    <div className="storeDataContent">에러횟수</div>
-                  )}
+                <div className="kakaoDataWrapper">
+                  <div className="storeDataContent">에러횟수</div>
+                  <div className="storeDataCount">{item.error_count}</div>
                 </div>
-                <div
-                  className="kakaoDataServing"
-                  onMouseEnter={() => setPerformance(true)}
-                  onMouseLeave={() => setPerformance(false)}
-                >
-                  {performance ? (
-                    <div className="storeDataHover">{item.performance}</div>
-                  ) : (
-                    <div className="storeDataContent">주행효율</div>
-                  )}
+                <div className="kakaoDataWrapper">
+                  <div className="storeDataContent">주행효율</div>
+                  <div className="storeDataCount">{item.performance}</div>
                 </div>
               </div>
             </div>

@@ -3,6 +3,7 @@ import ReactDatePicker from 'react-datepicker';
 import ko from 'date-fns/locale/ko';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Calendar.scss';
+import Button from 'component/Button/Button';
 
 const Calendar = ({
   event,
@@ -46,14 +47,21 @@ const Calendar = ({
         selected={endDate}
         onChange={date => setEndDate(date)}
       />
-      <button
+      {/* <button
         className="searchBtn"
         onClick={() => {
           postDatesInfoHandler(calendarDate);
         }}
       >
         검색
-      </button>
+      </button> */}
+      <Button
+        type="primaryBtn"
+        text="검색"
+        event={() => {
+          postDatesInfoHandler(calendarDate);
+        }}
+      />
     </div>
   );
 };

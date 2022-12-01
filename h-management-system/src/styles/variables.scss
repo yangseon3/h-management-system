@@ -12,11 +12,13 @@
   line-height: $height;
 }
 
-@mixin position($position: relative,
+@mixin position(
+  $position: relative,
   $top: 0px,
   $right: 0px,
   $bottom: 0px,
-  $left: 0px) {
+  $left: 0px
+) {
   position: $position;
   top: $top;
   right: $right;
@@ -24,21 +26,11 @@
   left: $left;
 }
 
-$primary-color: rgb(95, 0, 128);
-$specialPrice-color: rgb(189, 118, 255);
-$subPrimary-color: rgb(109, 86, 115);
-$point-color: rgb(255, 191, 0);
-$frozen-color: rgb(94, 157, 239);
-$chilled-color: rgb(80, 187, 140);
-$sun-color: rgb(252, 136, 74);
-$white-color: rgb(255, 255, 255);
-$hover-color: rgb(245, 240, 246);
-$line-color: rgb(221, 221, 221);
-$lightLine-color: rgb(246, 246, 246);
-$gray-color: rgb(146, 146, 150);
-$lightGray-color: rgb(208, 208, 208);
-$devide-color: rgb(181, 181, 181);
-$modalBg-color: rgb(108, 108, 108);
-$disabled-color: rgb(102, 102, 102);
-$text-color: rgb(44, 44, 44);
-$dicount-color: rgb(246, 74, 37);
+$primary-color: #5655a5;
+$subPrimary-color: #8887c0;
+$background-color: #f0f3fa;
+$white-color: #fff;
+$black-color: #000;
+$critical-color: #d9376d;
+$major-color: #406dfa;
+$minor-color: #299d38;

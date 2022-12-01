@@ -36,35 +36,39 @@ const ErrorStatisticPresenter = () => {
     <div className="errorStatic">
       <div className="staticHeader">에러 상태</div>
       <div className="staticContentsBox">
-        <table style={{ background: 'white' }}>
-          <tr>
-            {STATIC_NAME.map(name => (
-              <th scope="col" key={name.id}>
-                {name.name}
-              </th>
-            ))}
-          </tr>
-          <tr>
-            {errorData &&
-              STATIC_NAME.map(name =>
-                name.name === '전체' ? (
-                  <td key={name.id}>{total}</td>
-                ) : (
-                  <td key={name.id}>{errorData.all[name.name]}</td>
-                )
-              )}
-          </tr>
-        </table>
+        <div className="statisticTypeBox">
+          {STATIC_NAME.map(name => (
+            <div className="statisticItem" key={name.id}>
+              <div
+                className="statisticColorBox"
+                style={{ background: name.color }}
+              />
+              <p className="statisticText">{name.name}</p>
+            </div>
+          ))}
+        </div>
+        <div className="statisticCountsBox">
+          <p className="statisticCountsText">{total}</p>
+          <p className="statisticCountsText">
+            {errorData && errorData.all.critical}
+          </p>
+          <p className="statisticCountsText">
+            {errorData && errorData.all.major}
+          </p>
+          <p className="statisticCountsText">
+            {errorData && errorData.all.minor}
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
 const STATIC_NAME = [
-  { id: 0, name: '전체' },
-  { id: 1, name: 'critical' },
-  { id: 2, name: 'major' },
-  { id: 3, name: 'minor' },
+  { id: 0, name: '전체', color: '#f0f3fa' },
+  { id: 1, name: 'CRITICAL', color: '#d9376d' },
+  { id: 2, name: 'MAJOR', color: '#406dfa' },
+  { id: 3, name: 'MINOR', color: '#299d38' },
 ];
 
 export default ErrorStatisticPresenter;

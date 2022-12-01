@@ -3,8 +3,4 @@
 .calendarBox {
   @include flex('null', center, 'null');
   width: 100%;
-
-  .searchBtn {
-    width: 100px;
-  }
 }

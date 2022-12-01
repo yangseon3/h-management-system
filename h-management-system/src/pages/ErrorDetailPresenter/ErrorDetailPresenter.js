@@ -11,7 +11,7 @@ import ErrorDetailSolutionList from './components/ErrorDetailSolutionList/ErrorD
 import './ErrorDetailPresenter.scss';
 import { postErrorData } from './ErrorDetailController';
 
-const ErrorDetailPresenter = ({ detailError, errorInfo, setErrorInfo }) => {
+const ErrorDetailPresenter = () => {
   const { state } = useLocation();
   const [startDate, setStartDate] = useState(state.initialInfo.startDate);
   const [endDate, setEndDate] = useState(state.initialInfo.endDate);

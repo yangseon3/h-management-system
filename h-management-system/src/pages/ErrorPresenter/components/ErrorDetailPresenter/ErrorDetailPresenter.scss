@@ -1,16 +1,18 @@
 @import '../../../../styles/variables.scss';
 
-.errorDetailContents {
+.errorDetailPresenter {
   width: 75%;
   height: 700px;
-  border: 1px solid black;
   display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: repeat(auto-fill, minmax(30%, auto));
   gap: 2rem;
 
   .box {
+    border: 1px solid black;
+  }
+  .boxes {
+    grid-area: 2 / 1 / 2 / 3;
     border: 1px solid black;
   }
 }

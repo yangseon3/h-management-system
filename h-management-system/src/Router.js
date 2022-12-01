@@ -6,7 +6,6 @@ import MainLayout from 'pages/MainLayout/MainLayout';
 import MainPresenter from 'pages/MainPresenter/MainPresenter';
 import RobotPresenter from 'pages/RobotPresenter/RobotPresenter';
 import ErrorPresenter from 'pages/ErrorPresenter/ErrorPresenter';
-import ErrorDetailPresenter from 'pages/ErrorDetailPresenter/ErrorDetailPresenter';
 import LogPresenter from 'pages/LogPresenter/LogPresenter';
 import ChartPresenter from 'pages/ChartPresenter/ChartPresenter';
 import StorePresenter from 'pages/StorePresenter/StorePresenter';
@@ -24,10 +23,6 @@ const Router = () => {
             <Route path="/robot/:category" element={<RobotPresenter />} />
             <Route path="/store/:category" element={<StorePresenter />} />
             <Route path="/error" element={<ErrorPresenter />} />
-            <Route
-              path="/errorDetail/:errorId"
-              element={<ErrorDetailPresenter />}
-            />
             <Route path="/log" element={<LogPresenter />} />
             <Route path="/chart" element={<ChartPresenter />} />
           </Route>

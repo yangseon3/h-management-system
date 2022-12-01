@@ -27,6 +27,7 @@ const Router = () => {
               <Route path="/robot/:category" element={<RobotPresenter />} />
               <Route path="/store/:category" element={<StorePresenter />} />
               <Route path="/error" element={<ErrorPresenter />} />
+              ya
               <Route
                 path="/errorDetail/:errorId"
                 element={<ErrorDetailPresenter />}

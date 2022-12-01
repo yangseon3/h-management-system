@@ -38,7 +38,6 @@ const Calendar = ({
         selected={startDate}
         onChange={date => setStartDate(date)}
       />
-
       <ReactDatePicker
         locale={ko} // 한글로 변경
         dateFormat="yyyy.MM.dd (eee)" // 시간 포맷 변경

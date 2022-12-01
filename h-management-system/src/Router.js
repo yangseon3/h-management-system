@@ -10,6 +10,7 @@ import LogPresenter from 'pages/LogPresenter/LogPresenter';
 import ChartPresenter from 'pages/ChartPresenter/ChartPresenter';
 import StorePresenter from 'pages/StorePresenter/StorePresenter';
 import Modal from 'react-modal';
+import ErrorDetailPresenter from 'pages/ErrorDetailPresenter/ErrorDetailPresenter';
 
 const Router = () => {
   const queryClient = new QueryClient();
@@ -23,6 +24,10 @@ const Router = () => {
             <Route path="/robot/:category" element={<RobotPresenter />} />
             <Route path="/store/:category" element={<StorePresenter />} />
             <Route path="/error" element={<ErrorPresenter />} />
+            <Route
+              path="/errorDetail/:errorId"
+              element={<ErrorDetailPresenter />}
+            />
             <Route path="/log" element={<LogPresenter />} />
             <Route path="/chart" element={<ChartPresenter />} />
           </Route>

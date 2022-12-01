@@ -1,0 +1,41 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailSolutionList {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: $white-color;
+
+  .solutionListContentsBox {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 15px;
+
+    .titleText {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .solutionList {
+      width: 100%;
+      height: 24vh;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      .solutionItem {
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 14px;
+
+        .itemText {
+          font-size: 14px;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}

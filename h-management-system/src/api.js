@@ -11,6 +11,8 @@ const API = {
   storeCopy: '/api/monitoring-system/robot_count',
   servingLog: '/api/serving-log/by-time',
   getDefaultError: '/api/monitoring-system/error-statistic',
+  postErrorInfo: '/api/monitoring-system/error-detail',
+  postDetatilContent: '/api/monitoring-system/error-detail/content',
 };
 
 export default API;

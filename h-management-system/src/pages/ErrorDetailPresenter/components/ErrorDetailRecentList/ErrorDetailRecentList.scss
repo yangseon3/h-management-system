@@ -1,0 +1,41 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailRecentList {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: $white-color;
+
+  .recentListContentsBox {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 15px;
+
+    .titleText {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .recentList {
+      width: 100%;
+      height: 24vh;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      .recentItem {
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 14px;
+
+        .itemText {
+          font-size: 14px;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}

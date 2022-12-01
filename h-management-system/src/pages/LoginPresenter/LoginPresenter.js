@@ -31,6 +31,7 @@ const LoginPresenter = () => {
   const postUserInfo = useMutation(LoginController, {
     onSuccess: data => {
       let [err, result] = data;
+
       if (!err) {
         if (result.valid === true) {
           navigate('/main');

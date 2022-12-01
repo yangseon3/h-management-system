@@ -21,15 +21,17 @@ const RobotMap = ({ robotData, params }) => {
     <div className="robotMap" ref={robotMapRef}>
       <div className="imgWrap">
         <img src={mapImg} alt={robotData[0].map_id + '이미지'} />
-        {robotData.map(robot => (
-          <RobotItem
-            key={robot.robot_id}
-            posX={robot.x_pos}
-            posY={robot.y_pos}
-            robot_id={robot.robot_id}
-            data={robot}
-          />
-        ))}
+        {params.category !== 'all'
+          ? robotData.map(robot => (
+              <RobotItem
+                key={robot.robot_id}
+                posX={robot.x_pos}
+                posY={robot.y_pos}
+                robot_id={robot.robot_id}
+                data={robot}
+              />
+            ))
+          : null}
       </div>
     </div>
   );

@@ -8,6 +8,11 @@
   overflow-x: hidden;
   background-color: #fff;
   z-index: 99;
+
+  .categoryWrap {
+    @include flex(flex-start, center, null);
+    gap: 1vw;
+  }
   .listWrap {
     @include flex(flex-start, center, null);
     flex-wrap: wrap;

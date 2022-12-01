@@ -16,7 +16,7 @@ const StoreList = ({ storeData, params }) => {
 
   return (
     <div className="storeList" ref={storeListRef}>
-      <Category />
+      <Category type="storeCategory" />
       {params.category === 'all' ? (
         <ul className="listWrap">
           {storeData.map(store => (

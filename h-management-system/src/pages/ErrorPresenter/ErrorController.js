@@ -1,5 +1,4 @@
 import API from 'api';
-import axios from 'axios';
 import { basicApi } from 'lib/config';
 
 export const getDefaultErrorlist = async () => {
@@ -18,7 +17,7 @@ export const getDefaultErrorlist = async () => {
 
 export const postErrorDate = async data => {
   try {
-    const response = await basicApi.post(API.postByTimeError, data);
+    const response = await basicApi.post(API.getDefaultError, data);
 
     if (response.status === 200) {
       return [false, response.data];

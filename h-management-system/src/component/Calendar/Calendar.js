@@ -4,7 +4,14 @@ import ko from 'date-fns/locale/ko';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Calendar.scss';
 
-const Calendar = ({ event, startDate, setStartDate, endDate, setEndDate }) => {
+const Calendar = ({
+  event,
+  startDate,
+  setStartDate,
+  endDate,
+  setEndDate,
+  mapId,
+}) => {
   const convertDate = date => {
     let year = date.getFullYear().toString();
     let month = ('0' + (date?.getMonth() + 1)).slice(-2);
@@ -19,7 +26,7 @@ const Calendar = ({ event, startDate, setStartDate, endDate, setEndDate }) => {
   };
 
   const postDatesInfoHandler = dates => {
-    event(dates);
+    mapId === undefined ? event(dates) : event({ ...dates, map_id: mapId });
   };
 
   return (

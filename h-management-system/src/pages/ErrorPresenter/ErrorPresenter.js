@@ -4,11 +4,13 @@ import { getDefaultErrorlist, postErrorDate } from './ErrorController';
 import ErrorListPresenter from './components/ErrorListPresenter/ErrorListPresenter';
 import ErrorChartPresenter from './components/ErrorChartPresenter/ErrorChartPresenter';
 import './ErrorPresenter.scss';
+import ErrorDetailPresenter from './components/ErrorDetailPresenter/ErrorDetailPresenter';
 
 const ErrorPresenter = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [getDefaultData, setGetDefaultData] = useState(true);
+  const [errorId, setErrorId] = useState(undefined);
 
   const defaults = useQuery(['defaultErrorList'], getDefaultErrorlist, {
     enabled: getDefaultData,
@@ -24,11 +26,10 @@ const ErrorPresenter = () => {
 
   const handleClickDateInfo = dates => {
     postDateData.mutate(dates);
+    setErrorId(undefined);
   };
 
   const dateErrorList = postDateData.data && postDateData.data[1];
-
-  console.log(defaultErrorList);
 
   return (
     <div className="errorPresenter">
@@ -37,10 +38,18 @@ const ErrorPresenter = () => {
         setStartDate={setStartDate}
         endDate={endDate}
         setEndDate={setEndDate}
-        defaultErrorList={defaultErrorList}
+        defaultErrorList={getDefaultData ? defaultErrorList : dateErrorList}
         event={handleClickDateInfo}
+        errorId={errorId}
+        setErrorId={setErrorId}
       />
-      <ErrorChartPresenter defaultErrorList={defaultErrorList} />
+      {errorId === undefined ? (
+        <ErrorChartPresenter
+          defaultErrorList={getDefaultData ? defaultErrorList : dateErrorList}
+        />
+      ) : (
+        <ErrorDetailPresenter />
+      )}
     </div>
   );
 };

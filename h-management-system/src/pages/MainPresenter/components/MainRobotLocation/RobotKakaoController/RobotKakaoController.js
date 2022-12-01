@@ -5,7 +5,7 @@ export const GetKakaoData = async () => {
   try {
     const res = await basicApi(API.store);
     const data = await res.data;
-    console.log(data);
+
     return data;
   } catch (err) {
     alert(err);

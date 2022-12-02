@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams, useSearchParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import API from 'api';
 import { basicApi } from 'lib/config';
 import RobotList from './components/RobotList/RobotList';
@@ -24,7 +25,12 @@ const RobotPresenter = () => {
   const resultData = robotData && robotData.data;
 
   return (
-    <div className="robotPresenter">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="robotPresenter"
+    >
       {resultData && (
         <>
           <RobotList
@@ -37,7 +43,7 @@ const RobotPresenter = () => {
           <RobotMap robotData={resultData.robot} params={params} />
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 

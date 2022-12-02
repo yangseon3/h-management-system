@@ -17,10 +17,11 @@ const RobotList = ({
       robotListRef.current.style.width = '100%';
     }
   }, [params]);
+
   const handleFilter = e => {
-    searchParams.set('status', e.target.value);
+    searchParams.set('state', e.target.value);
     if (e.target.value === '') {
-      searchParams.delete('status');
+      searchParams.delete('state');
     }
     setSearchParams(searchParams);
   };
@@ -32,11 +33,11 @@ const RobotList = ({
         <Category type="storeCategory" />
         <div className="filterBox">
           <select onChange={handleFilter} value={sort ? sort : ''}>
-            <option value="">기본순</option>
-            <option value="error">에러 로봇순</option>
-            <option value="serving">서빙 로봇순</option>
-            <option value="stay">대기 로봇순</option>
-            <option value="repair">수리 로봇순</option>
+            <option value="">전체로봇</option>
+            <option value="1">서빙중</option>
+            <option value="2">대기중</option>
+            {/* <option value="3">에러</option>
+            <option value="4">수리중</option> */}
           </select>
         </div>
       </div>

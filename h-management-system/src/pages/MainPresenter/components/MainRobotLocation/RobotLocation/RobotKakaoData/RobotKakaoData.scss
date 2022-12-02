@@ -65,26 +65,25 @@
             border-radius:0px 10px 10px 0px;
         }
     }
-    .kakaoDataServing {
+    .kakaoData {
         width: 100%;
         display: flex;
-        justify-content: space-between; 
-        margin: 5px; 
-        cursor: pointer;
+        justify-content: space-around;
+        margin: 5px;  
     }
-    .storeDataHover {
-        text-align: center;
-        width: 100%;
-        line-height: 25px;
+    .kakaoDataWrapper { 
+        width: 30%;
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center; 
         border: 1px solid black; 
-        cursor: pointer;
     }
     .storeDataContent{ 
         text-align: center;
-        width: 100%;
-        line-height: 25px;
-        border: 1px solid black;
+        line-height: 25px; 
         cursor: pointer;
     }
-
+.storeDataCount {
+    font-weight: bold;
+}
 }

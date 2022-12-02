@@ -1,0 +1,51 @@
+@import '../../../../../styles/variables.scss';
+ 
+.logDataType { 
+    border: 1px solid red;
+    width: 350px;
+
+    .logHeaderWrapper {
+      @include flex (space-between,center,null); 
+      background-color: #FCE6CD;  
+      height: 50px;
+      margin: 10px 5px;
+      padding-left: 10px
+    }
+    .logHeader {
+      @include flex (null,center,null);
+      @include font($size: 30px, $height: normal, $spacing: normal, $weight: bold); 
+    }
+    .logMaps,.logRobots,.logUsers {
+      @include flex (null,center,null);
+      @include font($size: 18px, $height: normal, $spacing: normal, $weight: normal); 
+      height: 50px;
+      background-color: #FCE6CD; 
+      margin: 10px 5px;
+      padding-left: 10px
+    } 
+    .logErrorWrapper,.logServingWrapper,.logRobotWrapper {
+      @include flex (center,null,column);
+      @include font($size: 18px, $height: 25px, $spacing: normal, $weight: normal); 
+      height: 120px;
+      background-color: #FCE6CD; 
+      margin: 10px 5px;
+      padding-left: 10px
+    } 
+    .logsWrapper{
+      display: flex;
+      justify-content: space-between;
+     .Submit{
+      border-radius: 10px;
+      width: 50px;   
+     }
+    } 
+    .dateWrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .logCountWrapper {
+      display: flex;
+      justify-content:space-between;
+    }
+  }
+  

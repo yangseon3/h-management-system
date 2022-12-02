@@ -1,12 +1,11 @@
 import React from 'react';
 import ConfirmModal from './ConfirmModal/ConfirmModal';
-import DateModal from './DateModal/DateModal';
-import './Modal.scss';
+import './CommonModal.scss';
 import RobotModal from './RobotModal/RobotModal';
 
 const CommonModal = ({
   type,
-  contents,
+  children,
   close,
   event,
   title,
@@ -17,17 +16,7 @@ const CommonModal = ({
     confirm: (
       <ConfirmModal
         close={close}
-        contents={contents}
-        event={event}
-        title={title}
-        data={data}
-        setData={setData}
-      />
-    ),
-    date: (
-      <DateModal
-        close={close}
-        contents={contents}
+        children={children}
         event={event}
         title={title}
         data={data}
@@ -37,11 +26,13 @@ const CommonModal = ({
     robot: (
       <RobotModal
         close={close}
-        contents={contents}
+        children={children}
         event={event}
         title={title}
         data={data}
         setData={setData}
+        width={24}
+        height={30}
       />
     ),
   };

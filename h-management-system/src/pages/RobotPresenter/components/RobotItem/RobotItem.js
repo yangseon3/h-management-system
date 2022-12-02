@@ -1,7 +1,7 @@
+import CommonModal from 'component/Modal/CommonModal';
 import React, { useState } from 'react';
-import './RobotItem.scss';
-import Modal from 'react-modal';
 import { getHomeRobot, getInitRobot } from '../RobotControl/RobotControl';
+import './RobotItem.scss';
 
 const RobotItem = ({ robot_id, posX, posY, data }) => {
   let robotImg = '/images/robot/octa_robot_black.png';
@@ -49,40 +49,19 @@ const RobotItem = ({ robot_id, posX, posY, data }) => {
         <img src={robotImg} alt="robot-icon-img" />
       </div>
       {isModal && (
-        <Modal
+        <CommonModal
           type="robot"
-          isOpen={isModal}
-          onRequestClose={() => setIsModal(false)}
-          style={modalStyle}
+          close={() => setIsModal(false)}
+          title="로봇제어"
         >
           <p>로봇ID{robot_id}</p>
           <button onClick={() => setIsModal(false)}>close</button>
           <button onClick={handleReturn}>복귀</button>
           <button onClick={handleInit}>초기화</button>
-        </Modal>
+        </CommonModal>
       )}
     </>
   );
 };
 
 export default RobotItem;
-const modalStyle = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
-    zIndex: 999,
-  },
-  content: {
-    background: '#ffffe7',
-    overflow: 'auto',
-    inset: '20vh 38vw',
-    borderRadius: '12px',
-    outline: 'none',
-    border: 'none',
-    zIndex: 10,
-  },
-};

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import './StorePresenter.scss';
 import { useParams } from 'react-router-dom';

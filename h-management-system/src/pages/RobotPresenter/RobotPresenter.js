@@ -9,14 +9,14 @@ import './RobotPresenter.scss';
 
 const RobotPresenter = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const sort = searchParams.get('status');
+  const sort = searchParams.get('state');
   const params = useParams();
 
-  const robotData = useQuery(['RobotKey', params], async () => {
+  const robotData = useQuery(['RobotKey', params, sort], async () => {
     const { data } = await basicApi.get(
       params.category === 'all'
-        ? `${API.robot}?status=${sort}`
-        : `${API.robot}/map_id/${params.category}?status=${sort}`
+        ? `${API.robot}?state=${sort ? sort : ''}`
+        : `${API.robot}/map_id/${params.category}?state=${sort ? sort : ''}`
     );
     return data;
   });

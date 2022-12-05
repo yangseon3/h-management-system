@@ -8,9 +8,7 @@ const Category = ({ type, event, mapId }) => {
   const category = {
     storeCategory: <StoreCategory />,
     errorCategory: <ErrorCategory event={event} mapId={mapId} />,
-    logCategory: (
-      <LogMappingCategory event={event} selectedMapId={selectedMapId} />
-    ),
+    logCategory: <LogMappingCategory event={event} />,
   };
   return <div className="categoryBox">{category[type]}</div>;
 };

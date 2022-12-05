@@ -3,17 +3,11 @@ import React from 'react';
 const LogMappingCategory = ({ event, selectedMapId }) => {
   return (
     <select onChange={event}>
-      {MAP.map(map =>
-        selectedMapId === map.mapId ? (
-          <option key={map.mapId} value={map.mapId} selected>
-            {map.mapName}
-          </option>
-        ) : (
-          <option key={map.mapId} value={map.mapId}>
-            {map.mapName}
-          </option>
-        )
-      )}
+      {MAP.map(map => (
+        <option key={map.mapId} value={map.mapId}>
+          {map.mapName}
+        </option>
+      ))}
     </select>
   );
 };

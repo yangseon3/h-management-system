@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { AnimatePresence } from 'framer-motion';
 import Login from 'pages/LoginPresenter/LoginPresenter';
 import MainLayout from 'pages/MainLayout/MainLayout';
 import MainPresenter from 'pages/MainPresenter/MainPresenter';
@@ -14,26 +15,28 @@ import ErrorDetailPresenter from 'pages/ErrorDetailPresenter/ErrorDetailPresente
 
 const Router = () => {
   const queryClient = new QueryClient();
+
   Modal.setAppElement('#root');
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/main" element={<MainPresenter />} />
-            <Route path="/robot/:category" element={<RobotPresenter />} />
-            <Route path="/store/:category" element={<StorePresenter />} />
-            <Route path="/error" element={<ErrorPresenter />} />
-            <Route
+        <AnimatePresence>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/main" element={<MainPresenter />} />
+              <Route path="/robot/:category" element={<RobotPresenter />} />
+              <Route path="/store/:category" element={<StorePresenter />} />
+              <Route path="/error" element={<ErrorPresenter />} />
+                          <Route
               path="/errorDetail/:errorId"
               element={<ErrorDetailPresenter />}
             />
-            <Route path="/log" element={<LogPresenter />} />
-            <Route path="/chart" element={<ChartPresenter />} />
-          </Route>
-
-          <Route path="/" element={<Login />} />
-        </Routes>
+              <Route path="/log" element={<LogPresenter />} />
+              <Route path="/chart" element={<ChartPresenter />} />
+            </Route>
+            <Route path="/" element={<Login />} />
+          </Routes>
+        </AnimatePresence>
       </BrowserRouter>
     </QueryClientProvider>
   );

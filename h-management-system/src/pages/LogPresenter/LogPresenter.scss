@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 
-.logPresenter {
+.logPresenter { 
   width: 100%;
-  padding-left: 6vw;
-}
+  height: 100%;
+  padding-left: 6vw; 
+    display: flex;  
+  }
+ 

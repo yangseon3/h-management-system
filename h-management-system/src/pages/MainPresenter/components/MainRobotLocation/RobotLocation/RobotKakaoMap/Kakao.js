@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { GetKakaoData } from '../../RobotKakaoController/RobotKakaoController';
 
 const Kakao = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [info, setInfo] = useState({});
 
-  const params = useParams();
+  const navigate = useNavigate();
 
-  const RobotDetail = () => {
-    query(params.productId);
-  };
   const query = useQuery(['mapData'], GetKakaoData);
 
-  const totalData = query.data && query.data.stores;
+  const totalData = query.data && query.data[1].stores;
 
   const totalValue =
     totalData &&
@@ -43,7 +40,9 @@ const Kakao = () => {
           totalValue.map(item => (
             <div key={item.map_id}>
               <MapMarker
-                onClick={RobotDetail}
+                onClick={() => {
+                  navigate(`/store/${item.map_id}`);
+                }}
                 position={{ lat: item.y, lng: item.x }}
                 clickable={true} // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
                 // 마커에 마우스오버 이벤트를 등록합니다

@@ -2,7 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import Category from 'component/Category/Category';
 import './RobotList.scss';
 
-const RobotList = ({ robotData, params }) => {
+const RobotList = ({
+  robotData,
+  params,
+  searchParams,
+  setSearchParams,
+  sort,
+}) => {
   const robotListRef = useRef(null);
   useEffect(() => {
     if (params.category !== 'all') {
@@ -12,10 +18,30 @@ const RobotList = ({ robotData, params }) => {
     }
   }, [params]);
 
+  const handleFilter = e => {
+    searchParams.set('state', e.target.value);
+    if (e.target.value === '') {
+      searchParams.delete('state');
+    }
+    setSearchParams(searchParams);
+  };
+
   return (
     <div className="robotList" ref={robotListRef}>
       <p>Robot</p>
-      <Category />
+      <div className="categoryWrap">
+        <Category type="storeCategory" />
+        <div className="filterBox">
+          <select onChange={handleFilter} value={sort ? sort : ''}>
+            <option value="">전체로봇</option>
+            <option value="1">서빙중</option>
+            <option value="2">대기중</option>
+            {/* <option value="3">에러</option>
+            <option value="4">수리중</option> */}
+          </select>
+        </div>
+      </div>
+
       <ul className="listWrap">
         {robotData.map((robot, idx) => (
           <li key={idx}>

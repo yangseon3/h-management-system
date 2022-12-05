@@ -24,7 +24,7 @@ const StoreCategory = () => {
   return (
     <div className="categoryBox">
       <select onChange={handleCategory} value={params.category}>
-        <option value="all">all</option>
+        <option value="all">전체매장</option>
         {optionMenu &&
           optionMenu.map((option, idx) => (
             <option key={idx} value={option.map_id}>

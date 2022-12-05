@@ -1,5 +1,5 @@
 import React from 'react';
-import ConfirmModal from './ConfirmModal/ConfirmModal';
+import UserModal from './UserModal/UserModal';
 import './CommonModal.scss';
 import RobotModal from './RobotModal/RobotModal';
 
@@ -13,14 +13,16 @@ const CommonModal = ({
   setData,
 }) => {
   const modal = {
-    confirm: (
-      <ConfirmModal
+    user: (
+      <UserModal
         close={close}
         children={children}
         event={event}
         title={title}
         data={data}
         setData={setData}
+        width={20}
+        height={20}
       />
     ),
     robot: (

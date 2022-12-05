@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
+import { motion } from 'framer-motion';
 import { getDefaultErrorlist, postErrorDate } from './ErrorController';
 import ErrorListPresenter from './components/ErrorListPresenter/ErrorListPresenter';
 import ErrorChartPresenter from './components/ErrorChartPresenter/ErrorChartPresenter';
@@ -32,7 +33,12 @@ const ErrorPresenter = () => {
   const dateErrorList = postDateData.data && postDateData.data[1];
 
   return (
-    <div className="errorPresenter">
+    <motion.div
+      className="errorPresenter"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <ErrorListPresenter
         startDate={startDate}
         setStartDate={setStartDate}
@@ -50,7 +56,7 @@ const ErrorPresenter = () => {
       ) : (
         <ErrorDetailPresenter />
       )}
-    </div>
+    </motion.div>
   );
 };
 

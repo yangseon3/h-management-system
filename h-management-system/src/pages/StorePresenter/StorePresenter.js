@@ -1,11 +1,12 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import './StorePresenter.scss';
 import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { basicApi } from 'lib/config';
 import API from 'api';
 import StoreList from './components/StoreList/StoreList';
 import StoreInfo from './components/StoreInfo/StoreInfo';
+import './StorePresenter.scss';
 
 const StorePresenter = () => {
   const params = useParams();
@@ -18,7 +19,12 @@ const StorePresenter = () => {
   });
   const resultData = storeData && storeData.data;
   return (
-    <div className="storePresenter">
+    <motion.div
+      className="storePresenter"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       {resultData && (
         <>
           <StoreList storeData={resultData.stores} params={params} />
@@ -29,7 +35,7 @@ const StorePresenter = () => {
           />
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 

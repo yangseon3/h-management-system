@@ -2,7 +2,7 @@
 .robotList {
   padding: 10px;
   height: 100%;
-  transition: all 0.7s ease-in-out;
+  transition: inherit;
   border: 1px solid black;
   overflow-y: scroll;
   overflow-x: hidden;

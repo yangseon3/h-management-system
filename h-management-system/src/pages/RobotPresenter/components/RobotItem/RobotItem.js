@@ -55,7 +55,7 @@ const RobotItem = ({ robot_id, posX, posY, data }) => {
           title="로봇제어"
         >
           <p>로봇ID{robot_id}</p>
-          <button onClick={() => setIsModal(false)}>close</button>
+
           <button onClick={handleReturn}>복귀</button>
           <button onClick={handleInit}>초기화</button>
         </CommonModal>

@@ -1,8 +1,17 @@
 import React from 'react';
 import Modal from 'react-modal';
-import './RobotModal.scss';
+import './UserModal.scss';
 
-const RobotModal = ({ close, event, title, children, height, width }) => {
+const UserModal = ({
+  type,
+  contents,
+  close,
+  event,
+  title,
+  width,
+  height,
+  children,
+}) => {
   const confirmHandler = e => {
     e.stopPropagation();
     event();
@@ -26,23 +35,24 @@ const RobotModal = ({ close, event, title, children, height, width }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'rgba(0, 0, 0, 0.5)',
+          background: 'transparent',
           zIndex: 10000,
         },
         content: {
           position: 'absolute',
-          top: '50%',
-          left: '50%',
+          top: '8%',
+          left: '70%',
           right: 'auto',
           bottom: 'auto',
-          transform: 'translate(-50%, -50%)',
+          border: '1px solid #E9ECF9',
           width: `${width ? width + 'vw' : 'auto'}`,
           boxSizing: 'border-box',
-          border: 'none',
           background: 'white',
           borderRadius: '0.5em',
           outline: 'none',
           padding: '1.5em 1em',
+          boxSizing: 'border-box',
+          boxShadow: '#8690C2 0px 0px 7px 2px',
           textAlign: 'center',
           zIndex: 30,
           overflow: 'hidden',
@@ -52,9 +62,9 @@ const RobotModal = ({ close, event, title, children, height, width }) => {
     >
       <p>{title}</p>
       <div>{children}</div>
-      <button onClick={closeHandler}>close</button>
+      <button>로그아웃</button>
     </Modal>
   );
 };
 
-export default RobotModal;
+export default UserModal;

@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
+import { FaUserCircle } from 'react-icons/fa';
 import { basicApi } from 'lib/config';
 import API from 'api';
 import TabContent from './components/TabContent';
 import './Header.scss';
+import CommonModal from 'component/Modal/CommonModal';
 
 const Header = () => {
   const [dateState, setDateState] = useState(new Date());
   const [currentTab, setCurrentTab] = useState('일간');
+  const [isModal, setIsModal] = useState(false);
   const params = useParams();
 
   useEffect(() => {
@@ -85,6 +88,12 @@ const Header = () => {
                 })}
               </p>
             </div>
+          </div>
+          <div className="userIcon" onClick={() => setIsModal(true)}>
+            <FaUserCircle style={{ fontSize: '2vw' }} />
+            {isModal && (
+              <CommonModal type="user" close={() => setIsModal(false)} />
+            )}
           </div>
         </div>
       </div>

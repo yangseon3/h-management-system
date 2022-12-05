@@ -1,0 +1,26 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailInfo {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: $white-color;
+
+  .infoContentsBox {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 15px;
+
+    .titleText {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .contentsText {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+  }
+}

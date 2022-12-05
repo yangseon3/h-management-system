@@ -15,9 +15,37 @@ export const getDefaultErrorlist = async () => {
   }
 };
 
+export const postDetailErrorList = async data => {
+  try {
+    const response = await basicApi.post(API.postErrorInfo, data);
+
+    if (response.status === 200) {
+      return [false, response.data];
+    } else {
+      return [response.data.error, response.data.message];
+    }
+  } catch (e) {
+    return [true, e.message];
+  }
+};
+
 export const postErrorDate = async data => {
   try {
     const response = await basicApi.post(API.getDefaultError, data);
+
+    if (response.status === 200) {
+      return [false, response.data];
+    } else {
+      return [response.data.error, response.data.message];
+    }
+  } catch (e) {
+    return [true, e.message];
+  }
+};
+
+export const postDetailContentData = async data => {
+  try {
+    const response = await basicApi.post(API.postDetatilContent, data);
 
     if (response.status === 200) {
       return [false, response.data];

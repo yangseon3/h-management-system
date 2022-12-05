@@ -4,12 +4,10 @@ import ErrorCategory from './ErrorCategory';
 import './Category.scss';
 import LogMappingCategory from './LogMappingCategory';
 
-const Category = ({ type, event, selectedMapId }) => {
+const Category = ({ type, event, mapId }) => {
   const category = {
     storeCategory: <StoreCategory />,
-    errorCategory: (
-      <ErrorCategory event={event} selectedMapId={selectedMapId} />
-    ),
+    errorCategory: <ErrorCategory event={event} mapId={mapId} />,
     logCategory: (
       <LogMappingCategory event={event} selectedMapId={selectedMapId} />
     ),

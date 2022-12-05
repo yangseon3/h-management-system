@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Calendar from 'component/Calendar/Calendar';
 import { useNavigate } from 'react-router-dom';
-import './ErrorListPresenter.scss';
+import Calendar from 'component/Calendar/Calendar';
 import Category from 'component/Category/Category';
+import './ErrorListPresenter.scss';
 
 const ErrorListPresenter = ({
   event,
@@ -11,11 +11,12 @@ const ErrorListPresenter = ({
   endDate,
   setEndDate,
   defaultErrorList,
-  errorId,
+  errorInfo,
   selectedMapId,
-  setErrorId,
 }) => {
-  const [mapId, setMapId] = useState(selectedMapId);
+  const [mapId, setMapId] = useState(selectedMapId ? selectedMapId : 0);
+
+  const navigate = useNavigate();
 
   const onChangeMapIdHandler = e => {
     setMapId(parseInt(e.target.value));
@@ -27,7 +28,7 @@ const ErrorListPresenter = ({
       <Category
         type="errorCategory"
         event={onChangeMapIdHandler}
-        selectedMapId={selectedMapId}
+        mapId={mapId}
       />
       <Calendar
         startDate={startDate}
@@ -40,16 +41,40 @@ const ErrorListPresenter = ({
       <div className="errorListBox">
         {defaultErrorList &&
           defaultErrorList.error_notice?.map(
-            ({ error_id, error_msg, current_node, robot_id, created_at }) => (
+            ({
+              error_id,
+              error_msg,
+              current_node,
+              robot_id,
+              created_at,
+              map_id,
+              error_type,
+            }) => (
               <div
                 className={
-                  errorId === error_id ? 'checkedErrorList' : 'errorList'
+                  errorInfo && errorInfo.error_id === error_id
+                    ? 'checkedErrorList'
+                    : 'errorList'
                 }
                 key={error_id}
                 onClick={() => {
-                  errorId && error_id === errorId
-                    ? setErrorId(undefined)
-                    : setErrorId(error_id);
+                  navigate(`/errorDetail/${error_id}`, {
+                    state: {
+                      initialInfo: {
+                        map_id,
+                        startDate,
+                        endDate,
+                      },
+                      error: {
+                        robot_id,
+                        created_at,
+                        map_id,
+                        error_type,
+                        error_id,
+                      },
+                      errorList: defaultErrorList,
+                    },
+                  });
                 }}
               >
                 <p>error_msg : {error_msg}</p>
@@ -63,11 +88,5 @@ const ErrorListPresenter = ({
     </div>
   );
 };
-
-const MAP = [
-  { mapId: 0, mapName: '전체' },
-  { mapId: 1, mapName: '향동 노리쿡' },
-  { mapId: 2, mapName: '연신내 더피플버거' },
-];
 
 export default ErrorListPresenter;

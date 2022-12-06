@@ -11,7 +11,7 @@ const TabContent = ({ before, resultData, params, date }) => {
     {
       id: 1,
       title: '서빙횟수',
-      unit: '번',
+      unit: '',
       currentValue: dataValue.serving_count,
       prevValue: dataValue.serving_count_before,
     },
@@ -19,7 +19,7 @@ const TabContent = ({ before, resultData, params, date }) => {
       id: 2,
       title: '이동거리',
       unit: 'km',
-      currentValue: dataValue.move_distance,
+      currentValue: parseInt(dataValue.move_distance),
       prevValue: dataValue.move_distance_before,
     },
     {
@@ -45,33 +45,35 @@ const TabContent = ({ before, resultData, params, date }) => {
       {CONTENT_BOXES &&
         CONTENT_BOXES.map(({ id, title, currentValue, prevValue, unit }) => (
           <div className="dataBox" key={id}>
-            <div className="mainData">
-              {currentValue}
-              <span className="mainUnit">{unit}</span>
-            </div>
-            <div className="compareBox">
-              <div className="resultValue">
-                <span>
-                  {prevValue > currentValue ? (
-                    <RiArrowDownSFill
-                      className="compareIcon"
-                      style={{ color: 'red' }}
-                    />
-                  ) : (
-                    <RiArrowUpSFill
-                      className="compareIcon"
-                      style={{ color: 'green' }}
-                    />
-                  )}
-                </span>
-                <p className="compareValue">
-                  {calcResult(currentValue, prevValue)
-                    ? calcResult(currentValue, prevValue) + '%'
-                    : currentValue + unit}
-                </p>
+            <p className="dataTitle">{title}</p>
+            <div className="valueBox">
+              <div className="mainData">
+                {currentValue}
+                <span className="mainUnit">{unit}</span>
+              </div>
+              <div className="compareBox">
+                <div className="resultValue">
+                  <span>
+                    {prevValue > currentValue ? (
+                      <RiArrowDownSFill
+                        className="compareIcon"
+                        style={{ color: 'red' }}
+                      />
+                    ) : (
+                      <RiArrowUpSFill
+                        className="compareIcon"
+                        style={{ color: 'green' }}
+                      />
+                    )}
+                  </span>
+                  <p className="compareValue">
+                    {calcResult(currentValue, prevValue)
+                      ? calcResult(currentValue, prevValue) + '%'
+                      : currentValue + unit}
+                  </p>
+                </div>
                 <p className="compareTitle">{before}대비</p>
               </div>
-              <p>{title}</p>
             </div>
           </div>
         ))}

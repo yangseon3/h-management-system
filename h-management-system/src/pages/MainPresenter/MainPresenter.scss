@@ -3,5 +3,14 @@
   @include flex(space-between, center, null);
   width: 100%;
   margin: 0 auto;
-  padding-left: 6vw;
+  height: 100%;
+}
+.robotInfoWrap {
+  button {
+    @include flex(flex-start, center, null);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+  }
 }

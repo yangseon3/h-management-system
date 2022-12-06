@@ -3,7 +3,6 @@ import RobotItem from '../RobotItem/RobotItem';
 import './RobotMap.scss';
 
 const RobotMap = ({ robotData, params }) => {
-  const mapImg = `/images/map/map-background-${robotData[0].map_id}.png`;
   const robotMapRef = useRef(null);
   useEffect(() => {
     if (params.category === 'all') {
@@ -20,11 +19,17 @@ const RobotMap = ({ robotData, params }) => {
   return (
     <div className="robotMap" ref={robotMapRef}>
       <div className="imgWrap">
-        <img src={mapImg} alt={robotData[0].map_id + '이미지'} />
+        {params.category !== 'all' ? (
+          <img
+            src={`/images/map/map-background-${params.category}.png`}
+            alt={params.category + '이미지'}
+          />
+        ) : null}
+
         {params.category !== 'all'
-          ? robotData.map(robot => (
+          ? robotData?.map((robot, idx) => (
               <RobotItem
-                key={robot.robot_id}
+                key={idx}
                 posX={robot.x_pos}
                 posY={robot.y_pos}
                 robot_id={robot.robot_id}

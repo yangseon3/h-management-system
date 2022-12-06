@@ -2,18 +2,41 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
+import {
+  MdOutlineKeyboardArrowRight,
+  MdOutlineKeyboardArrowLeft,
+} from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
 import { basicApi } from 'lib/config';
 import API from 'api';
 import TabContent from './components/TabContent';
 import './Header.scss';
 import CommonModal from 'component/Modal/CommonModal';
+import Nav from 'component/Nav/Nav';
 
 const Header = () => {
   const [dateState, setDateState] = useState(new Date());
   const [currentTab, setCurrentTab] = useState('일간');
   const [isModal, setIsModal] = useState(false);
   const params = useParams();
+  const handleNextClick = () => {
+    if (currentTab === '일간') {
+      setCurrentTab('주간');
+    } else if (currentTab === '주간') {
+      setCurrentTab('월간');
+    } else {
+      setCurrentTab('일간');
+    }
+  };
+  const handlePrevClick = () => {
+    if (currentTab === '월간') {
+      setCurrentTab('주간');
+    } else if (currentTab === '주간') {
+      setCurrentTab('일간');
+    } else {
+      setCurrentTab('월간');
+    }
+  };
 
   useEffect(() => {
     const timeUpdate = setInterval(() => {
@@ -59,13 +82,7 @@ const Header = () => {
     <div className="header">
       <div className="headerTop">
         <div className="innerHeader">
-          <h1 className="logo">
-            <img
-              src="/images/hprobot-logo-white-1line.png"
-              alt="헬퍼로보틱스 로고"
-            />
-          </h1>
-          <p>Monitoring System</p>
+          <h1 className="logo">HMS</h1>
           <div className="weatherWrap">
             <div className="dateWrap">
               <AiOutlineCalendar className="icon" />
@@ -88,27 +105,39 @@ const Header = () => {
                 })}
               </p>
             </div>
-          </div>
-          <div className="userIcon" onClick={() => setIsModal(true)}>
-            <FaUserCircle style={{ fontSize: '2vw' }} />
-            {isModal && (
-              <CommonModal type="user" close={() => setIsModal(false)} />
-            )}
+            <div className="userIcon" onClick={() => setIsModal(true)}>
+              <FaUserCircle style={{ fontSize: '2vw' }} />
+              {isModal && (
+                <CommonModal type="user" close={() => setIsModal(false)} />
+              )}
+            </div>
           </div>
         </div>
       </div>
       <div className="headerBottom">
+        <Nav />
         <div className="robotInfoWrap">
+          <button className="arrowLeft" onClick={handlePrevClick}>
+            <MdOutlineKeyboardArrowLeft />
+            <p className="arrowName">
+              {currentTab === '일간'
+                ? '월'
+                : MENU_TAB.map((tabname, idx) =>
+                    tabname === currentTab[0] ? MENU_TAB[idx - 1] : ''
+                  )}
+            </p>
+          </button>
           {!isLoading && MAPPING_OBJ[currentTab]}
-        </div>
-        <div className="tabMenu">
-          <ul className="menuWrap">
-            {MENU_TAB.map((tabname, idx) => (
-              <li key={idx} onClick={() => setCurrentTab(tabname)}>
-                {tabname}
-              </li>
-            ))}
-          </ul>
+          <button className="arrowRight" onClick={handleNextClick}>
+            <p className="arrowName">
+              {currentTab === '월간'
+                ? '일'
+                : MENU_TAB.map((tabname, idx) =>
+                    tabname === currentTab[0] ? MENU_TAB[idx + 1] : ''
+                  )}
+            </p>
+            <MdOutlineKeyboardArrowRight />
+          </button>
         </div>
       </div>
     </div>
@@ -116,4 +145,4 @@ const Header = () => {
 };
 
 export default Header;
-const MENU_TAB = ['일간', '주간', '월간'];
+const MENU_TAB = ['일', '주', '월'];

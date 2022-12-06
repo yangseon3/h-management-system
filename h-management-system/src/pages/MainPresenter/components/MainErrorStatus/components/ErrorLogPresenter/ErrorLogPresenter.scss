@@ -3,8 +3,6 @@
 .errorLogPresenter {
   width: 100%;
   margin-top: 15px;
-  padding: 15px;
-  border: 1px solid black;
   border-radius: 5px;
 
   .logHeader {
@@ -13,16 +11,84 @@
     font-weight: 600;
   }
 
+  .logControllBox {
+    padding: 15px;
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    background-color: white;
+  }
+
   .errorButtonBox {
     @include flex(flex-end, center, row);
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
+    background-color: $white-color;
   }
 
   .errorLogBox {
-    @include flex(flex-end, left, column);
+    @include flex(null, null, column);
+    margin-top: 20px;
+    padding: 20px;
     width: 100%;
-    height: 300px;
-    text-align: right;
+    height: 350px;
+    background-color: $white-color;
+    border-radius: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .logColorBox {
+      margin-right: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+    }
+
+    .errorLog {
+      @include flex(space-between, center, row);
+      margin-top: 10px;
+      background-color: $white-color;
+
+      .logDate {
+        margin-right: 5%;
+        background-color: $white-color;
+
+        .logDay {
+          background-color: $white-color;
+          font-size: 13px;
+        }
+
+        .logTime {
+          margin-top: 5px;
+          background-color: $white-color;
+          font-size: 13px;
+        }
+      }
+
+      .logInfo {
+        padding: 15px;
+        width: 70%;
+        border-radius: 10px;
+
+        .logMsg {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .logStore {
+          margin: 5px 0;
+          font-size: 12px;
+        }
+      }
+
+      .logDegreeBox {
+        @include flex(flex-end, center, row);
+
+        .logType {
+          margin-top: 1px;
+          font-size: 13px;
+        }
+      }
+    }
   }
 }

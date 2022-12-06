@@ -1,0 +1,29 @@
+@import '/src/styles/variables.scss';
+
+.button {
+  background-color: white;
+
+  .primaryBtn {
+    padding-top: 2px;
+    width: 95px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: $primary-color;
+    color: white;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+
+  .subBtn {
+    padding-top: 2px;
+    width: 95px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: $background-color;
+    color: $primary-color;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+}

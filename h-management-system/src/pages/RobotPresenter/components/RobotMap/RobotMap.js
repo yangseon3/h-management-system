@@ -11,7 +11,7 @@ const RobotMap = ({ robotData, params }) => {
       robotMapRef.current.style.padding = '0';
     } else {
       robotMapRef.current.style.opacity = '1';
-      robotMapRef.current.style.width = '65.5vw';
+      robotMapRef.current.style.width = '64.6042vw';
       robotMapRef.current.style.padding = '1vw';
     }
   }, [params]);
@@ -32,8 +32,9 @@ const RobotMap = ({ robotData, params }) => {
                 key={idx}
                 posX={robot.x_pos}
                 posY={robot.y_pos}
-                robot_id={robot.robot_id}
+                robotId={robot.robot_id}
                 data={robot}
+                params={params.category}
               />
             ))
           : null}

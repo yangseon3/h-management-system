@@ -18,6 +18,7 @@ const RobotList = ({
       robotListRef.current.style.width = '100%';
     }
   }, [params]);
+
   const handleStateText = state => {
     if (state === '1') {
       return '이동중';
@@ -109,7 +110,7 @@ const RobotList = ({
               <div className="robotBattery">
                 <span
                   className="charge"
-                  style={{ width: `${robot.battery}%` }}
+                  style={{ width: `${robot.battery > 0 ? robot.battery : 0}%` }}
                 />
               </div>
               <p>{robot.battery}%</p>

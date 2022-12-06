@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { IoMdArrowDropdown } from 'react-icons/io';
 import Category from 'component/Category/Category';
 import './RobotList.scss';
 
@@ -12,11 +13,37 @@ const RobotList = ({
   const robotListRef = useRef(null);
   useEffect(() => {
     if (params.category !== 'all') {
-      robotListRef.current.style.width = '24vw';
+      robotListRef.current.style.width = '20vw';
     } else {
       robotListRef.current.style.width = '100%';
     }
   }, [params]);
+  const handleStateText = state => {
+    if (state === '1') {
+      return '이동중';
+    } else if (state === '2') {
+      return '대기중';
+    } else if (state === '3') {
+      return '에러';
+    } else if (state === '4') {
+      return '수리중';
+    } else {
+      return '정보없음';
+    }
+  };
+  const handleColor = state => {
+    if (state === '1') {
+      return '#299D38';
+    } else if (state === '2') {
+      return '#D9AC37';
+    } else if (state === '3') {
+      return '#DA376E';
+    } else if (state === '4') {
+      return '#406DFA';
+    } else {
+      return '#000';
+    }
+  };
 
   const handleFilter = e => {
     searchParams.set('state', e.target.value);
@@ -28,7 +55,6 @@ const RobotList = ({
 
   return (
     <div className="robotList" ref={robotListRef}>
-      <p>Robot</p>
       <div className="categoryWrap">
         <Category type="storeCategory" />
         <div className="filterBox">
@@ -39,28 +65,54 @@ const RobotList = ({
             {/* <option value="3">에러</option>
             <option value="4">수리중</option> */}
           </select>
+          <IoMdArrowDropdown className="selectIcon" />
         </div>
       </div>
 
       <ul className="listWrap">
-        {robotData.map((robot, idx) => (
+        {robotData?.map((robot, idx) => (
           <li key={idx}>
-            <p className="robotTitle">
-              {robot.map_name}_{robot.robot_id}
-              <span className="robotState">{robot.state}</span>
-            </p>
-            <div className="robotBattery">
-              <span className="charge" style={{ width: `${robot.battery}%` }} />
+            <div className="infoWrap">
+              <div>
+                <p className="robotTitle">{robot.k_map_name}</p>
+                <div className="robotInfo">
+                  <div className="subTitle">
+                    <p>서빙횟수</p>
+                    <p>이동거리</p>
+                  </div>
+                  <div>
+                    <p>{robot.serving_count}회</p>
+                    <p>{robot.distance}km</p>
+                  </div>
+                </div>
+              </div>
+              <div className="iconWrap">
+                <p style={{ color: `${handleColor(robot.state)}` }}>
+                  {handleStateText(robot.state)}
+                </p>
+                <div className="robotIcon">
+                  <img
+                    src={`/images/robot/robot_state_${robot.state}.png`}
+                    alt="로봇이미지"
+                  />
+                  <p>No. {robot.robot_id}</p>
+                  <p
+                    className="arrowIcon"
+                    style={{ color: `${handleColor(robot.state)}` }}
+                  >
+                    &gt;&gt;&gt;
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="robotInfo">
-              <div>
-                <p>서빙횟수</p>
-                <p>이동거리</p>
+            <div className="batteryWrap">
+              <div className="robotBattery">
+                <span
+                  className="charge"
+                  style={{ width: `${robot.battery}%` }}
+                />
               </div>
-              <div>
-                <p>{robot.serving_count}회</p>
-                <p>{robot.distance}km</p>
-              </div>
+              <p>{robot.battery}%</p>
             </div>
           </li>
         ))}

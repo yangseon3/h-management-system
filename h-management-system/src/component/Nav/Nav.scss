@@ -1,23 +1,41 @@
 @import '/src/styles/variables.scss';
 .mainTab {
-  @include flex(space-between, flex-start, null);
-  position: fixed;
-  left: 0;
-  height: 83vh;
-  background-color: white;
+  height: 94vh;
+  background-color: #39416b;
+  border-radius: 0 30px 30px 0;
+  color: #fff;
   z-index: 999;
 }
 .navContainer {
-  width: 5vw;
+  width: 14vw;
   height: 100%;
-  border: 1px solid black;
+
+  .profileWrap {
+    @include flex(center, center, null);
+    width: 100%;
+    padding: 2vw;
+    .profileIcon {
+      font-size: 6vw;
+    }
+  }
   .navWrap {
+    padding-left: 8px;
+
     li {
-      padding: 0.6944vw 0;
-      text-align: center;
+      @include flex(flex-start, center, null);
+      padding: 1vw;
+      height: auto;
+      border-radius: 30px 0 0 30px;
       cursor: pointer;
+      .imgBox {
+        width: 12%;
+        img {
+          width: 100%;
+        }
+      }
+
       .menuName {
-        display: block;
+        padding-left: 10px;
       }
     }
   }

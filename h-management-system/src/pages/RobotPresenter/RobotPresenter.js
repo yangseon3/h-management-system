@@ -21,9 +21,7 @@ const RobotPresenter = () => {
     );
     return data;
   });
-
   const resultData = robotData && robotData.data;
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,18 +29,14 @@ const RobotPresenter = () => {
       exit={{ opacity: 0 }}
       className="robotPresenter"
     >
-      {resultData && (
-        <>
-          <RobotList
-            robotData={resultData.robot}
-            params={params}
-            searchParams={searchParams}
-            setSearchParams={setSearchParams}
-            sort={sort}
-          />
-          <RobotMap robotData={resultData.robot} params={params} />
-        </>
-      )}
+      <RobotList
+        robotData={resultData?.robot}
+        params={params}
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+        sort={sort}
+      />
+      <RobotMap robotData={resultData?.robot} params={params} />
     </motion.div>
   );
 };

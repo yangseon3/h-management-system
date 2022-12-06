@@ -9,8 +9,8 @@ const ServingLogs = ({ servingLogData }) => {
     servingLogData && servingLogData.map(item => Object.values(item));
 
   return (
-    <div className="mapDataContents">
-      <table className="mapDataContentsWrapper">
+    <div className="servingDataContents">
+      <table className="servingDataContentsWrapper">
         <tr>
           {objKeys &&
             objKeys[0].map((item, index) => (

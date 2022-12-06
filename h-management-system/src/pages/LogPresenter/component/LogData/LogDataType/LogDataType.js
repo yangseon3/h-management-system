@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Category from 'component/Category/Category';
+import ConvertStrYesterday from 'utils/ConvertStrYesterday';
 import './LogDataType.scss';
 
 const LogDataType = props => {
@@ -13,12 +14,12 @@ const LogDataType = props => {
   } = props;
 
   const [logData, setLogData] = useState({
-    errorDataCount: '',
-    servingDataCount: '',
-    robotDataCount: '',
-    errorDate: '',
-    servingDate: '',
-    robotDate: '',
+    errorDataCount: '100',
+    servingDataCount: '100',
+    robotDataCount: '100',
+    errorDate: ConvertStrYesterday(),
+    servingDate: ConvertStrYesterday(),
+    robotDate: ConvertStrYesterday(),
   });
 
   const logDataHandler = e => {
@@ -53,140 +54,157 @@ const LogDataType = props => {
 
   return (
     <div className="logDataType">
-      <div className="logHeaderWrapper">
-        <div className="logHeader">log</div>
-        <Category type="logCategory" event={onChangeMapIdHandler} />
-      </div>
-      <div
-        className="logMaps"
-        onClick={() => {
-          setSelectTab('maps');
-        }}
-      >
-        maps
-      </div>
-      <div
-        className="logRobots"
-        onClick={() => {
-          setSelectTab('robots');
-        }}
-      >
-        robots
-      </div>
-      <div
-        className="logUsers"
-        onClick={() => {
-          setSelectTab('users');
-        }}
-      >
-        users
-      </div>
-      <div className="logErrorWrapper">
-        <div className="logsWrapper">
-          <div>error_logs</div>
-          <button
-            className="Submit"
+      <div className="LogDataWrapper">
+        <div className="logDataCategoryWrapper">
+          <Category type="logCategory" event={onChangeMapIdHandler} />
+        </div>
+        <div className="getLogData">
+          <div
+            className="logMaps"
             onClick={() => {
-              handleClickErrorData(errorLogRawData);
-              setSelectTab('error_logs');
+              setSelectTab('maps');
             }}
           >
-            제출
-          </button>
-        </div>
-        <div className="dateWrapper">
-          <div className="logErrorDate">날짜/시간</div>
-          <div>
-            <input
-              type="datetime-local"
-              name="errorDate"
-              onChange={logDataHandler}
-            />
+            MAPS
           </div>
-        </div>
-        <div className="logCountWrapper">
-          <div className="logErrorCount">이후 로그 개수</div>
-          <input
-            type="number"
-            name="errorDataCount"
-            step="5"
-            placeholder="수량"
-            min="0"
-            max="1000"
-            onChange={logDataHandler}
-          />
-        </div>
-      </div>
-      <div className="logServingWrapper">
-        <div className="logsWrapper">
-          <div>serving_logs</div>
-          <button
-            className="Submit"
+          <div
+            className="logRobots"
             onClick={() => {
-              handleClickServingData(servingLogRawData);
-              setSelectTab('serving_logs');
+              setSelectTab('robots');
             }}
           >
-            제출
-          </button>
-        </div>
-        <div className="dateWrapper">
-          <div className="logServingDate">날짜/시간</div>
-          <div>
-            <input
-              type="datetime-local"
-              name="servingDate"
-              onChange={logDataHandler}
-            />
+            ROBOTS
           </div>
-        </div>
-        <div className="logCountWrapper">
-          <div className="logServingCount">이후 로그 개수</div>
-          <input
-            type="number"
-            name="servingDataCount"
-            step="5"
-            placeholder="수량"
-            min="0"
-            max="1000"
-            onChange={logDataHandler}
-          />
-        </div>
-      </div>
-      <div className="logRobotWrapper">
-        <div className="logsWrapper">
-          <div>robot_logs</div>
-          <button
-            className="Submit"
+          <div
+            className="logUsers"
             onClick={() => {
-              handleClickRobotData(robotLogRawData);
-              setSelectTab('robot_logs');
+              setSelectTab('users');
             }}
           >
-            제출
-          </button>
-        </div>
-        <div className="dateWrapper">
-          <div className="logRobotDate">날짜/시간</div>
-          <div>
-            <input
-              type="datetime-local"
-              name="robotDate"
-              onChange={logDataHandler}
-            />
+            USERS
           </div>
         </div>
-        <div className="logCountWrapper">
-          <div className="logRobotCount">이후 로그 개수</div>
-          <input
-            type="number"
-            name="robotDataCount"
-            step="5"
-            placeholder="수량"
-            min="0"
-            max="1000"
-            onChange={logDataHandler}
-          />
+        <div className="postLogData">
+          <div className="logErrorWrapper">
+            <div className="logsWrapper">
+              <div>error_logs</div>
+            </div>
+            <div className="dateWrapper">
+              <div className="logErrorDate">날짜/시간</div>
+              <div>
+                <input
+                  type="datetime-local"
+                  name="errorDate"
+                  value={logData.errorDate}
+                  onChange={logDataHandler}
+                />
+              </div>
+            </div>
+            <div className="logCountWrapper">
+              <div className="logErrorCount">이후 로그 개수</div>
+              <input
+                type="number"
+                name="errorDataCount"
+                value={logData.errorDataCount}
+                step="10"
+                placeholder="수량"
+                min="0"
+                max="1000"
+                onChange={logDataHandler}
+              />
+            </div>
+            <div className="logDataSubmitButton">
+              <button
+                className="submit"
+                onClick={() => {
+                  handleClickErrorData(errorLogRawData);
+                  setSelectTab('error_logs');
+                }}
+              >
+                제출
+              </button>
+            </div>
+          </div>
+          <div className="logServingWrapper">
+            <div className="logsWrapper">
+              <div>serving_logs</div>
+            </div>
+            <div className="dateWrapper">
+              <div className="logServingDate">날짜/시간</div>
+              <div>
+                <input
+                  type="datetime-local"
+                  name="servingDate"
+                  value={logData.servingDate}
+                  onChange={logDataHandler}
+                />
+              </div>
+            </div>
+            <div className="logCountWrapper">
+              <div className="logServingCount">이후 로그 개수</div>
+              <input
+                type="number"
+                name="servingDataCount"
+                step="10"
+                value={logData.servingDataCount}
+                placeholder="수량"
+                min="0"
+                max="1000"
+                onChange={logDataHandler}
+              />
+            </div>
+            <div className="logDataSubmitButton">
+              <button
+                className="submit"
+                onClick={() => {
+                  handleClickServingData(servingLogRawData);
+                  setSelectTab('serving_logs');
+                }}
+              >
+                제출
+              </button>
+            </div>
+          </div>
+          <div className="logRobotWrapper">
+            <div className="logsWrapper">
+              <div>robot_logs</div>
+            </div>
+            <div className="dateWrapper">
+              <div className="logRobotDate">날짜/시간</div>
+              <div>
+                <input
+                  type="datetime-local"
+                  name="robotDate"
+                  value={logData.robotDate}
+                  onChange={logDataHandler}
+                />
+              </div>
+            </div>
+            <div className="logCountWrapper">
+              <div className="logRobotCount">이후 로그 개수</div>
+              <input
+                type="number"
+                name="robotDataCount"
+                step="5"
+                value={logData.robotDataCount}
+                placeholder="수량"
+                min="0"
+                max="1000"
+                onChange={logDataHandler}
+              />
+            </div>
+            <div className="logDataSubmitButton">
+              <button
+                className="submit"
+                onClick={() => {
+                  handleClickRobotData(robotLogRawData);
+                  setSelectTab('robot_logs');
+                }}
+              >
+                제출
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

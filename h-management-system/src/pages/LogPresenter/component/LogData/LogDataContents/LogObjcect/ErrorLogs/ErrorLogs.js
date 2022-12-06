@@ -8,8 +8,8 @@ const ErrorLogs = ({ errorLogData }) => {
     errorLogData && errorLogData.map(item => Object.values(item));
 
   return (
-    <div className="mapDataContents">
-      <table className="mapDataContentsWrapper">
+    <div className="errorDataContents">
+      <table className="errorDataContentsWrapper">
         <tr>
           {objKeys &&
             objKeys[0].map((item, index) => (

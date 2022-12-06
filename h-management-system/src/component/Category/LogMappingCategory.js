@@ -1,6 +1,7 @@
 import React from 'react';
+import './LogMappingCategory.scss';
 
-const LogMappingCategory = ({ event, selectedMapId }) => {
+const LogMappingCategory = ({ event }) => {
   return (
     <select onChange={event}>
       {MAP.map(map => (
@@ -13,7 +14,7 @@ const LogMappingCategory = ({ event, selectedMapId }) => {
 };
 
 const MAP = [
-  { mapId: 0, mapName: '전체' },
+  { mapId: 0, mapName: '전체매장' },
   { mapId: 1, mapName: '향동 노리쿡' },
   { mapId: 2, mapName: '연신내 더피플버거' },
   { mapId: 3, mapName: '공유 주방' },

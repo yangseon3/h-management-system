@@ -8,8 +8,8 @@ const RobotLogs = ({ robotLogData }) => {
     robotLogData && robotLogData.map(item => Object.values(item));
 
   return (
-    <div className="mapDataContents">
-      <table className="mapDataContentsWrapper">
+    <div className="robotLogsDataContents">
+      <table className="robotLogsDataContentsWrapper">
         <tr>
           {objKeys &&
             objKeys[0].map((item, index) => (

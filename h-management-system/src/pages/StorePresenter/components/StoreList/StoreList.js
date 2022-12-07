@@ -22,7 +22,9 @@ const StoreList = ({ storeData, params }) => {
           {storeData.map(store => (
             <Link key={store.map_id} to={`/store/${store.map_id}`}>
               <li>
-                <p>{store.map_name}</p>
+                <p className="storeTitle">
+                  {store.map_name} <span className="arrowIcon">&gt;</span>
+                </p>
                 <div className="imgWrap">
                   <img
                     src={`/images/map/map-background-${store.map_id}-monitoring.png`}

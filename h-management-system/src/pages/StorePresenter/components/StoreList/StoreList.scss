@@ -1,23 +1,36 @@
 @import '/src/styles/variables.scss';
 .storeList {
-  padding: 10px;
+  padding: 1vw;
   height: 100%;
   transition: all 0.7s ease-in-out;
-  border: 1px solid black;
   overflow-y: scroll;
-  background-color: #fff;
+  background-color: $background-color;
   z-index: 99;
   .listWrap {
     @include flex(flex-start, center, null);
+    width: 100%;
     flex-wrap: wrap;
-    gap: 1vw;
+    gap: 2vw;
     margin-top: 20px;
     li {
-      width: calc((90vw - 20px) / 3);
-      border: 1px solid black;
+      padding: 1vw;
+      width: 39.375vw;
+      background-color: #fff;
+      border-radius: 0.7813vw;
+      font-size: 1.0417vw;
+      font-weight: 700;
+
+      .storeTitle {
+        margin-bottom: 1vw;
+      }
+
+      .arrowIcon {
+        margin-left: 1vw;
+      }
     }
     .imgWrap {
       height: 200px;
+      text-align: center;
 
       img {
         height: 100%;

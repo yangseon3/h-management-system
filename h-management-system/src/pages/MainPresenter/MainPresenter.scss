@@ -3,9 +3,7 @@
 .main {
   @include flex(space-between, null, null);
   margin: 0 auto;
-  margin-top: 3.6458vw;
-  width: 80vw;
-  min-height: 38.5938vw;
+  padding: 2.8125vw 1vw 1vw 1vw;
 }
 
 .robotInfoWrap {
@@ -13,7 +11,7 @@
     @include flex(flex-start, center, null);
     border: none;
     background: none;
-    font-size: 1.5vw;
+    font-size: 0.7813vw;
     cursor: pointer;
   }
 }

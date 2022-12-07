@@ -1,19 +1,17 @@
 @import '/src/styles/variables.scss';
 .robotList {
-  padding: 1vw;
+  padding-top: 2.2396vw;
   height: 100%;
   transition: inherit;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: $background-color;
   z-index: 99;
 
   .categoryWrap {
     @include flex(flex-start, center, null);
-    gap: 1vw;
+    gap: 1.0938vw;
+    margin-bottom: 1.0938vw;
     .filterBox {
       position: relative;
-      width: 8.3333vw;
+      width: 9.1146vw;
 
       select {
         width: 100%;

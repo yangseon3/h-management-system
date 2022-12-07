@@ -57,12 +57,12 @@ const TabContent = ({ before, resultData, params, date }) => {
                     {prevValue > currentValue ? (
                       <RiArrowDownSFill
                         className="compareIcon"
-                        style={{ color: 'red' }}
+                        style={{ color: '#d9376d' }}
                       />
                     ) : (
                       <RiArrowUpSFill
                         className="compareIcon"
-                        style={{ color: 'green' }}
+                        style={{ color: '#299d38' }}
                       />
                     )}
                   </span>

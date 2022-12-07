@@ -24,20 +24,23 @@ const ErrorListPresenter = ({
 
   return (
     <div className="errorListPresenter">
-      <p className="errorListTitle">Error</p>
-      <Category
-        type="errorCategory"
-        event={onChangeMapIdHandler}
-        mapId={mapId}
-      />
-      <Calendar
-        startDate={startDate}
-        setStartDate={setStartDate}
-        endDate={endDate}
-        setEndDate={setEndDate}
-        event={event}
-        mapId={mapId}
-      />
+      <div className="categoryBox">
+        <Category
+          type="errorCategory"
+          event={onChangeMapIdHandler}
+          mapId={mapId}
+        />
+      </div>
+      <div className="calendarBox">
+        <Calendar
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+          event={event}
+          mapId={mapId}
+        />
+      </div>
       <div className="errorListBox">
         {defaultErrorList &&
           defaultErrorList.error_notice?.map(
@@ -77,10 +80,10 @@ const ErrorListPresenter = ({
                   });
                 }}
               >
-                <p>error_msg : {error_msg}</p>
-                <p>current_node {current_node}:</p>
-                <p>robot_id : {robot_id}</p>
-                <p>created_at : {created_at}</p>
+                <p className="errorText">error_msg : {error_msg}</p>
+                <p className="errorText">current_node {current_node}:</p>
+                <p className="errorText">robot_id : {robot_id}</p>
+                <p className="errorText">created_at : {created_at}</p>
               </div>
             )
           )}

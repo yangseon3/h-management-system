@@ -3,11 +3,13 @@
 .errorStatic {
   margin-top: 20px;
   width: 100%;
-  border-radius: 5px;
+  height: 7.8646vw;
 
   .staticHeader {
-    margin-bottom: 20px;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
     width: 100%;
+    font-size: 1.0417vw;
     font-weight: 600;
   }
 
@@ -16,38 +18,36 @@
 
     .statisticTypeBox {
       @include flex(space-between, center, row);
-      padding: 0 20px;
-      margin-bottom: 10px;
+      padding: 0 1em;
+      margin-bottom: 0.5em;
       width: 100%;
-      height: 50px;
+      height: 2.2917vw;
       background: white;
-      border-radius: 15px;
+      border-radius: 1em;
 
       .statisticItem {
         @include flex(center, center, row);
-        width: 100px;
-        background: white;
+        width: 10em;
 
         .statisticColorBox {
-          margin-right: 10px;
-          width: 12px;
-          height: 12px;
-          border-radius: 12px;
+          margin-right: 0.5em;
+          width: 0.4688vw;
+          height: 0.4688vw;
+          border-radius: 0.4688vw;
         }
 
         .statisticText {
-          margin-top: 3px;
-          background: white;
+          margin-top: 0.2em;
+          font-size: 0.8854vw;
         }
       }
     }
+
     .statisticCountsBox {
       @include flex(space-between, center, row);
-      // padding-right: 30px;
-      padding: 0 20px;
-      margin-bottom: 10px;
+      padding: 0 1em;
       width: 100%;
-      height: 50px;
+      height: 2.2917vw;
       background: white;
       border-radius: 15px;
 
@@ -56,6 +56,7 @@
         width: 100px;
         background: white;
         font-weight: 600;
+        font-size: 0.8854vw;
       }
     }
   }

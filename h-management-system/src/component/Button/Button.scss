@@ -1,27 +1,28 @@
 @import '/src/styles/variables.scss';
 
 .button {
-  background-color: white;
 
   .primaryBtn {
-    padding-top: 2px;
-    width: 95px;
-    height: 30px;
-    border-radius: 30px;
+    padding-top: 0.1042vw;
+    width: 5.8854vw;
+    height: 1.7708vw;
+    border-radius: 1.7708vw;
     background-color: $primary-color;
     color: white;
+    font-size: 0.7813vw;
     font-weight: 500;
     border: none;
     cursor: pointer;
   }
 
   .subBtn {
-    padding-top: 2px;
-    width: 95px;
-    height: 30px;
-    border-radius: 30px;
+    padding-top: 0.1042vw;
+    width: 5.8854vw;
+    height: 1.7708vw;
+    border-radius: 1.7708vw;
     background-color: $background-color;
     color: $primary-color;
+    font-size: 0.7813vw;
     font-weight: 500;
     border: none;
     cursor: pointer;

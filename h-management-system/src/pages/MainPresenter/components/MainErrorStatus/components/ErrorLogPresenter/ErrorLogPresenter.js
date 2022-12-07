@@ -113,6 +113,8 @@ const ErrorLogPresenter = () => {
           event={handleClickDateInfo}
         />
         <div className="errorButtonBox">
+
+          <button className="styleBtn" />
           <Button
             type="subBtn"
             text="ALL"
@@ -126,90 +128,96 @@ const ErrorLogPresenter = () => {
       </div>
       <div className="errorLogBox">
         {getAllData &&
-          allData?.error_notice.map(
-            ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
-              <div className="errorLog" key={log_id}>
-                <div
-                  className="logColorBox"
-                  style={{ background: DEGREE_COLOR[risk_degree] }}
-                />
-                <div className="logDate">
-                  <p className="logDay">{format_date.split(' ')[0]}</p>
-                  <p className="logTime">
-                    {format_date.split(' ')[1] + format_date.split(' ')[2]}
-                  </p>
-                </div>
-                <div className="logInfo">
-                  <p className="logMsg">{error_msg}</p>
-                  <p className="logStore">{k_map_name}</p>
-                  <div className="logDegreeBox">
-                    <div
-                      className="logColorBox"
-                      style={{ background: DEGREE_COLOR[risk_degree] }}
-                    />
-                    <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
+          allData?.error_notice
+            .reverse()
+            .map(
+              ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
+                <div className="errorLog" key={log_id}>
+                  <div
+                    className="logColorBox"
+                    style={{ background: DEGREE_COLOR[risk_degree] }}
+                  />
+                  <div className="logDate">
+                    <p className="logDay">{format_date.split(' ')[0]}</p>
+                    <p className="logTime">
+                      {format_date.split(' ')[1] + format_date.split(' ')[2]}
+                    </p>
+                  </div>
+                  <div className="logInfo">
+                    <p className="logMsg">{error_msg}</p>
+                    <p className="logStore">{k_map_name}</p>
+                    <div className="logDegreeBox">
+                      <div
+                        className="logColorBox"
+                        style={{ background: DEGREE_COLOR[risk_degree] }}
+                      />
+                      <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          )}
+              )
+            )}
         {getCurrentData === false &&
           getAllData === false &&
-          dateData?.error_notice.map(
-            ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
-              <div className="errorLog" key={log_id}>
-                <div
-                  className="logColorBox"
-                  style={{ background: DEGREE_COLOR[risk_degree] }}
-                />
-                <div className="logDate">
-                  <p className="logDay">{format_date.split(' ')[0]}</p>
-                  <p className="logTime">
-                    {format_date.split(' ')[1] + format_date.split(' ')[2]}
-                  </p>
-                </div>
-                <div className="logInfo">
-                  <p className="logMsg">{error_msg}</p>
-                  <p className="logStore">{k_map_name}</p>
-                  <div className="logDegreeBox">
-                    <div
-                      className="logColorBox"
-                      style={{ background: DEGREE_COLOR[risk_degree] }}
-                    />
-                    <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
+          dateData?.error_notice
+            .reverse()
+            .map(
+              ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
+                <div className="errorLog" key={log_id}>
+                  <div
+                    className="logColorBox"
+                    style={{ background: DEGREE_COLOR[risk_degree] }}
+                  />
+                  <div className="logDate">
+                    <p className="logDay">{format_date.split(' ')[0]}</p>
+                    <p className="logTime">
+                      {format_date.split(' ')[1] + format_date.split(' ')[2]}
+                    </p>
+                  </div>
+                  <div className="logInfo">
+                    <p className="logMsg">{error_msg}</p>
+                    <p className="logStore">{k_map_name}</p>
+                    <div className="logDegreeBox">
+                      <div
+                        className="logColorBox"
+                        style={{ background: DEGREE_COLOR[risk_degree] }}
+                      />
+                      <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          )}
+              )
+            )}
         {getCurrentData &&
-          currentData?.error_notice.map(
-            ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
-              <div className="errorLog" key={log_id}>
-                <div
-                  className="logColorBox"
-                  style={{ background: DEGREE_COLOR[risk_degree] }}
-                />
-                <div className="logDate">
-                  <p className="logDay">{format_date.split(' ')[0]}</p>
-                  <p className="logTime">
-                    {format_date.split(' ')[1] + format_date.split(' ')[2]}
-                  </p>
-                </div>
-                <div className="logInfo">
-                  <p className="logMsg">{error_msg}</p>
-                  <p className="logStore">{k_map_name}</p>
-                  <div className="logDegreeBox">
-                    <div
-                      className="logColorBox"
-                      style={{ background: DEGREE_COLOR[risk_degree] }}
-                    />
-                    <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
+          currentData?.error_notice
+            .reverse()
+            .map(
+              ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
+                <div className="errorLog" key={log_id}>
+                  <div
+                    className="logColorBox"
+                    style={{ background: DEGREE_COLOR[risk_degree] }}
+                  />
+                  <div className="logDate">
+                    <p className="logDay">{format_date.split(' ')[0]}</p>
+                    <p className="logTime">
+                      {format_date.split(' ')[1] + format_date.split(' ')[2]}
+                    </p>
+                  </div>
+                  <div className="logInfo">
+                    <p className="logMsg">{error_msg}</p>
+                    <p className="logStore">{k_map_name}</p>
+                    <div className="logDegreeBox">
+                      <div
+                        className="logColorBox"
+                        style={{ background: DEGREE_COLOR[risk_degree] }}
+                      />
+                      <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          )}
+              )
+            )}
         <div style={{ marginTop: '20px' }} ref={scrollRef} />
       </div>
     </div>

@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
 .calendarBox {
-  @include flex('null', center, 'null');
+  @include flex(space-between, center, 'null');
   width: 100%;
 }

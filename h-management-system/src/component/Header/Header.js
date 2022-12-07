@@ -12,7 +12,6 @@ import API from 'api';
 import TabContent from './components/TabContent';
 import './Header.scss';
 import CommonModal from 'component/Modal/CommonModal';
-import Nav from 'component/Nav/Nav';
 
 const Header = () => {
   const [dateState, setDateState] = useState(new Date());
@@ -115,7 +114,6 @@ const Header = () => {
         </div>
       </div>
       <div className="headerBottom">
-        <Nav />
         <div className="robotInfoWrap">
           <button className="arrowLeft" onClick={handlePrevClick}>
             <MdOutlineKeyboardArrowLeft />

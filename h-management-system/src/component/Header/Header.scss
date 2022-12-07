@@ -1,28 +1,38 @@
 @import '/src/styles/variables.scss';
 
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
   .headerTop {
-    height: 6vh;
-    line-height: 6vh;
+    margin: 0 auto;
+    width: 98vw;
+    height: 7vh;
+    line-height: 7vh;
     background-color: $background-color;
     color: #39416b;
 
     .logo {
-      font-size: 2vw;
+      font-size: 1.5625vw;
     }
     .weatherWrap {
       @include flex(space-between, center, null);
+      padding-right: 1vw;
       width: 22vw;
       height: 3vh;
+
       .dateWrap,
       .timeWrap {
         display: flex;
         align-items: center;
         .icon {
-          font-size: 20px;
+          font-size: 1.3889vw;
         }
         p {
-          padding: 4px 4px 0;
+          padding: 0.2778vw 0.2778vw 0;
           white-space: nowrap;
           line-height: 3vh;
         }
@@ -41,22 +51,19 @@
   }
   .headerBottom {
     @include flex(space-between, null, null);
-    width: 99vw;
-    gap: 1vw;
-    // @include flex(center, center, null);
-    // height: 10vh;
-    // gap: 1.3889vw;
+    padding: 0 1vw 1vh 16.7813vw;
+    border-bottom: 1px solid $stroke-color;
+    background-color: $background-color;
 
     .robotInfoWrap {
       @include flex(space-between, center, null);
-      padding: 0 1vw;
+      padding: 0 1.5625vw;
+      height: 14.772vh;
       width: 100%;
-      height: 14vh;
       background-color: #fff;
-      border-radius: 30px;
+      border-radius: 1.5625vw;
 
       button {
-        width: 5vw;
         .arrowName {
           font-size: 1vw;
         }

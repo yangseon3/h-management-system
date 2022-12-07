@@ -113,6 +113,7 @@ const ErrorLogPresenter = () => {
           event={handleClickDateInfo}
         />
         <div className="errorButtonBox">
+
           <button className="styleBtn" />
           <Button
             type="subBtn"

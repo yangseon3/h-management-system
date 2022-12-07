@@ -4,8 +4,6 @@ import { Doughnut } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const StoreDoughnut = ({ totalRobots, availableRobots }) => {
-  console.log(totalRobots, availableRobots);
-
   const data = {
     labels: ['사용가능', '사용불가'],
     datasets: [

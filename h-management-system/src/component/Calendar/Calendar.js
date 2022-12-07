@@ -4,7 +4,6 @@ import ko from 'date-fns/locale/ko';
 import 'react-datepicker/dist/react-datepicker.css';
 import Button from 'component/Button/Button';
 import './Calendar.scss';
-import Button from 'component/Button/Button';
 
 const CustomDatePickerInput = forwardRef((props, ref) => (
   <input

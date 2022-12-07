@@ -18,8 +18,8 @@ const Kakao = () => {
     totalData &&
     totalData.map(cur => ({
       ...cur,
-      x: Number(cur.store_x_pos),
-      y: Number(cur.store_y_pos),
+      lat: Number(cur.store_lat),
+      lng: Number(cur.store_lng),
     }));
 
   return (
@@ -27,14 +27,15 @@ const Kakao = () => {
       <Map // 지도를 표시할 Container
         center={{
           // 지도의 중심좌표
-          lat: 37.4765,
-          lng: 126.818,
+          lat: 35.9,
+          lng: 127.6,
         }}
         style={{
-          width: '100%',
-          height: '450px',
+          width: '24vw',
+          height: '33.4688vw',
+          borderRadius: '0.5208vw',
         }}
-        level={12} // 지도의 확대 레벨
+        level={13} // 지도의 확대 레벨
       >
         {totalValue &&
           totalValue.map(item => (
@@ -43,7 +44,7 @@ const Kakao = () => {
                 onClick={() => {
                   navigate(`/store/${item.map_id}`);
                 }}
-                position={{ lat: item.y, lng: item.x }}
+                position={{ lat: item.lat, lng: item.lng }}
                 clickable={true} // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
                 // 마커에 마우스오버 이벤트를 등록합니다
                 onMouseOver={
@@ -64,8 +65,7 @@ const Kakao = () => {
                 {isOpen && info.map_id === item.map_id && (
                   <div
                     style={{
-                      padding: '15px',
-                      color: '#000',
+                      padding: '0.7813vw',
                     }}
                   >
                     {item.map_name}

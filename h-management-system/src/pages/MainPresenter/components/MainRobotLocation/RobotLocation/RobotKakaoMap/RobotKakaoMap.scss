@@ -1,12 +1,12 @@
 .RobotKakaoMap {
 display: flex;
 flex-direction: column;
-width: 100%;  
-.RobotKakaoMapHeader { 
-    border-bottom: 1px solid black;
-    height: 30px;
+width: 24vw;  
+.RobotKakaoMapHeader {  
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;  
+    margin:0.8333vw 0vw 1.5625vw 0vw;
+    font-size: 1.0417vw;
+    font-weight: 600; 
 }
 }

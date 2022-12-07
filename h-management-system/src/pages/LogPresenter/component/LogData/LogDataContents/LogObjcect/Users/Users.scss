@@ -1,22 +1,24 @@
 @import "../../../../../../../styles/variables.scss";
 
 .userDataContents {
-    width: 100%;
-    height: 85vh;
-    border: 1px solid red;
+    width: 80vw;
+    height: 40vw;
     overflow: scroll; 
+    border-radius: 0.7813vw;
+    padding: 1.0417vw;
+    background-color: white;
    .userDataContentsWrapper{
-    width: 100%;  
+    width: 80vw;  
+    border-spacing: 0.5208vw;
+    border-collapse: separate;
     tr {
-       line-height: 30px;
+       line-height: 1.5625vw;
     }
      th { 
         font-weight: bold;
-        border: 1px solid red;
      }
      td { 
     text-align: center;
-    border: 1px solid red;
      }
     }
 } 

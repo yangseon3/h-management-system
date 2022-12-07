@@ -1,51 +1,76 @@
 @import '../../../../../styles/variables.scss';
  
 .logDataType { 
-    border: 1px solid red;
-    width: 350px;
+  width: 22.1354vw;
+  height: 42.4479vw;
+  margin-right: 2vw; 
+  border-radius: 0vw 1.5625vw 1.5625vw 0;
+  background-color: white;
+  display: flex;
+  justify-content: center; 
+    .logDataCategoryWrapper {
+      @include flex (space-between,center,null);   
+      height: 2.6042vw;
+      margin: 0.5208vw 0vw 0.2604vw 0vw; 
+    }
+    .getLogData {
+      @include flex (space-between,center,null);  
 
-    .logHeaderWrapper {
-      @include flex (space-between,center,null); 
-      background-color: #FCE6CD;  
-      height: 50px;
-      margin: 10px 5px;
-      padding-left: 10px
     }
     .logHeader {
       @include flex (null,center,null);
-      @include font($size: 30px, $height: normal, $spacing: normal, $weight: bold); 
+      @include font($size: 1.5625vw, $height: normal, $spacing: normal, $weight: bold); 
     }
     .logMaps,.logRobots,.logUsers {
-      @include flex (null,center,null);
-      @include font($size: 18px, $height: normal, $spacing: normal, $weight: normal); 
-      height: 50px;
-      background-color: #FCE6CD; 
-      margin: 10px 5px;
-      padding-left: 10px
+      @include flex (center,center,null);
+      @include font($size: 0.9375vw, $height: normal, $spacing: normal, $weight: normal); 
+      width: 5.8854vw;
+      height: 1.7708vw; 
+      background-color: #3F488B; 
+      color: white;
+      margin: 0.5208vw 0vw 1.0417vw 0vw; 
+      border-radius: 1.5625vw;
+      cursor: pointer;
     } 
+    .postLogData {
+      @include flex (space-evenly,center,column);
+      width: 18.2292vw;
+      height: 23.4375vw;
+      background-color: #F0F3FA;
+      border-radius: 1.5625vw;    
+    }
     .logErrorWrapper,.logServingWrapper,.logRobotWrapper {
-      @include flex (center,null,column);
-      @include font($size: 18px, $height: 25px, $spacing: normal, $weight: normal); 
-      height: 120px;
-      background-color: #FCE6CD; 
-      margin: 10px 5px;
-      padding-left: 10px
+      @include flex (space-evenly,null,column);
+      @include font($size: 0.9375vw, $height: 1.3021vw, $spacing: normal, $weight: normal); 
+      width: 16.8750vw;
+      height: 6.1979vw;
+      background-color: white;  
+      padding: 0vw 0.5208vw;
+      border-radius: 0.5208vw; 
+    }  
+    .logDataSubmitButton {
+      @include flex (right,null,null);
+     .submit{
+      width: 5.8854vw;
+      height: 1.7708vw; 
+      background-color: #3F488B; 
+      color: white; 
+      border-radius: 1.5625vw;
+      cursor: pointer; 
     } 
-    .logsWrapper{
-      display: flex;
-      justify-content: space-between;
-     .Submit{
-      border-radius: 10px;
-      width: 50px;   
-     }
-    } 
+  }
+  .logsWrapper {
+    font-size: 0.6771vw;
+  }
     .dateWrapper {
       display: flex;
       justify-content: space-between;
+      font-size: 0.6771vw;
     }
     .logCountWrapper {
       display: flex;
       justify-content:space-between;
+      font-size: 0.6771vw;
     }
   }
   

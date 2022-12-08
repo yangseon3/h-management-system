@@ -3,7 +3,8 @@
 .main {
   @include flex(space-between, null, null);
   margin: 0 auto;
-  padding: 2.8125vw 1vw 1vw 1vw;
+  padding: 2vh 1vw 2vw 1vw;
+  height: 76.228vh;
 }
 
 .robotInfoWrap {

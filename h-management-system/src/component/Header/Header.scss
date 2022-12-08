@@ -51,7 +51,7 @@
   }
   .headerBottom {
     @include flex(space-between, null, null);
-    padding: 0 1vw 1vh 16.7813vw;
+    padding: 0 1vw 2vh 16.7813vw;
     border-bottom: 1px solid $stroke-color;
     background-color: $background-color;
 

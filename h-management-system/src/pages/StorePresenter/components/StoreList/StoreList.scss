@@ -1,19 +1,22 @@
 @import '/src/styles/variables.scss';
+
 .storeList {
-  padding: 1vw;
+  margin-top: 2.2396vw;
+  padding: 0 1vw 1vw;
   height: 100%;
   transition: all 0.7s ease-in-out;
-  overflow-y: scroll;
+  border-radius: 0 1.5625vw 1.5625vw 0;
   z-index: 99;
+
   .listWrap {
-    @include flex(flex-start, center, null);
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 2vw;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.1875vw;
+    row-gap: 1.9792vw;
+    margin-top: 1.0417vw;
+
     li {
-      padding: 1vw;
-      width: 39.375vw;
+      padding: 1.6667vw;
       background-color: #fff;
       border-radius: 0.7813vw;
       font-size: 1.0417vw;
@@ -28,12 +31,39 @@
       }
     }
     .imgWrap {
-      height: 200px;
+      height: 13.5417vw;
       text-align: center;
 
       img {
         height: 100%;
         object-fit: contain;
+      }
+    }
+  }
+
+  .shortcutInfo {
+    margin-top: 1.0417vw;
+    padding: 0.7292vw;
+    background-color: $background-color;
+    height: 30.9583vw;
+    border-radius: 1.5625vw;
+
+    .shortcutInfoWrap {
+      padding: 1.6667vw 1.1979vw;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 0.7813vw;
+    }
+    .shortcutTitle {
+      text-align: center;
+      .storeName {
+        display: inline-block;
+        padding: 0.4688vw 0;
+        width: 100%;
+        font-size: 1.0417vw;
+        color: #fff;
+        background-color: $subPrimary-color;
+        border-radius: 0.5208vw;
       }
     }
   }

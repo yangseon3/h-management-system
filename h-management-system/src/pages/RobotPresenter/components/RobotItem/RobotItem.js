@@ -54,8 +54,8 @@ const RobotItem = ({ robotId, data, params }) => {
       <div
         className="robotItemWrap"
         style={{
-          left: `${(posX * 100) / 1920 - 1.562}vw`,
-          top: `${(posY * 100) / 1920 - 1.562}vw`,
+          left: `${(posX * 100) / 2080 - 1.4423}vw`,
+          top: `${(posY * 100) / 2080 - 1.4423}vw`,
         }}
         onClick={handleRobotClick}
       >

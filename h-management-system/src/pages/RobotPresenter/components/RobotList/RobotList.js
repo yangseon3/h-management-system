@@ -11,11 +11,18 @@ const RobotList = ({
   sort,
 }) => {
   const robotListRef = useRef(null);
+  const displayRef = useRef(null);
   useEffect(() => {
     if (params.category !== 'all') {
-      robotListRef.current.style.width = '20vw';
+      robotListRef.current.style.width = '22vw';
+      robotListRef.current.style.height = '77.228vh';
+      robotListRef.current.style.overflowY = 'scroll';
+      displayRef.current.style.gridTemplateColumns = 'repeat(1, 1fr)';
     } else {
       robotListRef.current.style.width = '100%';
+      robotListRef.current.style.height = '100%';
+      robotListRef.current.style.overflowY = 'hidden';
+      displayRef.current.style.gridTemplateColumns = 'repeat(4, 1fr)';
     }
   }, [params]);
 
@@ -70,7 +77,7 @@ const RobotList = ({
         </div>
       </div>
 
-      <ul className="listWrap">
+      <ul className="listWrap" ref={displayRef}>
         {robotData?.map((robot, idx) => (
           <li key={idx}>
             <div className="infoWrap">
@@ -92,10 +99,13 @@ const RobotList = ({
                   {handleStateText(robot.state)}
                 </p>
                 <div className="robotIcon">
-                  <img
-                    src={`/images/robot/robot_state_${robot.state}.png`}
-                    alt="로봇이미지"
-                  />
+                  {robot.state && (
+                    <img
+                      src={`/images/robot/robot_state_${robot.state}.png`}
+                      alt="로봇이미지"
+                    />
+                  )}
+
                   <p>No. {robot.robot_id}</p>
                   <p
                     className="arrowIcon"

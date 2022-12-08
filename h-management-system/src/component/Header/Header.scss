@@ -64,8 +64,10 @@
       border-radius: 1.5625vw;
 
       button {
+        font-size: 1.5vw;
         .arrowName {
           font-size: 1vw;
+          margin-top: 0.1em;
         }
         &.arrowRight {
           @include flex(flex-end, center, null);

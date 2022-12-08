@@ -8,17 +8,13 @@ import './ErrorPresenter.scss';
 
 const ErrorPresenter = () => {
   let date = new Date();
-  let year = date?.getFullYear().toString();
-  let month = date?.getMonth();
-  let day = date?.getDate();
+  let year = date.getFullYear().toString();
+  let month = date.getMonth();
+  let day = date.getDate();
 
-  console.log(year, month, day);
-
-  const [startDate, setStartDate] = useState(new Date(year, month, day - 7));
+  const [startDate, setStartDate] = useState(new Date(year, month, day - 6));
   const [endDate, setEndDate] = useState(new Date());
   const [getDefaultData, setGetDefaultData] = useState(true);
-
-  console.log(startDate);
 
   const defaults = useQuery(['defaultErrorList'], getDefaultErrorlist, {
     enabled: getDefaultData,

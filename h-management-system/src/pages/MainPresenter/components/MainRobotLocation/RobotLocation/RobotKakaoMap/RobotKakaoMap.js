@@ -6,7 +6,7 @@ const RobotKakaoMap = () => {
   return (
     <div className="RobotKakaoMap">
       <div className="RobotKakaoMapHeader">전국 매장 위치</div>
-      <div>
+      <div className="mapWrap">
         <Kakao />
       </div>
     </div>

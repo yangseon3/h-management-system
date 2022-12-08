@@ -2,22 +2,22 @@
 
 .errorLogPresenter {
   width: 100%;
-  margin-top: 15px;
-  border-radius: 5px;
+  border-radius: 0.7813vw;
 
   .logHeader {
     width: 100%;
     font-size: 1.0417vw;
-    margin-bottom: 15px;
+    margin-bottom: 1.4063vw;
     font-weight: 600;
   }
 
   .logControllBox {
     @include flex(space-between, center, column);
-    padding: 0.625vw 1.7188vw;
+    margin-bottom: 0.7292vw;
+    padding: 0.5208vw 1.7188vw;
     width: 100%;
-    height: 5.2083vw;
-    border-radius: 15px;
+    height: 4.6875vw;
+    border-radius: 0.7813vw;
     background-color: white;
   }
 
@@ -33,12 +33,11 @@
 
   .errorLogBox {
     @include flex(null, null, column);
-    margin-top: 1.3021vw;
     padding: 1.3021vw;
     width: 100%;
     height: 19.0104vw;
     background-color: $white-color;
-    border-radius: 15px;
+    border-radius: 0.7813vw;
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -55,7 +54,6 @@
       background-color: $white-color;
 
       .logDate {
-
         margin-right: 1.9792vw;
         background-color: $white-color;
 

@@ -1,7 +1,8 @@
+@import '/src/styles/variables.scss';
+
 .mainRobotLocatioin {
-  width: 52vw;  
-  display: flex;
-  justify-content: space-between; 
+  @include flex(space-between, null, null);
+  width: 52vw;   
   .mainRobotLocatioinKakaoData {
     width: 24vw;
     border: none;  

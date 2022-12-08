@@ -79,7 +79,7 @@ const RobotList = ({
                 <div className="robotInfo">
                   <div className="subTitle">
                     <p>서빙횟수</p>
-                    <p>이동거리</p>
+                    <p>이동q거리</p>
                   </div>
                   <div>
                     <p>{robot.serving_count}회</p>

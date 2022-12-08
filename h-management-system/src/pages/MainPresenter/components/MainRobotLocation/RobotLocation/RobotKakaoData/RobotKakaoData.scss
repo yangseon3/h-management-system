@@ -1,6 +1,7 @@
+@import '/src/styles/variables.scss';
+
 .kakaoDataContainer {
-    display: flex;
-    flex-direction: column;
+    @include flex(null, null, column); 
     width: 24vw;  
     height: 80vh; 
     margin-top: 0.8333vw; 
@@ -8,24 +9,23 @@
         width: 24vw;   
     } 
     .kakaoDataImpoContent {
-        width: 24vw;
-        display: flex;
-        align-items: center;
+        @include flex(null, center, null); 
+        width: 24vw; 
         font-size: 1.0417vw;
         font-weight: bold; 
     }
     .kakaoDataItemWrapper {
+        @include flex(flex-end, center, null); 
         width: 24vw; 
-        height: 1.5625vw;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        height: 1.5625vw; 
+        text-indent: 0.2604vw;
     }
     .kakaoDataEachItem {
+        @include flex(center, center, null); 
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 0.2604;
+        padding-left: 0.5208vw
     }
     .kakaoDataErrorItem {
         width: 0.4688vw;
@@ -54,12 +54,10 @@
     }
     .kakaoDataItemType {
        font-size: 0.6771vw;
-        padding-left: 0.2604vw;
+        // padding-left: 0.2604vw;
     }
     .kakaoDataImpoWrapper{  
-        display: flex; 
-        align-items: center;
-        flex-direction: column;
+        @include flex(null, center, column);  
         margin-bottom: 1.0417vw; 
         border-radius: 0.5208vw;
         background-color: white;
@@ -70,9 +68,7 @@
         margin: 0.2604vw; 
     } 
     .kakaoDataBranchWrapper { 
-        display: flex;
-        align-items:center;
-        justify-content: space-between;
+        @include flex(space-between, center, null);   
         padding: 0.5208vw 1.0417vw 0.5208vw 1.0417vw; 
         cursor: pointer;
     }
@@ -81,12 +77,10 @@
         height: 2.9688vw;
     }
     .kakaoDataBranchMove {
+        @include flex(space-evenly, null, column); 
         width: 24vw; 
         height: 2.6042vw;
-        padding-left: 0.5208vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly; 
+        padding-left: 0.5208vw; 
     }
     .kakaoDataBranchName{
         width: 12vw;  
@@ -101,57 +95,63 @@
         font-weight:600;
     }
     .kakaoDataStatusDisplay {
+        @include flex(center, null, null); 
         width: 24vw; 
-        font-size: 0.5208vw;  
-        display: flex; 
-        justify-content: center; 
+        font-size: 0.5208vw;   
     }
     .kakaoDataGauge {
+        @include flex(null, null, null); 
         width: 22vw;
-        height: 1.1979vw;  
-        display: flex;  
-        border-radius: 0.5208vw; 
-        margin-top: 0.5208vw;
+        height: 0.7813vw;
+        margin-top: 1.0417vw;
+        border: 0.0521vw solid $primary-color;
+        background: repeating-linear-gradient(
+          90deg,
+          $primary-color 0 0.0521vw,
+          #eeeef6 0 10%
+        );
+        border-radius: 1.0417vw;
+        overflow: hidden;
+        transition: width 0.5s ease-in-out;
         .error { 
             height: 1.1979vw;
             background-color: #5755A5;
-            border-radius: 0.5208vw 0vw 0vw 0.5208vw; 
+            opacity: 0.8;
         }
         .serving { 
             height: 1.1979vw;
             background-color: #8887C0; 
+            opacity: 0.8;
         }
         .waiting { 
             height: 1.1979vw;
             background-color: #BBBCDB; 
+            opacity: 0.8;
         }
         .repair { 
             height: 1.1979vw;
             background-color: #EEEEF7;
-            border-radius:0vw 0.5208vw 0.5208vw 0vw;
+            opacity: 0.8;
         }
     }
     .kakaoData {
-        width: 24vw;
-        display: flex;
-        justify-content: space-evenly; 
+        @include flex(space-evenly, null, null); 
+        width: 24vw; 
     }
     .kakaoDataWrapper { 
+        @include flex(center, center, null); 
         width: 5.8854vw;
         height: 1.7708vw;
-        font-size: 0.7813vw;
-        display: flex; 
-        justify-content: center;
-        align-items: center;  
+        font-size: 0.7813vw; 
         border-radius: 1.0417vw;
         background-color: #F1F3FA;
     }
-.storeDataCount {
+    .storeDataCount {
     font-weight: bold;
     text-indent: 0.2604vw;
+    }
+    .kakaoDataViewMore {
+      text-align: center;
+      font-size: 1.0417vw;
 }
-.kakaoDataViewMore {
-    text-align: center;
-    font-size: 1.0417vw;
-}
-}
+} 

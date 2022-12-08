@@ -93,6 +93,7 @@ const LogDataType = props => {
               <div className="logErrorDate">날짜/시간</div>
               <div>
                 <input
+                  className="logDateTime"
                   type="datetime-local"
                   name="errorDate"
                   value={logData.errorDate}
@@ -133,6 +134,7 @@ const LogDataType = props => {
               <div className="logServingDate">날짜/시간</div>
               <div>
                 <input
+                  className="logDateTime"
                   type="datetime-local"
                   name="servingDate"
                   value={logData.servingDate}
@@ -173,6 +175,7 @@ const LogDataType = props => {
               <div className="logRobotDate">날짜/시간</div>
               <div>
                 <input
+                  className="logDateTime"
                   type="datetime-local"
                   name="robotDate"
                   value={logData.robotDate}

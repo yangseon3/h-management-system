@@ -1,10 +1,7 @@
 @import '../../../../../styles/variables.scss';
  
-.logDataType { 
-  // width: 22.1354vw;
-  // height: 42.4479vw;
-  width: 25vw;
-  height: 40vw;
+.logDataType {  
+  width: 25vw; 
   margin-right: 2vw; 
   border-radius: 0vw 1.5625vw 1.5625vw 0vw;
   background-color: white;
@@ -59,23 +56,26 @@
       color: white; 
       border-radius: 1.5625vw;
       border: none;
-      cursor: pointer; 
+      cursor: pointer;  
     } 
   }
   .logsWrapper {
     font-size: 0.6771vw;
   }
     .dateWrapper {
-      display: flex;
-      justify-content: space-between;
+      @include flex (space-between,null,null); 
       font-size: 0.6771vw;
       .logDateTime {
-        width: 11vw;
+        width: 11.5vw;
+        font-size: 0.7108vw;
       }
     }
     .logCountWrapper {
-      display: flex;
-      justify-content:space-between;
+      @include flex (space-between,null,null);  
+      font-size: 0.6771vw;
+    }
+    .logDataNumber {
+      width: 2.5vw;
       font-size: 0.6771vw;
     }
   }

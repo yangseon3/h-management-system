@@ -104,6 +104,7 @@ const LogDataType = props => {
             <div className="logCountWrapper">
               <div className="logErrorCount">이후 로그 개수</div>
               <input
+                className="logDataNumber"
                 type="number"
                 name="errorDataCount"
                 value={logData.errorDataCount}
@@ -145,6 +146,7 @@ const LogDataType = props => {
             <div className="logCountWrapper">
               <div className="logServingCount">이후 로그 개수</div>
               <input
+                className="logDataNumber"
                 type="number"
                 name="servingDataCount"
                 step="10"
@@ -186,6 +188,7 @@ const LogDataType = props => {
             <div className="logCountWrapper">
               <div className="logRobotCount">이후 로그 개수</div>
               <input
+                className="logDataNumber"
                 type="number"
                 name="robotDataCount"
                 step="5"

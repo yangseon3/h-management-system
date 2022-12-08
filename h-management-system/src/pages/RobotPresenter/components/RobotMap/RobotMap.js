@@ -11,7 +11,7 @@ const RobotMap = ({ robotData, params }) => {
       robotMapRef.current.style.padding = '0';
     } else {
       robotMapRef.current.style.opacity = '1';
-      robotMapRef.current.style.width = '64.6042vw';
+      robotMapRef.current.style.width = '59.7885vw';
       robotMapRef.current.style.padding = '1vw';
     }
   }, [params]);

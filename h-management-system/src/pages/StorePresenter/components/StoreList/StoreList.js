@@ -8,11 +8,19 @@ const StoreList = ({ storeData, params }) => {
   useEffect(() => {
     if (params.category === 'all') {
       storeListRef.current.style.width = '100%';
+      storeListRef.current.style.backgroundColor = 'transparent';
+      storeListRef.current.style.height = 'auto';
+      storeListRef.current.style.marginLeft = '0';
     } else {
-      storeListRef.current.style.width = '24vw';
+      storeListRef.current.style.width = '22vw';
+      storeListRef.current.style.backgroundColor = '#fff';
+      storeListRef.current.style.height = 'calc(100vh - 2.2396vw - 22.772vh)';
+      storeListRef.current.style.marginLeft = '-1.5625vw';
+      storeListRef.current.style.padding = '1vw 1vw 1vw 2.5625vw';
     }
   }, [params]);
   const storeSelected = storeData && storeData[0];
+  console.log(storeSelected);
 
   return (
     <div className="storeList" ref={storeListRef}>
@@ -37,10 +45,16 @@ const StoreList = ({ storeData, params }) => {
         </ul>
       ) : (
         storeSelected && (
-          <div className="shortCutInfo">
-            <p>{storeSelected.map_name}</p>
-            <p>{storeSelected.descirbe}</p>
-            <p>{storeSelected.descirbe}</p>
+          <div className="shortcutInfo">
+            <div className="shortcutInfoWrap">
+              <div className="shortcutTitle">
+                <p>Map Name</p>
+                <p className="storeName">{storeSelected.map_name}</p>
+              </div>
+              <p>{storeSelected.map_name}</p>
+              <p>{storeSelected.descirbe}</p>
+              <p>{storeSelected.descirbe}</p>
+            </div>
           </div>
         )
       )}

@@ -1,10 +1,12 @@
 @import '../../../../../styles/variables.scss';
  
 .logDataType { 
-  width: 22.1354vw;
-  height: 42.4479vw;
+  // width: 22.1354vw;
+  // height: 42.4479vw;
+  width: 25vw;
+  height: 40vw;
   margin-right: 2vw; 
-  border-radius: 0vw 1.5625vw 1.5625vw 0;
+  border-radius: 0vw 1.5625vw 1.5625vw 0vw;
   background-color: white;
   display: flex;
   justify-content: center; 
@@ -56,6 +58,7 @@
       background-color: #3F488B; 
       color: white; 
       border-radius: 1.5625vw;
+      border: none;
       cursor: pointer; 
     } 
   }
@@ -66,6 +69,9 @@
       display: flex;
       justify-content: space-between;
       font-size: 0.6771vw;
+      .logDateTime {
+        width: 11vw;
+      }
     }
     .logCountWrapper {
       display: flex;

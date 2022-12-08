@@ -1,9 +1,10 @@
 @import "../../../../../../../styles/variables.scss";
 
-.errorDataContents {
-   height: 40vw;
+.errorDataContents { 
+   width: 60.7vw; 
+   height: 76vh;
    overflow: scroll; 
-   border-radius: 0.7813vw;
+   border-radius: 1.5625vw;
    padding: 1.0417vw;
    background-color: white;
    .errorDataContentsWrapper{
@@ -13,11 +14,13 @@
     tr {
       line-height: 1.5625vw;
     }
-     th { 
-        font-weight: bold;
-     }
-     td { 
-    text-align: center;
-     }
+    th { 
+      font-weight: bold;
+      font-size: 0.8333vw;
+   }
+   td { 
+      text-align: center;
+      font-size: 0.8333vw;
+   }
     }
 } 

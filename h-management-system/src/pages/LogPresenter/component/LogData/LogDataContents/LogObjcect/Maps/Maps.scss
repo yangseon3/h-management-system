@@ -1,9 +1,10 @@
 @import "../../../../../../../styles/variables.scss";
 
 .mapDataContents {  
-   height: 40vw;
-   overflow: scroll; 
-   border-radius: 0.7813vw;
+   width: 60.7vw; 
+   height: 76vh;
+   overflow: scroll;
+   border-radius: 1.5625vw;
    padding: 1.0417vw;
    background-color: white;
    .mapDataContentsWrapper{
@@ -15,9 +16,11 @@
     }
      th { 
         font-weight: bold;
+        font-size: 0.8333vw;
      }
      td { 
-    text-align: center;
+        text-align: center;
+        font-size: 0.8333vw;
      }
     }
 } 

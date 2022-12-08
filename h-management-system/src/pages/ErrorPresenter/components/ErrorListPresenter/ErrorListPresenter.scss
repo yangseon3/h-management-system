@@ -1,39 +1,54 @@
 @import '../../../../styles/variables.scss';
 
 .errorListPresenter {
-  padding: 10px;
-  width: 23%;
-  height: 700px;
-  border: 1px solid black;
+  padding: 1.6146vw 0.9375vw;
+  width: 20.2083vw;
+  // height: 42.9688vw;
+  height: 76.228vh;
+  background: $white-color;
+  border-top-right-radius: 1.5625vw;
+  border-bottom-right-radius: 1.5625vw;
 
-  .errorListTitle {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 600;
+  .categoryBox {
+    margin-bottom: 0.9896vw;
+  }
+  .calendarBox {
+    margin-bottom: 0.5896vw;
   }
 
   .errorListBox {
+    padding: 0.7292vw;
     width: 100%;
-    padding: 10px;
-    height: 600px;
-    border: 1px solid black;
-    margin-top: 10px;
+    height: 58vh;
+    border-radius: 1.5625vw;
+    background: $background-color;
     overflow: scroll;
     overflow-x: hidden;
   }
 
   .errorList {
-    margin-bottom: 10px;
+    margin-bottom: 0.6771vw;
+    padding: 0.6771vw;
     width: 100%;
-    border: 1px solid black;
-    padding: 10px;
-    font-size: 13px;
+    min-height: 4.0625vw;
+    border-radius: 0.7813vw;
+    background: $white-color;
+    cursor: pointer;
   }
+
   .checkedErrorList {
-    margin-bottom: 10px;
+    margin-bottom: 0.6771vw;
     width: 100%;
-    border: 3px solid black;
-    padding: 10px;
-    font-size: 13px;
+    min-height: 4.0625vw;
+    border-radius: 0.7813vw;
+    background: $primary-color;
+    color: $white-color;
+    padding: 0.6771vw;
+    cursor: pointer;
+  }
+
+  .errorText {
+    margin-bottom: 0.1042vw;
+    font-size: 0.6771vw;
   }
 }

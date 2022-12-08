@@ -1,26 +1,28 @@
 @import '/src/styles/variables.scss';
 
 .errorDetailInfo {
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 15px;
+  width: 18.6979vw;
+  max-height: 17.8646vw;
+  padding: 1.1979vw;
+  border-radius: 0.7813vw;
   background-color: $white-color;
 
   .infoContentsBox {
-    padding: 20px;
+    padding: 1.1979vw;
     width: 100%;
     height: 100%;
-    border: 1px solid black;
-    border-radius: 15px;
+    background: $background-color;
+    border-radius: 0.7813vw;
 
     .titleText {
+      font-size: 0.8854vw;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 1vw;
     }
 
     .contentsText {
-      font-size: 14px;
-      margin: 10px 0;
+      font-size: 0.6771vw;
+      margin: 0.5vw 0;
     }
   }
 }

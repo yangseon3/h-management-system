@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation } from 'react-query';
 import { postDetailContentData } from 'pages/ErrorPresenter/ErrorController';
 import './ErrorDetailSolution.scss';
+import Button from 'component/Button/Button';
 
 const ErrorDetailSolution = ({
   errorInfo,
@@ -87,15 +88,12 @@ const ErrorDetailSolution = ({
           )}
         </div>
         <div className="solutionButtonBox">
-          <button className="solutionEditButton" onClick={handleClickDisabled}>
-            수정
-          </button>
-          <button
-            className="solutionSubmitButton"
-            onClick={handleClickPostContentData}
-          >
-            제출
-          </button>
+          <Button type="subBtn" text="수정" event={handleClickDisabled} />
+          <Button
+            type="primaryBtn"
+            text="저장"
+            event={handleClickPostContentData}
+          />
         </div>
       </div>
       <div className="solutionContentsBox">

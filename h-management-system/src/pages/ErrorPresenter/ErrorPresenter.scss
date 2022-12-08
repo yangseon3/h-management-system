@@ -2,8 +2,8 @@
 
 .errorPresenter {
   @include flex(space-between, 'null', 'null');
+  margin-top: 1vh;
+  padding-right: 1.6667vw;
   width: 100%;
-  margin-top: 30px;
-  padding-left: 6vw;
-  padding-right: 1vw;
+  height: 76.228vh;
 }

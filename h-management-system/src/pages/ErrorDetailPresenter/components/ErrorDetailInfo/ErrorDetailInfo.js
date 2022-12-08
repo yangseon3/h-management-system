@@ -10,13 +10,13 @@ const ErrorDetailInfo = ({ error }) => {
           최근 일주일 에러횟수 : {error && error.week_error_count}번
         </p>
         <p className="contentsText">
-          최근 일주일 서빙횟수 :{error && error.week_serving_count}번
+          최근 일주일 서빙횟수 : {error && error.week_serving_count}번
         </p>
         <p className="contentsText">
-          최근 한달 에러횟수 : {error && error.month_error_count}번
+          최근 한 달 에러횟수 : {error && error.month_error_count}번
         </p>
         <p className="contentsText">
-          최근 한달 서빙횟수 : {error && error.month_serving_count}번
+          최근 한 달 서빙횟수 : {error && error.month_serving_count}번
         </p>
       </div>
     </div>

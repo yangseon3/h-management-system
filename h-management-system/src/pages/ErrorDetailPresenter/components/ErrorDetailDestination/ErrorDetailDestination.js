@@ -8,28 +8,30 @@ const ErrorDetailDestination = ({ error }) => {
   return (
     <div className="errorDetailDestination">
       <div className="destinationContentsBox">
-        <p className="titleText">
-          최근 목적지
-          <span className="dataText">
-            {error && error.recent_table}번 테이블
-          </span>
-        </p>
-        <p className="titleText">
-          최근 배터리
-          <span className="dataText">{error && error.battery}%</span>
-        </p>
-        <p className="titleText">
-          최근 경로
-          <span className="dataText">{error && error.robot_path}</span>
-        </p>
-        <p className="titleText">
-          최근 Final, Target
-          <span className="dataText">
-            {final}번 , {target}번
-          </span>
-        </p>
-        <p className="titleText">Map 상황</p>
-        <p>{error && error.map_existence}</p>
+        <div className="textBox">
+          <p className="titleText">최근 목적지</p>
+          <p className="dataText">: {error && error.recent_table}번 테이블</p>
+        </div>
+        <div className="textBox">
+          <p className="titleText">최근 배터리</p>
+          <p className="dataText">: {error && error.battery}%</p>
+        </div>
+        <div className="textBox">
+          <p className="titleText">최근 경로</p>
+          <p className="dataText">: {error && error.robot_path}</p>
+        </div>
+        <div className="textBox">
+          <p className="titleText">최근 Final, Target</p>
+          <p className="dataText">
+            : {final}번 , {target}번
+          </p>
+        </div>
+        <div className="textBox">
+          <p className="titleText">Map 상황</p>
+        </div>
+        <div className="mapTextBox">
+          <p className="dataText">{error && error.map_existence}</p>
+        </div>
       </div>
     </div>
   );

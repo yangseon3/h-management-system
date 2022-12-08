@@ -8,6 +8,8 @@ const Nav = () => {
   const location = useLocation();
   const page = location.pathname.split('/')[1];
 
+  console.log(page);
+
   return (
     <div className="mainTab">
       <div className="navContainer">
@@ -53,7 +55,11 @@ const SIDE_TAB = [
     path: '/store/all',
   },
   { tabname: '로봇', icon: '/images/icons/robot_menu_', path: '/robot/all' },
-  { tabname: '에러', icon: '/images/icons/error_menu_', path: '/error' },
+  {
+    tabname: '에러',
+    icon: '/images/icons/error_menu_',
+    path: '/error',
+  },
   { tabname: '로그', icon: '/images/icons/log_menu_', path: '/log' },
   { tabname: '통계', icon: '/images/icons/chart_menu_', path: '/chart' },
 ];

@@ -22,6 +22,8 @@ const ErrorListPresenter = ({
     setMapId(parseInt(e.target.value));
   };
 
+  console.log(defaultErrorList);
+
   return (
     <div className="errorListPresenter">
       <div className="categoryBox">
@@ -81,7 +83,7 @@ const ErrorListPresenter = ({
                 }}
               >
                 <p className="errorText">error_msg : {error_msg}</p>
-                <p className="errorText">current_node {current_node}:</p>
+                <p className="errorText">current_node : {current_node}</p>
                 <p className="errorText">robot_id : {robot_id}</p>
                 <p className="errorText">created_at : {created_at}</p>
               </div>

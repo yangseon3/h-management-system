@@ -36,14 +36,15 @@ const LineBarChart = ({ error }) => {
         label: 'Serve Counts',
         borderRadius: 2,
         data: error && error.serving_count,
-        backgroundColor: '#75A1DE',
+        backgroundColor: '#8887c0',
         fontColor: 'white',
+        barThickness: 20,
       },
     ],
   };
 
   return (
-    <div style={{ height: '20rem' }}>
+    <div className="chartBox">
       <Bar data={data} options={optionsChart} />
     </div>
   );

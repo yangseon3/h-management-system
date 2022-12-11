@@ -11,6 +11,7 @@ import Calendar from 'component/Calendar/Calendar';
 import ConvertCurTime from 'utils/ConvertCurTime';
 import ConvertStrCurTime from 'utils/ConvertStrCurTime';
 import './ErrorLogPresenter.scss';
+import { useNavigate } from 'react-router-dom';
 
 const ErrorLogPresenter = () => {
   //시작날짜, 끝나는 날짜를 관리하는 state
@@ -23,6 +24,8 @@ const ErrorLogPresenter = () => {
   const [getCurrentData, setGetCurrentData] = useState(false);
 
   const scrollRef = useRef();
+
+  const navigate = useNavigate();
 
   // 메인페이지 들어올 시 스크롤 아래로 이동
   useEffect(() => {
@@ -130,8 +133,18 @@ const ErrorLogPresenter = () => {
           allData?.error_notice
             .reverse()
             .map(
-              ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
-                <div className="errorLog" key={log_id}>
+              ({
+                risk_degree,
+                error_msg,
+                k_map_name,
+                format_date,
+                error_id,
+                robot_id,
+                created_at,
+                map_id,
+                error_type,
+              }) => (
+                <div className="errorLog" key={error_id}>
                   <div
                     className="logColorBox"
                     style={{ background: DEGREE_COLOR[risk_degree] }}
@@ -142,7 +155,28 @@ const ErrorLogPresenter = () => {
                       {format_date.split(' ')[1] + format_date.split(' ')[2]}
                     </p>
                   </div>
-                  <div className="logInfo">
+                  <div
+                    className="logInfo"
+                    onClick={() => {
+                      navigate(`/errorDetail/${error_id}`, {
+                        state: {
+                          initialInfo: {
+                            map_id,
+                            startDate: new Date(created_at.split(' ')[0]),
+                            endDate: new Date(created_at.split(' ')[0]),
+                          },
+                          error: {
+                            robot_id,
+                            created_at,
+                            map_id,
+                            error_type,
+                            error_id,
+                          },
+                          errorList: allData,
+                        },
+                      });
+                    }}
+                  >
                     <p className="logMsg">{error_msg}</p>
                     <p className="logStore">{k_map_name}</p>
                     <div className="logDegreeBox">
@@ -161,8 +195,18 @@ const ErrorLogPresenter = () => {
           dateData?.error_notice
             .reverse()
             .map(
-              ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
-                <div className="errorLog" key={log_id}>
+              ({
+                risk_degree,
+                error_msg,
+                k_map_name,
+                format_date,
+                error_id,
+                robot_id,
+                created_at,
+                map_id,
+                error_type,
+              }) => (
+                <div className="errorLog" key={error_id}>
                   <div
                     className="logColorBox"
                     style={{ background: DEGREE_COLOR[risk_degree] }}
@@ -173,7 +217,28 @@ const ErrorLogPresenter = () => {
                       {format_date.split(' ')[1] + format_date.split(' ')[2]}
                     </p>
                   </div>
-                  <div className="logInfo">
+                  <div
+                    className="logInfo"
+                    onClick={() => {
+                      navigate(`/errorDetail/${error_id}`, {
+                        state: {
+                          initialInfo: {
+                            map_id,
+                            startDate: new Date(created_at.split(' ')[0]),
+                            endDate: new Date(created_at.split(' ')[0]),
+                          },
+                          error: {
+                            robot_id,
+                            created_at,
+                            map_id,
+                            error_type,
+                            error_id,
+                          },
+                          errorList: dateData,
+                        },
+                      });
+                    }}
+                  >
                     <p className="logMsg">{error_msg}</p>
                     <p className="logStore">{k_map_name}</p>
                     <div className="logDegreeBox">
@@ -191,8 +256,18 @@ const ErrorLogPresenter = () => {
           currentData?.error_notice
             .reverse()
             .map(
-              ({ log_id, risk_degree, error_msg, k_map_name, format_date }) => (
-                <div className="errorLog" key={log_id}>
+              ({
+                risk_degree,
+                error_msg,
+                k_map_name,
+                format_date,
+                error_id,
+                robot_id,
+                created_at,
+                map_id,
+                error_type,
+              }) => (
+                <div className="errorLog" key={error_id}>
                   <div
                     className="logColorBox"
                     style={{ background: DEGREE_COLOR[risk_degree] }}
@@ -203,7 +278,28 @@ const ErrorLogPresenter = () => {
                       {format_date.split(' ')[1] + format_date.split(' ')[2]}
                     </p>
                   </div>
-                  <div className="logInfo">
+                  <div
+                    className="logInfo"
+                    onClick={() => {
+                      navigate(`/errorDetail/${error_id}`, {
+                        state: {
+                          initialInfo: {
+                            map_id,
+                            startDate: new Date(created_at.split(' ')[0]),
+                            endDate: new Date(created_at.split(' ')[0]),
+                          },
+                          error: {
+                            robot_id,
+                            created_at,
+                            map_id,
+                            error_type,
+                            error_id,
+                          },
+                          errorList: currentData,
+                        },
+                      });
+                    }}
+                  >
                     <p className="logMsg">{error_msg}</p>
                     <p className="logStore">{k_map_name}</p>
                     <div className="logDegreeBox">

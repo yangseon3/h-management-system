@@ -1,8 +1,22 @@
 @import '../../../../styles/variables.scss';
 
 .countChart {
+  @include flex(null, center, column);
+  padding: 0;
   width: 19.2708vw;
   height: 21.2708vw;
   border-radius: 0.7813vw;
   background: $white-color;
+
+  .chartName {
+    margin: 1.5vw;
+    font-weight: 600;
+  }
+
+  .chartContent {
+    @include flex(center, center, null);
+    width: 19.2708vw;
+    height: 15vw;
+    cursor: pointer;
+  }
 }

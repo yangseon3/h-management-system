@@ -22,8 +22,6 @@ const ErrorListPresenter = ({
     setMapId(parseInt(e.target.value));
   };
 
-  console.log(defaultErrorList);
-
   return (
     <div className="errorListPresenter">
       <div className="categoryBox">

@@ -4,7 +4,7 @@ import { Doughnut } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import './DoughnutChart.scss';
 
-const DoughnutChart = ({ error }) => {
+const DoughnutChart = ({ error, name }) => {
   const errorLabels = [];
 
   for (let key in error) {
@@ -42,44 +42,47 @@ const DoughnutChart = ({ error }) => {
 
   return (
     <div className="countChart">
-      <Doughnut
-        data={data}
-        options={{
-          cutoutPercentage: 75,
-          legend: {
-            display: false,
-          },
-          plugins: {
-            doughnutlabel: {
-              labels: [
-                {
-                  text: total,
-                  font: {
-                    size: '30',
-                  },
-                  color: 'black',
-                },
-              ],
+      <p className="chartName">{name}</p>
+      <div className="chartContent">
+        <Doughnut
+          data={data}
+          options={{
+            cutoutPercentage: 75,
+            legend: {
+              display: false,
             },
-            // ChartDataLabels: {
-            //   text: 'asd',
-            //   color: 'black',
-            //   font: {
-            //     size: 14,
-            //     weight: 'bold',
-            //   },
-            // },
-            datalabels: {
-              display: true,
-              color: 'black',
-              font: {
-                size: 14,
-                weight: 'bold',
+            plugins: {
+              doughnutlabel: {
+                labels: [
+                  {
+                    text: total,
+                    font: {
+                      size: '30',
+                    },
+                    color: 'black',
+                  },
+                ],
+              },
+              // ChartDataLabels: {
+              //   text: 'asd',
+              //   color: 'black',
+              //   font: {
+              //     size: 14,
+              //     weight: 'bold',
+              //   },
+              // },
+              datalabels: {
+                display: true,
+                color: 'black',
+                font: {
+                  size: 14,
+                  weight: 'bold',
+                },
               },
             },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
     </div>
   );
 };

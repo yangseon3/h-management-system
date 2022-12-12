@@ -71,7 +71,7 @@ const ErrorDetailSolution = ({
             <input
               className="solutionInput"
               name="manager"
-              value={contentInfo.manager}
+              value={contentInfo.manager || ''}
               type="text"
               placeholder="담당자"
               disabled
@@ -81,7 +81,7 @@ const ErrorDetailSolution = ({
               className="solutionInput"
               name="manager"
               onChange={contentInfoHandler}
-              value={contentInfo.manager}
+              value={contentInfo.manager || ''}
               type="text"
               placeholder="담당자"
             />

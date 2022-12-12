@@ -26,7 +26,7 @@ const ErrorStatisticPresenter = () => {
           console.log(result);
         }
       },
-      // refetchInterval: 1000,
+      refetchInterval: 1000,
     }
   );
 

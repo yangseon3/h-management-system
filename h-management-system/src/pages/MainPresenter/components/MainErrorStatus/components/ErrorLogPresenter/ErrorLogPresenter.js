@@ -23,14 +23,7 @@ const ErrorLogPresenter = () => {
   const [getAllData, setGetAllData] = useState(true);
   const [getCurrentData, setGetCurrentData] = useState(false);
 
-  const scrollRef = useRef();
-
   const navigate = useNavigate();
-
-  // 메인페이지 들어올 시 스크롤 아래로 이동
-  useEffect(() => {
-    scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-  }, []);
 
   //쿼리 목록들
   const QUERIES = [
@@ -53,7 +46,7 @@ const ErrorLogPresenter = () => {
           let [err, result] = data;
           err && console.log(result);
         },
-        // refetchInterval: 1000,
+        refetchInterval: 1000,
       };
     })
   );
@@ -97,13 +90,6 @@ const ErrorLogPresenter = () => {
   //기간별 오류들
   const dateData = postDateInfo.data && postDateInfo.data[1];
 
-  console.log(allData);
-
-  // 메시지 state 변경 시 스크롤 아래로 이동
-  useEffect(() => {
-    scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-  }, [allData, currentData, dateData]);
-
   return (
     <div className="errorLogPresenter">
       <div className="logHeader">에러 알림</div>
@@ -130,190 +116,183 @@ const ErrorLogPresenter = () => {
       </div>
       <div className="errorLogBox">
         {getAllData &&
-          allData?.error_notice
-            .reverse()
-            .map(
-              ({
-                risk_degree,
-                error_msg,
-                k_map_name,
-                format_date,
-                error_id,
-                robot_id,
-                created_at,
-                map_id,
-                error_type,
-              }) => (
-                <div className="errorLog" key={error_id}>
-                  <div
-                    className="logColorBox"
-                    style={{ background: DEGREE_COLOR[risk_degree] }}
-                  />
-                  <div className="logDate">
-                    <p className="logDay">{format_date.split(' ')[0]}</p>
-                    <p className="logTime">
-                      {format_date.split(' ')[1] + format_date.split(' ')[2]}
-                    </p>
-                  </div>
-                  <div
-                    className="logInfo"
-                    onClick={() => {
-                      navigate(`/errorDetail/${error_id}`, {
-                        state: {
-                          initialInfo: {
-                            map_id,
-                            startDate: new Date(created_at.split(' ')[0]),
-                            endDate: new Date(created_at.split(' ')[0]),
-                          },
-                          error: {
-                            robot_id,
-                            created_at,
-                            map_id,
-                            error_type,
-                            error_id,
-                          },
-                          errorList: allData,
+          allData?.error_notice.map(
+            ({
+              risk_degree,
+              error_msg,
+              k_map_name,
+              format_date,
+              error_id,
+              robot_id,
+              created_at,
+              map_id,
+              error_type,
+            }) => (
+              <div className="errorLog" key={error_id}>
+                <div
+                  className="logColorBox"
+                  style={{ background: DEGREE_COLOR[risk_degree] }}
+                />
+                <div className="logDate">
+                  <p className="logDay">{format_date.split(' ')[0]}</p>
+                  <p className="logTime">
+                    {format_date.split(' ')[1] + format_date.split(' ')[2]}
+                  </p>
+                </div>
+                <div
+                  className="logInfo"
+                  onClick={() => {
+                    navigate(`/errorDetail/${error_id}`, {
+                      state: {
+                        initialInfo: {
+                          map_id,
+                          startDate: new Date(created_at.split(' ')[0]),
+                          endDate: new Date(created_at.split(' ')[0]),
                         },
-                      });
-                    }}
-                  >
-                    <p className="logMsg">{error_msg}</p>
-                    <p className="logStore">{k_map_name}</p>
-                    <div className="logDegreeBox">
-                      <div
-                        className="logColorBox"
-                        style={{ background: DEGREE_COLOR[risk_degree] }}
-                      />
-                      <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
-                    </div>
+                        error: {
+                          robot_id,
+                          created_at,
+                          map_id,
+                          error_type,
+                          error_id,
+                        },
+                        errorList: allData,
+                      },
+                    });
+                  }}
+                >
+                  <p className="logMsg">{error_msg}</p>
+                  <p className="logStore">{k_map_name}</p>
+                  <div className="logDegreeBox">
+                    <div
+                      className="logColorBox"
+                      style={{ background: DEGREE_COLOR[risk_degree] }}
+                    />
+                    <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
                   </div>
                 </div>
-              )
-            )}
+              </div>
+            )
+          )}
         {getCurrentData === false &&
           getAllData === false &&
-          dateData?.error_notice
-            .reverse()
-            .map(
-              ({
-                risk_degree,
-                error_msg,
-                k_map_name,
-                format_date,
-                error_id,
-                robot_id,
-                created_at,
-                map_id,
-                error_type,
-              }) => (
-                <div className="errorLog" key={error_id}>
-                  <div
-                    className="logColorBox"
-                    style={{ background: DEGREE_COLOR[risk_degree] }}
-                  />
-                  <div className="logDate">
-                    <p className="logDay">{format_date.split(' ')[0]}</p>
-                    <p className="logTime">
-                      {format_date.split(' ')[1] + format_date.split(' ')[2]}
-                    </p>
-                  </div>
-                  <div
-                    className="logInfo"
-                    onClick={() => {
-                      navigate(`/errorDetail/${error_id}`, {
-                        state: {
-                          initialInfo: {
-                            map_id,
-                            startDate: new Date(created_at.split(' ')[0]),
-                            endDate: new Date(created_at.split(' ')[0]),
-                          },
-                          error: {
-                            robot_id,
-                            created_at,
-                            map_id,
-                            error_type,
-                            error_id,
-                          },
-                          errorList: dateData,
+          dateData?.error_notice.map(
+            ({
+              risk_degree,
+              error_msg,
+              k_map_name,
+              format_date,
+              error_id,
+              robot_id,
+              created_at,
+              map_id,
+              error_type,
+            }) => (
+              <div className="errorLog" key={error_id}>
+                <div
+                  className="logColorBox"
+                  style={{ background: DEGREE_COLOR[risk_degree] }}
+                />
+                <div className="logDate">
+                  <p className="logDay">{format_date.split(' ')[0]}</p>
+                  <p className="logTime">
+                    {format_date.split(' ')[1] + format_date.split(' ')[2]}
+                  </p>
+                </div>
+                <div
+                  className="logInfo"
+                  onClick={() => {
+                    navigate(`/errorDetail/${error_id}`, {
+                      state: {
+                        initialInfo: {
+                          map_id,
+                          startDate: new Date(created_at.split(' ')[0]),
+                          endDate: new Date(created_at.split(' ')[0]),
                         },
-                      });
-                    }}
-                  >
-                    <p className="logMsg">{error_msg}</p>
-                    <p className="logStore">{k_map_name}</p>
-                    <div className="logDegreeBox">
-                      <div
-                        className="logColorBox"
-                        style={{ background: DEGREE_COLOR[risk_degree] }}
-                      />
-                      <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
-                    </div>
+                        error: {
+                          robot_id,
+                          created_at,
+                          map_id,
+                          error_type,
+                          error_id,
+                        },
+                        errorList: dateData,
+                      },
+                    });
+                  }}
+                >
+                  <p className="logMsg">{error_msg}</p>
+                  <p className="logStore">{k_map_name}</p>
+                  <div className="logDegreeBox">
+                    <div
+                      className="logColorBox"
+                      style={{ background: DEGREE_COLOR[risk_degree] }}
+                    />
+                    <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
                   </div>
                 </div>
-              )
-            )}
+              </div>
+            )
+          )}
         {getCurrentData &&
-          currentData?.error_notice
-            .reverse()
-            .map(
-              ({
-                risk_degree,
-                error_msg,
-                k_map_name,
-                format_date,
-                error_id,
-                robot_id,
-                created_at,
-                map_id,
-                error_type,
-              }) => (
-                <div className="errorLog" key={error_id}>
-                  <div
-                    className="logColorBox"
-                    style={{ background: DEGREE_COLOR[risk_degree] }}
-                  />
-                  <div className="logDate">
-                    <p className="logDay">{format_date.split(' ')[0]}</p>
-                    <p className="logTime">
-                      {format_date.split(' ')[1] + format_date.split(' ')[2]}
-                    </p>
-                  </div>
-                  <div
-                    className="logInfo"
-                    onClick={() => {
-                      navigate(`/errorDetail/${error_id}`, {
-                        state: {
-                          initialInfo: {
-                            map_id,
-                            startDate: new Date(created_at.split(' ')[0]),
-                            endDate: new Date(created_at.split(' ')[0]),
-                          },
-                          error: {
-                            robot_id,
-                            created_at,
-                            map_id,
-                            error_type,
-                            error_id,
-                          },
-                          errorList: currentData,
+          currentData?.error_notice.map(
+            ({
+              risk_degree,
+              error_msg,
+              k_map_name,
+              format_date,
+              error_id,
+              robot_id,
+              created_at,
+              map_id,
+              error_type,
+            }) => (
+              <div className="errorLog" key={error_id}>
+                <div
+                  className="logColorBox"
+                  style={{ background: DEGREE_COLOR[risk_degree] }}
+                />
+                <div className="logDate">
+                  <p className="logDay">{format_date.split(' ')[0]}</p>
+                  <p className="logTime">
+                    {format_date.split(' ')[1] + format_date.split(' ')[2]}
+                  </p>
+                </div>
+                <div
+                  className="logInfo"
+                  onClick={() => {
+                    navigate(`/errorDetail/${error_id}`, {
+                      state: {
+                        initialInfo: {
+                          map_id,
+                          startDate: new Date(created_at.split(' ')[0]),
+                          endDate: new Date(created_at.split(' ')[0]),
                         },
-                      });
-                    }}
-                  >
-                    <p className="logMsg">{error_msg}</p>
-                    <p className="logStore">{k_map_name}</p>
-                    <div className="logDegreeBox">
-                      <div
-                        className="logColorBox"
-                        style={{ background: DEGREE_COLOR[risk_degree] }}
-                      />
-                      <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
-                    </div>
+                        error: {
+                          robot_id,
+                          created_at,
+                          map_id,
+                          error_type,
+                          error_id,
+                        },
+                        errorList: currentData,
+                      },
+                    });
+                  }}
+                >
+                  <p className="logMsg">{error_msg}</p>
+                  <p className="logStore">{k_map_name}</p>
+                  <div className="logDegreeBox">
+                    <div
+                      className="logColorBox"
+                      style={{ background: DEGREE_COLOR[risk_degree] }}
+                    />
+                    <p className="logType">{DEGREE_TYPE[risk_degree]}</p>
                   </div>
                 </div>
-              )
-            )}
-        <div style={{ marginTop: '20px' }} ref={scrollRef} />
+              </div>
+            )
+          )}
       </div>
     </div>
   );

@@ -8,9 +8,7 @@ export async function getErrorNotice() {
 
   try {
     const response = await axios.get('/api/monitoring-system/error-notice');
-    console.log('api 결과');
 
-    console.log(response);
     if (response.status === 200) {
       return [false, response.data];
     } else {

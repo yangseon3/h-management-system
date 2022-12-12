@@ -23,8 +23,6 @@ const ErrorDetailPresenter = () => {
     fetchedDetailData.mutate(state.error);
   };
 
-  console.log(state);
-
   useEffect(() => {
     postDetailData();
   }, [state.error]);

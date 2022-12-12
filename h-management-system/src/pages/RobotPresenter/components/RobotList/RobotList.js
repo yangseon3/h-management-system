@@ -15,7 +15,7 @@ const RobotList = ({
   useEffect(() => {
     if (params.category !== 'all') {
       robotListRef.current.style.width = '22vw';
-      robotListRef.current.style.height = '77.228vh';
+      robotListRef.current.style.height = '76.228vh';
       robotListRef.current.style.overflowY = 'scroll';
       displayRef.current.style.gridTemplateColumns = 'repeat(1, 1fr)';
     } else {

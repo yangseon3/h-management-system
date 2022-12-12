@@ -11,16 +11,43 @@ const StoreList = ({ storeData, params }) => {
       storeListRef.current.style.backgroundColor = 'transparent';
       storeListRef.current.style.height = 'auto';
       storeListRef.current.style.marginLeft = '0';
+      storeListRef.current.style.padding = '0 1vw';
     } else {
       storeListRef.current.style.width = '22vw';
       storeListRef.current.style.backgroundColor = '#fff';
-      storeListRef.current.style.height = 'calc(100vh - 2.2396vw - 22.772vh)';
+      storeListRef.current.style.height = '74.228vh';
       storeListRef.current.style.marginLeft = '-1.5625vw';
       storeListRef.current.style.padding = '1vw 1vw 1vw 2.5625vw';
     }
   }, [params]);
   const storeSelected = storeData && storeData[0];
-  console.log(storeSelected);
+
+  const STORE_INFO = [
+    {
+      title: '설명',
+      dataValue: storeSelected.descirbe,
+      robotNumber:
+        Number(storeSelected.error) +
+        Number(storeSelected.refair) +
+        Number(storeSelected.serving) +
+        Number(storeSelected.stay),
+    },
+    { title: 'Map_ID', dataValue: storeSelected.map_id },
+    { title: 'LOGIN', dataValue: storeSelected.login },
+    {
+      title: 'START_NODE',
+      dataValue: storeSelected.start_node,
+    },
+    {
+      title: 'WIFI_ID',
+      dataValue: storeSelected.wifi_id,
+    },
+    {
+      title: 'WIFI_PW',
+      dataValue: storeSelected.wifi_pw,
+    },
+    { title: 'HOME', dataValue: storeSelected.home },
+  ];
 
   return (
     <div className="storeList" ref={storeListRef}>
@@ -51,9 +78,13 @@ const StoreList = ({ storeData, params }) => {
                 <p>Map Name</p>
                 <p className="storeName">{storeSelected.map_name}</p>
               </div>
-              <p>{storeSelected.map_name}</p>
-              <p>{storeSelected.descirbe}</p>
-              <p>{storeSelected.descirbe}</p>
+              {STORE_INFO.map((info, idx) => (
+                <div className="mappedInfo" key={idx}>
+                  <p className="shortcutSubTitle">{info.title}</p>
+                  <p>{info.dataValue}</p>
+                  {info.robotNumber ? <p>로봇 {info.robotNumber}대</p> : null}
+                </div>
+              ))}
             </div>
           </div>
         )

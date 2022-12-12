@@ -12,7 +12,7 @@ const StoreInfo = ({ countData, robotData, params }) => {
       storeInfoRef.current.style.padding = '0';
     } else {
       storeInfoRef.current.style.opacity = '1';
-      storeInfoRef.current.style.width = '65.5vw';
+      storeInfoRef.current.style.width = '63.5vw';
       storeInfoRef.current.style.padding = '1vw';
     }
   }, [params]);
@@ -28,18 +28,24 @@ const StoreInfo = ({ countData, robotData, params }) => {
 
   return (
     <div className="storeInfo" ref={storeInfoRef}>
-      <div className="chartWrap">
-        <StoreDoughnut
-          totalRobots={totalRobots}
-          availableRobots={availableRobots}
-        />
-        <StoreLine countData={countData} />
-      </div>
       <div className="imgWrap">
         <img
           src={`/images/map/map-background-${params.category}-monitoring.png`}
           alt="매장맵 이미지"
         />
+      </div>
+      <div className="chartWrap">
+        <div className="doughnutWrap">
+          <p className="chartTitle">사용가능 로봇수</p>
+          <StoreDoughnut
+            totalRobots={totalRobots}
+            availableRobots={availableRobots}
+          />
+        </div>
+        <div className="linegraphWrap">
+          <p className="chartTitle">피크타임</p>
+          <StoreLine countData={countData} />
+        </div>
       </div>
     </div>
   );

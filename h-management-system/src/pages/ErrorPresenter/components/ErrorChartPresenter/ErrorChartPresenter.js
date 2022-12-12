@@ -12,12 +12,12 @@ const ErrorChartPresenter = ({ defaultErrorList }) => {
     },
     {
       id: 1,
-      errorTitle: '에러 종류',
+      errorTitle: '가이드 이탈',
       error: defaultErrorList && defaultErrorList.guide_departure,
     },
     {
       id: 2,
-      errorTitle: '에러 종류',
+      errorTitle: '오버 드라이브',
       error: defaultErrorList && defaultErrorList.over_drive_100cm,
     },
   ];
@@ -31,7 +31,11 @@ const ErrorChartPresenter = ({ defaultErrorList }) => {
       </div>
       <div className="doughnutChartBox">
         {doughnutChart.map(chart => (
-          <CountChart key={chart.id} error={chart.error} />
+          <CountChart
+            key={chart.id}
+            error={chart.error}
+            name={chart.errorTitle}
+          />
         ))}
       </div>
     </div>

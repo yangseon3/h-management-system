@@ -54,40 +54,50 @@ const ErrorListPresenter = ({
               created_at,
               map_id,
               error_type,
-            }) => (
-              <div
-                className={
-                  errorInfo && errorInfo.error_id === error_id
-                    ? 'checkedErrorList'
-                    : 'errorList'
-                }
-                key={error_id}
-                onClick={() => {
-                  navigate(`/errorDetail/${error_id}`, {
-                    state: {
-                      initialInfo: {
-                        map_id,
-                        startDate,
-                        endDate,
+            }) =>
+              errorInfo && errorInfo.error_id === error_id ? (
+                <div
+                  className="checkedErrorList"
+                  key={error_id}
+                  onClick={() => {
+                    navigate('/error');
+                  }}
+                >
+                  <p className="errorText">error_msg : {error_msg}</p>
+                  <p className="errorText">current_node : {current_node}</p>
+                  <p className="errorText">robot_id : {robot_id}</p>
+                  <p className="errorText">created_at : {created_at}</p>
+                </div>
+              ) : (
+                <div
+                  className="errorList"
+                  key={error_id}
+                  onClick={() => {
+                    navigate(`/errorDetail/${error_id}`, {
+                      state: {
+                        initialInfo: {
+                          map_id,
+                          startDate,
+                          endDate,
+                        },
+                        error: {
+                          robot_id,
+                          created_at,
+                          map_id,
+                          error_type,
+                          error_id,
+                        },
+                        errorList: defaultErrorList,
                       },
-                      error: {
-                        robot_id,
-                        created_at,
-                        map_id,
-                        error_type,
-                        error_id,
-                      },
-                      errorList: defaultErrorList,
-                    },
-                  });
-                }}
-              >
-                <p className="errorText">error_msg : {error_msg}</p>
-                <p className="errorText">current_node : {current_node}</p>
-                <p className="errorText">robot_id : {robot_id}</p>
-                <p className="errorText">created_at : {created_at}</p>
-              </div>
-            )
+                    });
+                  }}
+                >
+                  <p className="errorText">error_msg : {error_msg}</p>
+                  <p className="errorText">current_node : {current_node}</p>
+                  <p className="errorText">robot_id : {robot_id}</p>
+                  <p className="errorText">created_at : {created_at}</p>
+                </div>
+              )
           )}
       </div>
     </div>

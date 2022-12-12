@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { useNavigate } from 'react-router-dom';
 import './UserModal.scss';
 
 const UserModal = ({
@@ -12,6 +13,8 @@ const UserModal = ({
   height,
   children,
 }) => {
+  const navigate = useNavigate();
+
   const confirmHandler = e => {
     e.stopPropagation();
     event();
@@ -62,7 +65,13 @@ const UserModal = ({
     >
       <p>{title}</p>
       <div>{children}</div>
-      <button>로그아웃</button>
+      <button
+        onClick={() => {
+          navigate(`/`);
+        }}
+      >
+        로그아웃
+      </button>
     </Modal>
   );
 };

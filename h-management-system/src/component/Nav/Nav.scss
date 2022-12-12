@@ -26,12 +26,35 @@
   .navWrap {
     padding-left: 0.5208vw;
 
-    li {
+    .activeTab {
+      @include flex(flex-start, center, null);
+      height: 3.6458vw;
+      padding-left: 1.3021vw;
+      border-radius: 30px 0 0 30px;
+      background: $white-color;
+      cursor: pointer;
+
+      .imgBox {
+        width: 1.4583vw;
+        img {
+          width: 100%;
+        }
+      }
+
+      .menuName {
+        color: black;
+        padding-left: 1.0417vw;
+        font-size: 0.9375vw;
+      }
+    }
+
+    .tab {
       @include flex(flex-start, center, null);
       height: 3.6458vw;
       padding-left: 1.3021vw;
       border-radius: 30px 0 0 30px;
       cursor: pointer;
+
       .imgBox {
         width: 1.4583vw;
         img {

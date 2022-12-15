@@ -2,7 +2,15 @@ import React from 'react';
 import Modal from 'react-modal';
 import './RobotModal.scss';
 
-const RobotModal = ({ close, event, title, children, height, width }) => {
+const RobotModal = ({
+  close,
+  event,
+  title,
+  children,
+  height,
+  width,
+  boxShadow,
+}) => {
   const confirmHandler = e => {
     e.stopPropagation();
     event();
@@ -26,7 +34,7 @@ const RobotModal = ({ close, event, title, children, height, width }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'rgba(0, 0, 0, 0.5)',
+          background: 'transparent',
           zIndex: 10000,
         },
         content: {
@@ -42,17 +50,16 @@ const RobotModal = ({ close, event, title, children, height, width }) => {
           background: 'white',
           borderRadius: '0.5em',
           outline: 'none',
-          padding: '1.5em 1em',
+          padding: '0',
           textAlign: 'center',
           zIndex: 30,
           overflow: 'hidden',
           height: `${height}vw`,
+          boxShadow: boxShadow,
         },
       }}
     >
-      <p>{title}</p>
-      <div>{children}</div>
-      <button onClick={closeHandler}>close</button>
+      <div className="modalContent">{children}</div>
     </Modal>
   );
 };

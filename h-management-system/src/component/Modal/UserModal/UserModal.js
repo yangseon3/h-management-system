@@ -12,6 +12,7 @@ const UserModal = ({
   width,
   height,
   children,
+  boxShadow,
 }) => {
   const navigate = useNavigate();
 
@@ -43,8 +44,8 @@ const UserModal = ({
         },
         content: {
           position: 'absolute',
-          top: '8%',
-          left: '70%',
+          top: '7%',
+          left: '78%',
           right: 'auto',
           bottom: 'auto',
           border: '1px solid #E9ECF9',
@@ -53,9 +54,8 @@ const UserModal = ({
           background: 'white',
           borderRadius: '0.5em',
           outline: 'none',
-          padding: '1.5em 1em',
-          boxSizing: 'border-box',
-          boxShadow: '#8690C2 0px 0px 7px 2px',
+          padding: '0',
+          boxShadow: boxShadow,
           textAlign: 'center',
           zIndex: 30,
           overflow: 'hidden',
@@ -63,8 +63,7 @@ const UserModal = ({
         },
       }}
     >
-      <p>{title}</p>
-      <div>{children}</div>
+      <div className="modalContent">{children}</div>
       <button
         onClick={() => {
           navigate(`/`);

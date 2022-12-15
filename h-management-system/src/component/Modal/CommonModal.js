@@ -21,8 +21,9 @@ const CommonModal = ({
         title={title}
         data={data}
         setData={setData}
-        width={20}
-        height={20}
+        width={20.3125}
+        height={16.3021}
+        boxShadow="#8690C2 0 0 0.3646vw 0.1042vw"
       />
     ),
     robot: (
@@ -33,8 +34,9 @@ const CommonModal = ({
         title={title}
         data={data}
         setData={setData}
-        width={24}
-        height={30}
+        width={15.3646}
+        height={20.8333}
+        boxShadow="#8690C2 0 0 0.3646vw 0.1042vw"
       />
     ),
   };

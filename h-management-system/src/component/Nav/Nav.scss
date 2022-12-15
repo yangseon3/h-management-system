@@ -17,10 +17,14 @@
   .profileWrap {
     @include flex(center, center, null);
     width: 100%;
-    padding: 1.1979vw;
+    padding: 1.875vw;
     margin-bottom: 1.875vw;
-    .profileIcon {
-      font-size: 5.2083vw;
+    .imgWrap {
+      width: 5.2083vw;
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
   .navWrap {

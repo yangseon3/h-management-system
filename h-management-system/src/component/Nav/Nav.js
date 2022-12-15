@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
 import './Nav.scss';
 
 const Nav = () => {
@@ -16,7 +15,9 @@ const Nav = () => {
     <div className="mainTab">
       <div className="navContainer">
         <div className="profileWrap">
-          <FaUserCircle className="profileIcon" />
+          <div className="imgWrap">
+            <img src="/images/icons/mypage_icon.png" alt="유저아이콘" />
+          </div>
         </div>
         <ul className="navWrap">
           {SIDE_TAB.map(({ id, name, icon, activeIcon, path }) =>

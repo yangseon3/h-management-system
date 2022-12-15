@@ -105,9 +105,19 @@ const Header = () => {
               </p>
             </div>
             <div className="userIcon" onClick={() => setIsModal(true)}>
-              <FaUserCircle style={{ fontSize: '2vw' }} />
+              <div className="imgWrap">
+                <img src="/images/icons/mypage_icon_sm.png" alt="유저아이콘" />
+              </div>
               {isModal && (
-                <CommonModal type="user" close={() => setIsModal(false)} />
+                <CommonModal type="user" close={() => setIsModal(false)}>
+                  <div className="imgWrap">
+                    <img src="/images/icons/mypage_icon.png" alt="유저아이콘" />
+                  </div>
+                  <div className="userInfoWrap">
+                    <p>닉네임</p>
+                    <p>포지션</p>
+                  </div>
+                </CommonModal>
               )}
             </div>
           </div>

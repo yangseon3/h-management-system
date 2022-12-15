@@ -67,10 +67,18 @@ const RobotItem = ({ robotId, data, params }) => {
           close={() => setIsModal(false)}
           title="로봇제어"
         >
-          <p>로봇ID{robotId}</p>
-
-          <button onClick={handleReturn}>복귀</button>
-          <button onClick={handleInit}>초기화</button>
+          <p className="title">로봇이름 No.{robotId}</p>
+          <div className="robotImg">
+            <img src="/images/robot/basic_robot_v2.png" alt="로봇이미지" />
+          </div>
+          <div className="btnWrap">
+            <button className="returnBtn" onClick={handleReturn}>
+              복귀
+            </button>
+            <button className="initBtn" onClick={handleInit}>
+              초기화
+            </button>
+          </div>
         </CommonModal>
       )}
     </>

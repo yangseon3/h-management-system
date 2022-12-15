@@ -65,6 +65,7 @@ const UserModal = ({
     >
       <div className="modalContent">{children}</div>
       <button
+        className="logoutBtn"
         onClick={() => {
           navigate(`/`);
         }}

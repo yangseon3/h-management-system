@@ -125,6 +125,7 @@ const Header = () => {
       </div>
       <div className="headerBottom">
         <div className="robotInfoWrap">
+          <div className="currentTabName">{currentTab}</div>
           <button className="arrowLeft" onClick={handlePrevClick}>
             <MdOutlineKeyboardArrowLeft />
             <p className="arrowName">

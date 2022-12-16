@@ -59,7 +59,7 @@ const RobotModal = ({
         },
       }}
     >
-      <div className="modalContent">{children}</div>
+      <div className="RobotModalContent">{children}</div>
     </Modal>
   );
 };

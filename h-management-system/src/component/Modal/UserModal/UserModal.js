@@ -63,7 +63,7 @@ const UserModal = ({
         },
       }}
     >
-      <div className="modalContent">{children}</div>
+      <div className="userModalContent">{children}</div>
       <button
         className="logoutBtn"
         onClick={() => {

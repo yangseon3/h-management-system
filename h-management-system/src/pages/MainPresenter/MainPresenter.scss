@@ -1,0 +1,18 @@
+@import '/src/styles/variables.scss';
+
+.main {
+  @include flex(space-between, null, null);
+  margin: 0 auto;
+  padding: 2vh 1vw 2vw 1vw;
+  height: 76.228vh;
+}
+
+.robotInfoWrap {
+  button {
+    @include flex(flex-start, center, null);
+    border: none;
+    background: none;
+    font-size: 0.7813vw;
+    cursor: pointer;
+  }
+}

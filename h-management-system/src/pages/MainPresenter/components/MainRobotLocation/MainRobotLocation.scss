@@ -1,0 +1,11 @@
+@import '/src/styles/variables.scss';
+
+.mainRobotLocatioin {
+  @include flex(space-between, flex-start, null);
+  width: 66%;
+  height: 100%;
+  .mainRobotLocatioinKakaoData {
+    height: 100%;
+    width: 48.48%;
+  }
+}

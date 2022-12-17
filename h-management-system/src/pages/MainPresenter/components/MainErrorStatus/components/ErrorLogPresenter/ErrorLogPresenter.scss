@@ -1,0 +1,101 @@
+@import '../../../../../../styles/variables.scss';
+
+.errorLogPresenter {
+  width: 100%;
+  border-radius: 0.7813vw;
+
+  .logHeader {
+    width: 100%;
+    font-size: 1.0417vw;
+    margin-bottom: 1.4063vw;
+    font-weight: 600;
+  }
+
+  .logControllBox {
+    @include flex(space-between, center, column);
+    margin-bottom: 0.7292vw;
+    padding: 0.5208vw 1.7188vw;
+    width: 100%;
+    height: 4.6875vw;
+    border-radius: 0.7813vw;
+    background-color: white;
+  }
+
+  .errorButtonBox {
+    @include flex(space-between, center, row);
+    width: 100%;
+
+    .styleBtn {
+      width: 5.8854vw;
+      visibility: hidden;
+    }
+  }
+
+  .errorLogBox {
+    @include flex(null, null, column);
+    padding: 1.3021vw;
+    width: 100%;
+    height: 19.0104vw;
+    background-color: $white-color;
+    border-radius: 0.7813vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .logColorBox {
+      margin-right: 0.2604vw;
+      width: 0.4688vw;
+      height: 0.4688vw;
+      border-radius: 0.4688vw;
+    }
+
+    .errorLog {
+      @include flex(space-between, center, row);
+      margin-top: 10px;
+      background-color: $white-color;
+
+      .logDate {
+        margin-right: 1.9792vw;
+        background-color: $white-color;
+
+        .logDay {
+          background-color: $white-color;
+          font-size: 0.6771vw;
+        }
+
+        .logTime {
+          margin-top: 0.2604vw;
+          background-color: $white-color;
+          font-size: 0.6771vw;
+        }
+      }
+
+      .logInfo {
+        padding: 0.7813vw 1.0417vw;
+        width: 14.9479vw;
+        min-height: 3.9063vw;
+        border-radius: 10px;
+        background: $background-color;
+        cursor: pointer;
+
+        .logMsg {
+          font-size: 0.7813vw;
+          font-weight: 600;
+        }
+
+        .logStore {
+          margin: 0.2604vw 0;
+          font-size: 0.6771vw;
+        }
+      }
+
+      .logDegreeBox {
+        @include flex(flex-end, center, row);
+
+        .logType {
+          margin-top: 0.0521vw;
+          font-size: 0.6771vw;
+        }
+      }
+    }
+  }
+}

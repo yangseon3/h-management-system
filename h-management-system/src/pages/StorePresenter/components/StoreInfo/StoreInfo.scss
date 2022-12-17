@@ -1,0 +1,66 @@
+@import '/src/styles/variables.scss';
+
+.storeInfo {
+  height: 76.228vh;
+  transition: background-color 0.5s ease-in-out;
+  @include flex(space-between, stretch, column);
+  .imgWrap {
+    @include flex(center, center, null);
+    padding: 0.7813vw;
+    height: 17.1875vw;
+    background-color: #fff;
+    border-radius: 0.7813vw;
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .chartWrap {
+    @include flex(space-between, center, null);
+    gap: 1.6667vw;
+    height: 18.4167vw;
+
+    .doughnutWrap {
+      width: 19.375vw;
+      height: 100%;
+      p {
+        background-color: #fff;
+      }
+    }
+    .chartTitle {
+      padding: 0.625vw 2.0833vw;
+      margin-bottom: 0.5208vw;
+      font-size: 1.0417vw;
+      font-weight: 700;
+      background-color: #fff;
+      border-radius: 0.7813vw;
+    }
+    .linegraphWrap {
+      width: 39.6354vw;
+      height: 100%;
+    }
+    .storeDoughnut {
+      @include flex(center, center, null);
+      position: relative;
+      padding-bottom: 1.0417vw;
+      width: 100%;
+      height: 15.625vw;
+      background: #fff;
+      border-radius: 0.7813vw;
+
+      .doughnutText {
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .storeLine {
+      @include flex(center, center, null);
+      width: 100%;
+      height: 15.625vw;
+      background: #fff;
+      border-radius: 0.7813vw;
+    }
+  }
+}

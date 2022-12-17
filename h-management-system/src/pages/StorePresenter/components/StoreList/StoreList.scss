@@ -1,0 +1,83 @@
+@import '/src/styles/variables.scss';
+
+.storeList {
+  margin-top: 2vh;
+  padding: 0 1vw 1vw;
+  height: 100%;
+  transition: background-color, margin-left 0.7s ease-in-out;
+  border-radius: 0 1.5625vw 1.5625vw 0;
+  z-index: 99;
+
+  .listWrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.1875vw;
+    row-gap: 1.9792vw;
+    margin-top: 1.0417vw;
+
+    li {
+      padding: 1.6667vw;
+      background-color: #fff;
+      border-radius: 0.7813vw;
+      font-size: 1.0417vw;
+      font-weight: 700;
+
+      .storeTitle {
+        margin-bottom: 1vw;
+      }
+
+      .arrowIcon {
+        margin-left: 1vw;
+      }
+    }
+    .imgWrap {
+      height: 13.5417vw;
+      text-align: center;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .shortcutInfo {
+    margin-top: 1.0417vw;
+    padding: 0.7292vw;
+    background-color: $background-color;
+    height: 30.9583vw;
+    border-radius: 1.5625vw;
+
+    .shortcutInfoWrap {
+      padding: 1.6667vw 1.1979vw;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 0.7813vw;
+    }
+    .shortcutTitle {
+      margin-bottom: 1.875vw;
+      text-align: center;
+      font-size: 0.6771vw;
+      .storeName {
+        display: inline-block;
+        padding: 0.4688vw 0;
+        width: 100%;
+        font-size: 1.0417vw;
+        color: #fff;
+        background-color: $subPrimary-color;
+        border-radius: 0.5208vw;
+      }
+    }
+
+    .mappedInfo {
+      margin-bottom: 1.1458vw;
+      font-size: 0.8333vw;
+      line-height: 1.2;
+
+      .shortcutSubTitle {
+        font-size: 0.9375vw;
+        font-weight: 700;
+      }
+    }
+  }
+}

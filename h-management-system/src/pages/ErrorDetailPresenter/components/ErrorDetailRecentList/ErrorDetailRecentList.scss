@@ -1,0 +1,42 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailRecentList {
+  width: 18.6979vw;
+  max-height: 17.8646vw;
+  padding: 1.1979vw;
+  border-radius: 0.7813vw;
+  background-color: $white-color;
+
+  .recentListContentsBox {
+    padding: 1.1979vw;
+    width: 100%;
+    height: 100%;
+    background: $background-color;
+    border-radius: 0.7813vw;
+
+    .titleText {
+      font-size: 0.8854vw;
+      font-weight: 600;
+      margin-bottom: 1.0417vw;
+    }
+
+    .recentList {
+      width: 100%;
+      height: 11vw;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      .recentItem {
+        margin-bottom: 0.5vw;
+        padding: 5px;
+        background: white;
+        border-radius: 5px;
+        font-size: 0.7292vw;
+
+        .itemText {
+          font-size: 0.7292vw;
+        }
+      }
+    }
+  }
+}

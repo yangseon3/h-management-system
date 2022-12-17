@@ -1,0 +1,26 @@
+@import "../../../../../../../styles/variables.scss";
+
+.errorDataContents { 
+   width: 60.7vw; 
+   height: 76vh;
+   overflow: scroll; 
+   border-radius: 1.5625vw;
+   padding: 1.0417vw;
+   background-color: white;
+   .errorDataContentsWrapper{
+      width: 60vw;  
+      border-spacing: 0.5208vw;
+     border-collapse: separate;
+    tr {
+      line-height: 1.5625vw;
+    }
+    th { 
+      font-weight: bold;
+      font-size: 0.8333vw;
+   }
+   td { 
+      text-align: center;
+      font-size: 0.8333vw;
+   }
+    }
+} 

@@ -1,0 +1,8 @@
+@import '../../../../styles/variables.scss';
+
+.chartBox {
+  @include flex(center, center, null);
+  width: 46.0938vw;
+  height: 17.8438vw;
+  background: white;
+}

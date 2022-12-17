@@ -1,0 +1,7 @@
+@import '../../styles/variables.scss';
+
+.storePresenter {
+  @include flex(space-between, flex-start, null);
+  width: 100%;
+  height: 100%;
+}

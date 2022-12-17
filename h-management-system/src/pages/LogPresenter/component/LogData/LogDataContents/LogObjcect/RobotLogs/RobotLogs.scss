@@ -1,0 +1,26 @@
+@import "../../../../../../../styles/variables.scss";
+
+.robotLogsDataContents {
+   width: 60.7vw;
+   height: 76vh;
+   overflow-x: scroll; 
+   border-radius: 1.5625vw;
+   padding: 1.0417vw;
+   background-color: white;
+   .robotLogsDataContentsWrapper{
+      width: 160vw;  
+      border-spacing: 0.5208vw;
+      border-collapse: separate;
+    tr {
+      line-height: 1.5625vw;
+    }
+    th { 
+      font-weight: bold;
+      font-size: 0.8333vw;
+   }
+   td { 
+      text-align: center;
+      font-size: 0.8333vw;
+   }
+    }
+} 

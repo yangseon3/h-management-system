@@ -1,0 +1,51 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailSolution {
+  grid-area: 2 / 1 / 2 / 3;
+  width: 39.2188vw;
+  max-height: 17.8646vw;
+  padding: 1.1979vw;
+  border-radius: 0.7813vw;
+  background-color: $white-color;
+
+  .solutionHeader {
+    @include flex(space-between, center, row);
+    margin-bottom: 1vw;
+    width: 100%;
+
+    .solutionInputBox {
+      width: 65%;
+
+      .solutionInput {
+        padding-left: 10px;
+        width: 90%;
+        height: 30px;
+      }
+    }
+
+    .solutionButtonBox {
+      @include flex(space-between, center, row);
+      width: 35%;
+    }
+  }
+
+  .solutionContentsBox {
+    width: 100%;
+    // height: 100%;
+
+    .solutionContents {
+      resize: none;
+      padding: 20px;
+      width: 100%;
+      height: 11.6vw;
+      border-radius: 15px;
+      background: $background-color;
+      border: none;
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}

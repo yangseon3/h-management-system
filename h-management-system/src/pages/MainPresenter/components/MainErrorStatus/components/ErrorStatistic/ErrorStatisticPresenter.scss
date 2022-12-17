@@ -1,0 +1,61 @@
+@import '../../../../../../styles/variables.scss';
+
+.errorStatic {
+  width: 100%;
+  margin-bottom: 1.4063vw;
+
+  .staticHeader {
+    margin-bottom: 1.4063vw;
+    width: 100%;
+    font-size: 1.0417vw;
+    font-weight: 600;
+  }
+
+  .staticContentsBox {
+    width: 100%;
+
+    .statisticTypeBox {
+      @include flex(space-between, center, row);
+      padding: 0 1em;
+      margin-bottom: 0.3646vw;
+      width: 100%;
+      height: 2.0833vw;
+      background: white;
+      border-radius: 0.7813vw;
+
+      .statisticItem {
+        @include flex(center, center, row);
+        width: 10em;
+
+        .statisticColorBox {
+          margin-right: 0.5em;
+          width: 0.4688vw;
+          height: 0.4688vw;
+          border-radius: 0.4688vw;
+        }
+
+        .statisticText {
+          margin-top: 0.2em;
+          font-size: 0.8854vw;
+        }
+      }
+    }
+
+    .statisticCountsBox {
+      @include flex(space-between, center, row);
+      padding: 0 1em;
+      width: 100%;
+      height: 2.0833vw;
+      background: white;
+      border-radius: 0.7813vw;
+
+      .statisticCountsText {
+        @include flex(center, center, row);
+        width: 100px;
+        background: white;
+        font-weight: 600;
+        font-size: 0.8854vw;
+      }
+    }
+  }
+}

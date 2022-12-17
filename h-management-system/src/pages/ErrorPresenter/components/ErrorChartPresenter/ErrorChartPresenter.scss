@@ -1,0 +1,20 @@
+@import '../../../../styles/variables.scss';
+
+.errorChartPresenter {
+  @include flex(space-between, center, column);
+  width: 60.6771vw;
+  height: 41.4583vw;
+
+  .lineBarChartBox {
+    @include flex(center, center, 'null');
+    width: 100%;
+    height: 19.2708vw;
+    background: $white-color;
+    border-radius: 0.7813vw;
+  }
+
+  .doughnutChartBox {
+    @include flex(space-between, center, 'null');
+    width: 100%;
+  }
+}

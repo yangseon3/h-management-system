@@ -1,0 +1,60 @@
+@import '/src/styles/variables.scss';
+.tabContent {
+  @include flex(space-between, center, null);
+
+  .dataBox {
+    padding-left: 3vw;
+    width: 18vw;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 2.6042vw;
+      background-color: #e9ecf9;
+    }
+    &:first-child::before {
+      content: none;
+    }
+    .dataTitle {
+      margin-bottom: 0.625vw;
+      font-size: 0.8333vw;
+    }
+    .valueBox {
+      @include flex(flex-start, flex-end, null);
+    }
+    .mainData {
+      width: 50%;
+      font-size: 2.7778vw;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      color: $primary-color;
+
+      .mainUnit {
+        margin-left: 0.3472vw;
+        font-size: 1.6667vw;
+      }
+    }
+    .compareBox {
+      width: 50%;
+      p {
+        line-height: 1.3889vw;
+      }
+      .compareIcon {
+        margin-right: 0.3472vw;
+        font-size: 1.3889vw;
+      }
+      .compareTitle {
+        font-size: 0.7292vw;
+      }
+      .resultValue {
+        @include flex(flex-start, center, null);
+      }
+    }
+  }
+}

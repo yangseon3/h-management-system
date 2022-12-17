@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.errorPresenter {
+  @include flex(space-between, 'null', 'null');
+  margin-top: 1vh;
+  padding-right: 1.6667vw;
+  width: 100%;
+  height: 76.228vh;
+}

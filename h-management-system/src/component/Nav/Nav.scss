@@ -1,0 +1,75 @@
+@import '/src/styles/variables.scss';
+.mainTab {
+  position: fixed;
+  left: 0;
+  top: 7vh;
+  width: 15.7813vw;
+  height: 93vh;
+  background-color: #39416b;
+  border-radius: 0 30px 30px 0;
+  color: #fff;
+  z-index: 999;
+}
+.navContainer {
+  width: 15.7813vw;
+  height: 100%;
+
+  .profileWrap {
+    @include flex(center, center, null);
+    width: 100%;
+    padding: 1.875vw;
+    margin-bottom: 1.875vw;
+    .imgWrap {
+      width: 5.2083vw;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .navWrap {
+    padding-left: 0.5208vw;
+
+    .activeTab {
+      @include flex(flex-start, center, null);
+      height: 3.6458vw;
+      padding-left: 1.3021vw;
+      border-radius: 30px 0 0 30px;
+      background: $white-color;
+      cursor: pointer;
+
+      .imgBox {
+        width: 1.4583vw;
+        img {
+          width: 100%;
+        }
+      }
+
+      .menuName {
+        color: black;
+        padding-left: 1.0417vw;
+        font-size: 0.9375vw;
+      }
+    }
+
+    .tab {
+      @include flex(flex-start, center, null);
+      height: 3.6458vw;
+      padding-left: 1.3021vw;
+      border-radius: 30px 0 0 30px;
+      cursor: pointer;
+
+      .imgBox {
+        width: 1.4583vw;
+        img {
+          width: 100%;
+        }
+      }
+
+      .menuName {
+        padding-left: 1.0417vw;
+        font-size: 0.9375vw;
+      }
+    }
+  }
+}

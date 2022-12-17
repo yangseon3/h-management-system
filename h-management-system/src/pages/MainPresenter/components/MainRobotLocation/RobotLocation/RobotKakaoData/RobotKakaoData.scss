@@ -1,0 +1,153 @@
+@import '/src/styles/variables.scss';
+
+.kakaoDataContainer {
+  @include flex(null, null, column);
+  height: 100%;
+  .kakaoDataImpo {
+    height: 100%;
+  }
+  .kakaoDataImpoContent {
+    font-size: 1.0417vw;
+    font-weight: bold;
+  }
+  .kakaoDataItemWrapper {
+    @include flex(flex-end, center, null);
+    padding-right: 1.25vw;
+    height: 1.4063vw;
+    text-indent: 0.2604vw;
+  }
+  .kakaoDataEachItem {
+    @include flex(center, center, null);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.5208vw;
+  }
+  .kakaoDataErrorItem {
+    width: 0.4688vw;
+    height: 0.4688vw;
+    border-radius: 2.6042vw;
+    background-color: #5755a5;
+  }
+  .kakaoDataServingItem {
+    width: 0.4688vw;
+    height: 0.4688vw;
+    border-radius: 2.6042vw;
+    background-color: #8887c0;
+  }
+  .kakaoDataWaitingItem {
+    width: 0.4688vw;
+    height: 0.4688vw;
+    border-radius: 2.6042vw;
+    background-color: #bbbcdb;
+  }
+  .kakaoDataRepairItem {
+    width: 0.4688vw;
+    height: 0.4688vw;
+    border: 0.0521vw solid black;
+    border-radius: 2.6042vw;
+    background-color: #eeeef7;
+  }
+  .kakaoDataItemType {
+    font-size: 0.6771vw;
+    // padding-left: 0.2604vw;
+  }
+  .kakaoDataImpoWrapper {
+    @include flex(null, center, column);
+    margin-bottom: 1.0417vw;
+    border-radius: 0.5208vw;
+    background-color: white;
+    padding-bottom: 0.5208vw;
+  }
+  .kakaoDataCookGauge {
+    width: 24vw;
+    margin: 0.2604vw;
+  }
+  .kakaoDataBranchWrapper {
+    @include flex(space-between, center, null);
+    padding: 0.5208vw 1.0417vw 0.5208vw 1.0417vw;
+    cursor: pointer;
+  }
+  .branchMark {
+    width: 2.9688vw;
+    height: 2.9688vw;
+  }
+  .kakaoDataBranchMove {
+    @include flex(space-evenly, null, column);
+    width: 24vw;
+    height: 2.6042vw;
+    padding-left: 0.5208vw;
+  }
+  .kakaoDataBranchName {
+    width: 12vw;
+    font-size: 1.0417vw;
+    font-weight: bold;
+  }
+  .kakaoDataBranchLocation {
+    font-size: 0.6771vw;
+  }
+  .kakaoDataBranchArrow {
+    font-size: 1.0417vw;
+    font-weight: 600;
+  }
+  .kakaoDataStatusDisplay {
+    @include flex(center, null, null);
+    width: 24vw;
+    font-size: 0.5208vw;
+  }
+  .kakaoDataGauge {
+    @include flex(null, null, null);
+    width: 22.7604vw;
+    height: 1.1979vw;
+    margin-top: 1.0417vw;
+    border: 0.0521vw solid $primary-color;
+    background: repeating-linear-gradient(
+      90deg,
+      $primary-color 0 0.0521vw,
+      #eeeef6 0 10%
+    );
+    border-radius: 1.0417vw;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+    .error {
+      height: 1.1979vw;
+      background-color: #5755a5;
+      opacity: 0.8;
+    }
+    .serving {
+      height: 1.1979vw;
+      background-color: #8887c0;
+      opacity: 0.8;
+    }
+    .waiting {
+      height: 1.1979vw;
+      background-color: #bbbcdb;
+      opacity: 0.8;
+    }
+    .repair {
+      height: 1.1979vw;
+      background-color: #eeeef7;
+      opacity: 0.8;
+    }
+  }
+  .kakaoData {
+    @include flex(space-evenly, null, null);
+    width: 24vw;
+  }
+  .kakaoDataWrapper {
+    @include flex(center, center, null);
+    width: 5.8854vw;
+    height: 1.7708vw;
+    font-size: 0.7813vw;
+    border-radius: 1.0417vw;
+    background-color: #f1f3fa;
+  }
+  .storeDataCount {
+    font-weight: bold;
+    text-indent: 0.2604vw;
+  }
+  .kakaoDataViewMore {
+    text-align: center;
+    font-size: 1.0417vw;
+  }
+}

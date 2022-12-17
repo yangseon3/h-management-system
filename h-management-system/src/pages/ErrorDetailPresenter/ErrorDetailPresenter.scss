@@ -1,0 +1,18 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailPresenter {
+  @include flex(space-between, 'null', 'null');
+  margin-top: 1vh;
+  padding-right: 1.6667vw;
+  width: 100%;
+
+  .gridBox {
+    padding-bottom: 2.1354vw;
+    width: 60.6771vw;
+    height: 76.228vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(30%, auto));
+    gap: 1em;
+  }
+}

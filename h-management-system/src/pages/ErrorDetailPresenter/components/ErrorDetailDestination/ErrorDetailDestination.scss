@@ -1,0 +1,44 @@
+@import '/src/styles/variables.scss';
+
+.errorDetailDestination {
+  width: 18.6979vw;
+  max-height: 17.8646vw;
+  padding: 1.1979vw;
+  border-radius: 0.7813vw;
+  background-color: $white-color;
+
+  .destinationContentsBox {
+    padding: 1.1979vw;
+    width: 100%;
+    height: 100%;
+    background: $background-color;
+    border-radius: 0.7813vw;
+    word-break: break-all;
+
+    .textBox {
+      @include flex(flex-start, center, null);
+      margin-bottom: 1vw;
+
+      .titleText {
+        margin-right: 0.4vw;
+        font-size: 0.8854vw;
+        font-weight: 600;
+      }
+
+      .dataText {
+        font-size: 0.8854vw;
+      }
+    }
+
+    .mapTextBox {
+      width: 100%;
+      height: 3.5vw;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      .dataText {
+        font-size: 0.8854vw;
+      }
+    }
+  }
+}

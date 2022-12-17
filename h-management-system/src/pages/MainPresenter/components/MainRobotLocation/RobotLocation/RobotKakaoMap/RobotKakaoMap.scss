@@ -1,0 +1,15 @@
+@import '/src/styles/variables.scss';
+
+.RobotKakaoMap {
+  @include flex(space-between, null, column);
+  width: 100%;
+  height: 100%;
+  .RobotKakaoMapHeader {
+    margin-bottom: 1.4063vw;
+    font-size: 1.0417vw;
+    font-weight: 600;
+  }
+  .mapWrap {
+    height: 100%;
+  }
+}

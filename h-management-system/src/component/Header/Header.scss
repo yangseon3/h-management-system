@@ -1,54 +1,101 @@
 @import '/src/styles/variables.scss';
 
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
   .headerTop {
-    padding: 15px 0;
-    background-color: #558eff;
-    color: #fff;
+    margin: 0 auto;
+    width: 98vw;
+    height: 7vh;
+    line-height: 7vh;
+    background-color: $background-color;
+    color: #39416b;
 
     .logo {
-      width: 200px;
-      padding-top: 5px;
-      img {
-        width: 100%;
-      }
+      font-size: 1.5625vw;
     }
     .weatherWrap {
-      @include flex(justify-content, center, null);
-      height: 18px;
+      @include flex(space-between, center, null);
+      padding-right: 1vw;
+      width: 22vw;
+      height: 3vh;
+
       .dateWrap,
       .timeWrap {
         display: flex;
         align-items: center;
         .icon {
-          font-size: 20px;
+          font-size: 1.3889vw;
         }
         p {
-          padding: 4px 4px 0;
+          padding: 0.2778vw 0.2778vw 0;
           white-space: nowrap;
-          line-height: 18px;
+          line-height: 3vh;
         }
       }
-      .dateWrap {
-        margin-right: 30px;
+    }
+    .userIcon {
+      @include flex(center, center, null);
+      position: relative;
+      cursor: pointer;
+
+      .imgWrap {
+        width: 1.9271vw;
+        img {
+          display: block;
+          width: 100%;
+        }
       }
     }
   }
   .innerHeader {
     @include flex(space-between, center, null);
-    max-width: 1200px;
+    width: 98vw;
     margin: 0 auto;
   }
   .headerBottom {
-    padding-top: 10px;
-    border: 1px solid black;
-    .menuWrap {
+    @include flex(space-between, null, null);
+    padding: 0 1vw 2vh 16.7813vw;
+    border-bottom: 1px solid $stroke-color;
+    background-color: $background-color;
+
+    .robotInfoWrap {
       @include flex(space-between, center, null);
-      max-width: 1200px;
-      margin: 0 auto;
-      li {
-        width: 30%;
-        border: 1px solid black;
+      position: relative;
+      padding: 1.4063vw 1.5625vw 0;
+      height: 14.772vh;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 0.2604vw;
+      overflow: hidden;
+
+      .currentTabName {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1.4063vw;
+        background-color: #727ec1;
+        color: #fff;
+        font-size: 0.8854vw;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.4063vw;
+      }
+
+      button {
+        font-size: 1.5vw;
+        .arrowName {
+          font-size: 1vw;
+          margin-top: 0.1em;
+        }
+        &.arrowRight {
+          @include flex(flex-end, center, null);
+        }
       }
     }
   }

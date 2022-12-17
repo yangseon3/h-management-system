@@ -1,0 +1,16 @@
+.robotMap {
+  align-self: flex-start;
+  height: 100%;
+  transition: inherit;
+
+  .imgWrap {
+    position: relative;
+    width: 100%;
+  }
+  img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    height: fit-content;
+  }
+}

@@ -1,1 +1,43 @@
 @import '../../../styles/variables.scss';
+
+.RobotModalContent {
+  .title {
+    padding: 1.0417vw 0;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 0.7813vw;
+    font-weight: 700;
+  }
+  .robotImg {
+    margin: 0 auto 0.7292vw;
+    width: 7.8646vw;
+    img {
+      width: 100%;
+    }
+  }
+  .btnWrap {
+    margin: 0 auto;
+    width: 5.9896vw;
+
+    button {
+      display: block;
+      margin-bottom: 0.7292vw;
+      width: 100%;
+      height: 1.8229vw;
+      border-radius: 2.6042vw;
+      font-size: 0.7813vw;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0.1563vw 0.1563vw 0.2604vw 0 rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+
+      &.returnBtn {
+        background-color: #f0f3fa;
+        color: #3f488b;
+      }
+      &.initBtn {
+        background-color: #3f488b;
+        color: #fff;
+      }
+    }
+  }
+}

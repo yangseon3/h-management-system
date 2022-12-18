@@ -1,4 +1,3 @@
-import API from 'api';
 import CommonModal from 'component/Modal/CommonModal';
 import { basicApi } from 'lib/config';
 import React, { useState } from 'react';
@@ -24,7 +23,7 @@ const RobotItem = ({ robotId, data, params }) => {
 
   const positionData = useQuery(['PositionKey', params], async () => {
     const { data } = await basicApi.get(
-      `${API.robot}/map_id/${params}/position`
+      `${process.env.REACT_APP_robot}/map_id/${params}/position`
     );
     return data;
   });

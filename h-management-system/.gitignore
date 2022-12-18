@@ -25,4 +25,5 @@ yarn-error.log*
 .eslintcache
 
 #API KEY
-.env
+.env.DS_Store
+.DS_Store

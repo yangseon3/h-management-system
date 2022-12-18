@@ -1,11 +1,12 @@
-import API from 'api';
 import { basicApi } from 'lib/config';
 
 export const GetMapLog = async data => {
   try {
     const mapId = data.queryKey[1];
 
-    const response = await basicApi.get(`${API.getByMapLog}/${mapId}`);
+    const response = await basicApi.get(
+      `${process.env.REACT_APP_getByMapLog}/${mapId}`
+    );
     if (response.status === 200) {
       return [false, response.data];
     } else {
@@ -19,7 +20,9 @@ export const GetMapLog = async data => {
 export const GetRobotLog = async data => {
   try {
     const mapId = data.queryKey[1];
-    const response = await basicApi.get(`${API.getByRobotLog}/${mapId}`);
+    const response = await basicApi.get(
+      `${process.env.REACT_APP_getByRobotLog}/${mapId}`
+    );
     if (response.status === 200) {
       return [false, response.data];
     } else {
@@ -33,7 +36,9 @@ export const GetRobotLog = async data => {
 export const GetUserLog = async data => {
   try {
     const mapId = data.queryKey[1];
-    const response = await basicApi.get(`${API.getByUserLog}/${mapId}`);
+    const response = await basicApi.get(
+      `${process.env.REACT_APP_getByUserLog}/${mapId}`
+    );
     if (response.status === 200) {
       return [false, response.data];
     } else {
@@ -48,7 +53,7 @@ export const PostErrorLog = async data => {
   try {
     const dataMapId = data.mapId;
     const response = await basicApi.post(
-      `${API.postByErrorLog}/${dataMapId}`,
+      `${process.env.REACT_APP_postByErrorLog}/${dataMapId}`,
       data
     );
     if (response.status === 200) {
@@ -65,7 +70,7 @@ export const PostServingLog = async data => {
   try {
     const dataMapId = data.mapId;
     const response = await basicApi.post(
-      `${API.postByServingLog}/${dataMapId}`,
+      `${process.env.REACT_APP_postByServingLog}/${dataMapId}`,
       data
     );
     if (response.status === 200) {
@@ -82,7 +87,7 @@ export const PostRobotLog = async data => {
   try {
     const dataMapId = data.mapId;
     const response = await basicApi.post(
-      `${API.postByRobotLog}/${dataMapId}`,
+      `${process.env.REACT_APP_postByRobotLog}/${dataMapId}`,
       data
     );
     if (response.status === 200) {

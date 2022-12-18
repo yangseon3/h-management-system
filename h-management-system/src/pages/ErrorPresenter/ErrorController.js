@@ -1,9 +1,8 @@
-import API from 'api';
 import { basicApi } from 'lib/config';
 
 export const getDefaultErrorlist = async () => {
   try {
-    const response = await basicApi.get(API.getDefaultError);
+    const response = await basicApi.get(process.env.REACT_APP_getDefaultError);
 
     if (response.status === 200) {
       return [false, response.data];
@@ -17,7 +16,10 @@ export const getDefaultErrorlist = async () => {
 
 export const postDetailErrorList = async data => {
   try {
-    const response = await basicApi.post(API.postErrorInfo, data);
+    const response = await basicApi.post(
+      process.env.REACT_APP_postErrorInfo,
+      data
+    );
 
     if (response.status === 200) {
       return [false, response.data];
@@ -31,7 +33,10 @@ export const postDetailErrorList = async data => {
 
 export const postErrorDate = async data => {
   try {
-    const response = await basicApi.post(API.getDefaultError, data);
+    const response = await basicApi.post(
+      process.env.REACT_APP_getDefaultError,
+      data
+    );
 
     if (response.status === 200) {
       return [false, response.data];
@@ -45,7 +50,10 @@ export const postErrorDate = async data => {
 
 export const postDetailContentData = async data => {
   try {
-    const response = await basicApi.post(API.postDetatilContent, data);
+    const response = await basicApi.post(
+      process.env.REACT_APP_postDetatilContent,
+      data
+    );
 
     if (response.status === 200) {
       return [false, response.data];

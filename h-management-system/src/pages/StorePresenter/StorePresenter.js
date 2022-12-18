@@ -3,7 +3,6 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { basicApi } from 'lib/config';
-import API from 'api';
 import StoreList from './components/StoreList/StoreList';
 import StoreInfo from './components/StoreInfo/StoreInfo';
 import './StorePresenter.scss';
@@ -13,7 +12,9 @@ const StorePresenter = () => {
 
   const storeData = useQuery(['StoreKey', params], async () => {
     const { data } = await basicApi.get(
-      params.category === 'all' ? API.store : `${API.store}/${params.category}`
+      params.category === 'all'
+        ? process.env.REACT_APP_store
+        : `${process.env.REACT_APP_store}/${params.category}`
     );
     return data;
   });

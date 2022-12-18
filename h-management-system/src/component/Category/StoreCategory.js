@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import API from 'api';
 import { basicApi } from 'lib/config';
 
 const StoreCategory = () => {
@@ -15,7 +14,7 @@ const StoreCategory = () => {
   };
 
   const storeData = useQuery(['StoreKey'], async () => {
-    const { data } = await basicApi.get(API.store);
+    const { data } = await basicApi.get(process.env.REACT_APP_store);
     return data;
   });
 

@@ -6,9 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
 } from 'react-icons/md';
-import { FaUserCircle } from 'react-icons/fa';
 import { basicApi } from 'lib/config';
-import API from 'api';
 import TabContent from './components/TabContent';
 import './Header.scss';
 import CommonModal from 'component/Modal/CommonModal';
@@ -45,7 +43,7 @@ const Header = () => {
   }, []);
 
   const { isLoading, data } = useQuery('HeaderKey', async () => {
-    const { data } = await basicApi.get(API.statistic);
+    const { data } = await basicApi.get(process.env.REACT_APP_statistic);
     return data;
   });
   const resultData = data && data;

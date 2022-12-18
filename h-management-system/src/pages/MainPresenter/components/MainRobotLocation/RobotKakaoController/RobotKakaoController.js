@@ -1,9 +1,8 @@
-import API from 'api';
 import { basicApi } from 'lib/config';
 
 export const GetKakaoData = async () => {
   try {
-    const response = await basicApi.get(API.store);
+    const response = await basicApi.get(process.env.REACT_APP_store);
 
     if (response.status === 200) {
       return [false, response.data];

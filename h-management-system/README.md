@@ -16,15 +16,15 @@
 
 # 담당 티켓
 
-## 이진혁(PM)
+이진혁(PM)
 
 -> `Error info`,`Error state`, `Error notice`
 
-## 양동선
+양동선
 
 -> `Kakao info`, `Kakao map`, `Login`, `Log info`
 
-## 김온누리
+김온누리
 
 -> `Header`, `Nav`, `Store info`, `Robot info`
 
